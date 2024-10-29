@@ -1,0 +1,242 @@
+
+h1 {
+  margin: 0px;
+}
+
+.text-container  {
+  z-index: 100;
+  width: 100vw;
+  /* 100% da largura da viewport */
+  height: 100vh;
+  /* 100% da altura da viewport */
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+  flex-direction: column;
+  /* Adiciona uma coluna para os elementos */
+  justify-content: center;
+  /* Centraliza verticalmente */
+  align-items: center;
+  /* Centraliza horizontalmente */
+  font-size: 40px;
+  color: white;
+  opacity: 0.8;
+  user-select: none;
+  text-shadow: 1px 1px rgba(0, 0, 0, 0.1);
+}
+form {
+  display: flex; /* Exibe o formulário como um flex container */
+  flex-direction: column; /* Alinha os elementos em coluna */
+  align-items: center; /* Centraliza horizontalmente os elementos dentro do formulário */
+}
+
+
+.bar {
+  box-sizing: border-box;
+  width: 600px;
+  /* Aumenta a largura do campo de busca */
+  padding: 10px;
+  /* Adiciona um espaçamento interno */
+  margin-top: 0px;
+  /* Espaçamento acima do campo de busca */
+  font-size: 20px;
+  /* Ajusta o tamanho da fonte */
+  border: 2px solid #ccc;
+  /* Borda do campo de busca */
+  border-radius: 15px;
+  /* Cantos arredondados */
+}
+
+.bar:focus {
+  outline: none;
+  border-color: rgba(90, 90, 90, 0.425);
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.search-button {
+  width: 600px;
+  /* Aumenta a largura do botão */
+  padding: 10px;
+  /* Adiciona um espaçamento interno */
+  margin-top: 20px;
+  /* Espaçamento acima do botão */
+  font-size: 20px;
+  /* Ajusta o tamanho da fonte */
+  background-color: #007BFF;
+  /* Cor de fundo do botão */
+  color: white;
+  /* Cor do texto */
+  border: none;
+  /* Remove a borda padrão */
+  border-radius: 5px;
+  /* Cantos arredondados */
+  cursor: pointer;
+  /* Muda o cursor ao passar o mouse */
+}
+
+.search-button:hover {
+  background-color: #0056b3;
+  /* Cor do botão ao passar o mouse */
+}
+
+
+
+
+
+@keyframes moveInCircle {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  50% {
+    transform: rotate(180deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes moveVertical {
+  0% {
+    transform: translateY(-50%);
+  }
+
+  50% {
+    transform: translateY(50%);
+  }
+
+  100% {
+    transform: translateY(-50%);
+  }
+}
+
+@keyframes moveHorizontal {
+  0% {
+    transform: translateX(-50%) translateY(-10%);
+  }
+
+  50% {
+    transform: translateX(50%) translateY(10%);
+  }
+
+  100% {
+    transform: translateX(-50%) translateY(-10%);
+  }
+}
+
+
+.gradient-bg {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(40deg, var(--color-bg1), var(--color-bg2));
+  top: 0;
+  left: 0;
+
+  svg {
+    display: none;
+  }
+
+
+  .gradients-container {
+    filter: url(#goo) blur(40px);
+    width: 100%;
+    height: 100%;
+  }
+
+  .g1 {
+    position: absolute;
+    background: radial-gradient(circle at center, rgba(var(--color1), 0.8) 0, rgba(var(--color1), 0) 50%) no-repeat;
+    mix-blend-mode: var(--blending);
+
+    width: var(--circle-size);
+    height: var(--circle-size);
+    top: calc(50% - var(--circle-size) / 2);
+    left: calc(50% - var(--circle-size) / 2);
+
+    transform-origin: center center;
+    animation: moveVertical 30s ease infinite;
+
+    opacity: 1;
+  }
+
+  .g2 {
+    position: absolute;
+    background: radial-gradient(circle at center, rgba(var(--color2), 0.8) 0, rgba(var(--color2), 0) 50%) no-repeat;
+    mix-blend-mode: var(--blending);
+
+    width: var(--circle-size);
+    height: var(--circle-size);
+    top: calc(50% - var(--circle-size) / 2);
+    left: calc(50% - var(--circle-size) / 2);
+
+    transform-origin: calc(50% - 400px);
+    animation: moveInCircle 20s reverse infinite;
+
+    opacity: 1;
+  }
+
+  .g3 {
+    position: absolute;
+    background: radial-gradient(circle at center, rgba(var(--color3), 0.8) 0, rgba(var(--color3), 0) 50%) no-repeat;
+    mix-blend-mode: var(--blending);
+
+    width: var(--circle-size);
+    height: var(--circle-size);
+    top: calc(50% - var(--circle-size) / 2 + 200px);
+    left: calc(50% - var(--circle-size) / 2 - 500px);
+
+    transform-origin: calc(50% + 400px);
+    animation: moveInCircle 40s linear infinite;
+
+    opacity: 1;
+  }
+
+  .g4 {
+    position: absolute;
+    background: radial-gradient(circle at center, rgba(var(--color4), 0.8) 0, rgba(var(--color4), 0) 50%) no-repeat;
+    mix-blend-mode: var(--blending);
+
+    width: var(--circle-size);
+    height: var(--circle-size);
+    top: calc(50% - var(--circle-size) / 2);
+    left: calc(50% - var(--circle-size) / 2);
+
+    transform-origin: calc(50% - 200px);
+    animation: moveHorizontal 40s ease infinite;
+
+    opacity: 0.7;
+  }
+
+  .g5 {
+    position: absolute;
+    background: radial-gradient(circle at center, rgba(var(--color5), 0.8) 0, rgba(var(--color5), 0) 50%) no-repeat;
+    mix-blend-mode: var(--blending);
+
+    width: calc(var(--circle-size) * 2);
+    height: calc(var(--circle-size) * 2);
+    top: calc(50% - var(--circle-size));
+    left: calc(50% - var(--circle-size));
+
+    transform-origin: calc(50% - 800px) calc(50% + 200px);
+    animation: moveInCircle 20s ease infinite;
+
+    opacity: 1;
+  }
+
+  .interactive {
+    position: absolute;
+    background: radial-gradient(circle at center, rgba(var(--color-interactive), 0.8) 0, rgba(var(--color-interactive), 0) 50%) no-repeat;
+    mix-blend-mode: var(--blending);
+
+    width: 100%;
+    height: 100%;
+    top: -50%;
+    left: -50%;
+
+    opacity: 0.7;
+  }
+}
