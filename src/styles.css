@@ -1,11 +1,26 @@
 /* You can add global styles to this file, and also import other style files */
-@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--general-font) Roboto, "Helvetica Neue", sans-serif;
+}
 
-
-html, body { height: 100%; }
-body { margin: 0; font-family: var(--general-font) Roboto, "Helvetica Neue", sans-serif; }
-
-:root{
-    --general-font: "Courier Prime"
+:root {
+  --color-bg1: rgb(255, 132, 132);
+  --color-bg2: rgb(199, 140, 160);
+  --color1: 236, 186, 208;
+  --color2: 255, 146, 253;
+  --color3: 255, 255, 186; /*amarelo  */
+  --color4: 186, 255, 201; /* verde */
+  --color5: 255, 223, 186; /* laranja */
+  --color-interactive: 186, 225, 255;
+  --circle-size: 80%;
+  --blending: hard-light;
+  --general-font: "Courier Prime";
 }
