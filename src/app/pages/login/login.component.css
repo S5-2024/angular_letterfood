@@ -1,143 +1,5 @@
-
-/* configuração do forms: (não mexer) */
-.text-container {
-  z-index: 100;
-  width: 100vw;
-  height: 100vh;
-
-  display: flex;
-  position: absolute;
-  top: 0;
-  left: 0;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-
-  font-size: 2.5rem;
-  color: white;
-  opacity: 0.8;
-  user-select: none;
-  text-shadow: 0.063rem 0.063rem rgba(0, 0, 0, 0.1);
-}
-
-/*  Quadradinho preto trasnparente do form */
-form {
-  display: flex;
-
-  flex-direction: column;
-
-  justify-content: space-between; 
-  gap: 0.3125rem; /* 0.3rem */
-  align-items: center;
-
-  background-color: rgb(255, 255, 255);
-  height: 60%; /* 60% é uma porcentagem, não alterada */
-  width: 25%; /* 25% é uma porcentagem, não alterada */
-  padding: 1.25rem; /* 1.3rem */
-  border-radius: 1.25rem; /* 1.3rem */
-  box-shadow: 0px 0.25rem 0.5rem rgba(0, 0, 0, 0.2); /* 0px, 4px e 0.5rem */
-}
-
-
-h1 {
-  margin: 0px;
-  color: #000000;
-  font-size: 3.813rem;
-}
-
-/* Estilização dos inputs */
-.bar {
-  box-sizing: border-box;
-  width: 80%;
-  padding: 0.6rem;
-  font-size: 1.3rem;
-  border: 0.13rem solid #ccc;
-  border-radius: 0.6rem;
-}
-
-.bar:focus {
-  outline: none;
-  border-color: rgba(90, 90, 90, 0.425);
-  box-shadow: 0 0 0.3rem rgba(0, 123, 255, 0.5);
-}
-
-/* Estilização dos botões */
-
-.botao {
-  box-sizing: border-box;
-  width: 90%;
-  padding: 0.6rem;
-
-  font-size: 1.3rem;
-  /* Ajusta o tamanho da fonte */
-  border: 0.13rem solid #ccc;
-  /* Borda do campo de busca */
-  border-radius: 0.6rem;
-  /* Cantos arredondados */
-}
-
-.botao-google{
-  display: flex;
-  align-items: center;
-  margin-bottom: 1.3rem;
-  justify-content: flex-start;
-  padding: 0.5rem 1rem; /* ajuste o padding conforme necessário */
-  background-color: #ffff; /* cor de fundo do botão */
-  color: #000;
-  border: 0.06rem solid #ccc;
-  border-radius: 1.6rem;
-  cursor: pointer;
-  width: 60%;
-  height: 7%;
-  font-family: "GoogleSans-Regular", arial, sans-serif;
-  font-size: 0.9rem;
-}
-.botao-google:hover{
-   background-color: #F8FAFF;
-   border: 0.06rem solid #afb8ff;
-}
-.botao-google span + * {
-  margin: auto; /* Centraliza o conteúdo de texto */
-}
-
-.search-button {
-  width: 37.5rem;
-  /* Aumenta a largura do botão */
-  padding: 0.6rem;
-  /* Adiciona um espaçamento interno */
-  margin-top: 1.3rem;
-  /* Espaçamento acima do botão */
-  font-size: 1.3rem;
-  /* Ajusta o tamanho da fonte */
-  background-color: #007BFF;
-  /* Cor de fundo do botão */
-  color: white;
-  /* Cor do texto */
-  border: none;
-  /* Remove a borda padrão */
-  border-radius: 0.3rem;
-  /* Cantos arredondados */
-  cursor: pointer;
-  /* Muda o cursor ao passar o mouse */
-}
-
-.search-button:hover {
-  background-color: #0056b3;
-  /* Cor do botão ao passar o mouse */
-}
-
-.logos--google-icon {
-  margin-right: 0.5rem; /* espaço entre o ícone e o texto */
-  display: inline-flex;
-  width: 0.98em;
-  height: 1em;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 256 262'%3E%3Cpath fill='%234285f4' d='M255.878 133.451c0-10.734-.871-18.567-2.756-26.69H130.55v48.448h71.947c-1.45 12.04-9.283 30.172-26.69 42.356l-.244 1.622l38.755 30.023l2.685.268c24.659-22.774 38.875-56.282 38.875-96.027'/%3E%3Cpath fill='%2334a853' d='M130.55 261.1c35.248 0 64.839-11.605 86.453-31.622l-41.196-31.913c-11.024 7.688-25.82 13.055-45.257 13.055c-34.523 0-63.824-22.773-74.269-54.25l-1.531.13l-40.298 31.187l-.527 1.465C35.393 231.798 79.49 261.1 130.55 261.1'/%3E%3Cpath fill='%23fbbc05' d='M56.281 156.37c-2.756-8.123-4.351-16.827-4.351-25.82c0-8.994 1.595-17.697 4.206-25.82l-.073-1.73L15.26 71.312l-1.335.635C5.077 89.644 0 109.517 0 130.55s5.077 40.905 13.925 58.602z'/%3E%3Cpath fill='%23eb4335' d='M130.55 50.479c24.514 0 41.05 10.589 50.479 19.438l36.844-35.974C195.245 12.91 165.798 0 130.55 0C79.49 0 35.393 29.301 13.925 71.947l42.211 32.783c10.59-31.477 39.891-54.251 74.414-54.251'/%3E%3C/svg%3E");
-}
-
 /* Estilização do background */
-
+/* NÃO MEXER, CUIDADO */
 @keyframes moveInCircle {
   0% {
     transform: rotate(0deg);
@@ -294,3 +156,156 @@ h1 {
     opacity: 0.7;
   }
 }
+
+/* FIM DO ESTILO DO BACKGROUND */
+
+/* ESTILIZAÇÃO DO CARTÃO DE FORMULARIO  */
+
+h1 {
+  margin: 0px;
+  color: #000000;
+  font-size: 3.813rem;
+}
+
+.reset-password{
+  color: black;
+  font-size: 20px;
+}
+/* configuração do forms: (não mexer) */
+.text-container {
+  z-index: 100;
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  position: absolute;
+  
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 0;
+  font-size: 2.5rem;
+ 
+  opacity: 0.8;
+  user-select: none;
+  text-shadow: 0.063rem 0.063rem rgba(0, 0, 0, 0.1);
+}
+
+/*  Quadradinho preto transparente do form */
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.4em;
+
+  background-color: rgb(255, 255, 255);
+  height: 60%;
+  width: 25%;
+  border-radius: 1.25rem;
+  box-shadow: 0px 0.25rem 0.5rem rgba(0, 0, 0, 0.2);
+}
+.form > * + * {
+  margin-top: 1em;
+}
+
+/* Estilização dos inputs */
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 80%;  
+  height: 6%;
+  box-sizing: border-box;
+}
+
+label {
+  margin-bottom: 5px; /* Espaço entre o label e o input */
+  font-size: 1.3rem;
+}
+.bar {
+  box-sizing: border-box;
+  width: 100%;
+  height: 8%;
+  padding: 1rem;
+  font-size: 1.3rem;
+  border: 0.14rem solid #ccc;
+  border-radius: 0.5rem;
+  color: black;
+}
+
+.bar:focus {
+  outline: none;
+  border-color: rgba(186,225,255, 1);
+  background-color: rgb(251,247,245);
+}
+
+/* Estilização dos botões */
+
+/* Div mãe */
+.botoes{
+  width: 80%;
+  height: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 1px;
+  margin-bottom: 40px;
+  box-sizing: content-box;
+
+}
+
+/* Div do botão entrar */
+.botao {
+  box-sizing: border-box;
+  background-color: rgb(0, 86, 179);
+  color: white;
+  font-family: var(--fontegabi);
+
+}
+.botao:hover{
+  background-color: rgb(1, 59, 121);
+
+}
+/* A especie botão (estilo igual deles) */
+button{
+  width: 100%;
+  height: 25%;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  padding: 0.5rem 1rem; /* ajuste o padding conforme necessário */
+  background-color: #ffff; /* cor de fundo do botão */
+  color: #000;
+  border: 0.06rem solid #ccc;
+  border-radius: 1.6rem;
+  cursor: pointer;
+  font-size: 1.3rem;
+
+}
+/* Botão google */
+.botao-google{
+  justify-content: flex-start;
+  font-family: "GoogleSans-Regular", arial, sans-serif;
+  font-size: 0.9rem;
+}
+.botao-google:hover{
+   background-color: #F8FAFF;
+   border: 0.06rem solid #afb8ff;
+}
+.botao-google span + * {
+  margin: auto; /* Centraliza o conteúdo de texto */
+}
+
+/* SVG do Icone do google */
+.logos--google-icon {
+  margin-right: 0.5rem; /* espaço entre o ícone e o texto */
+  display: inline-flex;
+  width: 1.3em;
+  height: 1.3em;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 256 262'%3E%3Cpath fill='%234285f4' d='M255.878 133.451c0-10.734-.871-18.567-2.756-26.69H130.55v48.448h71.947c-1.45 12.04-9.283 30.172-26.69 42.356l-.244 1.622l38.755 30.023l2.685.268c24.659-22.774 38.875-56.282 38.875-96.027'/%3E%3Cpath fill='%2334a853' d='M130.55 261.1c35.248 0 64.839-11.605 86.453-31.622l-41.196-31.913c-11.024 7.688-25.82 13.055-45.257 13.055c-34.523 0-63.824-22.773-74.269-54.25l-1.531.13l-40.298 31.187l-.527 1.465C35.393 231.798 79.49 261.1 130.55 261.1'/%3E%3Cpath fill='%23fbbc05' d='M56.281 156.37c-2.756-8.123-4.351-16.827-4.351-25.82c0-8.994 1.595-17.697 4.206-25.82l-.073-1.73L15.26 71.312l-1.335.635C5.077 89.644 0 109.517 0 130.55s5.077 40.905 13.925 58.602z'/%3E%3Cpath fill='%23eb4335' d='M130.55 50.479c24.514 0 41.05 10.589 50.479 19.438l36.844-35.974C195.245 12.91 165.798 0 130.55 0C79.49 0 35.393 29.301 13.925 71.947l42.211 32.783c10.59-31.477 39.891-54.251 74.414-54.251'/%3E%3C/svg%3E");
+}
+

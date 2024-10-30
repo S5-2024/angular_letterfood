@@ -3,7 +3,9 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+ 
 }
+ 
 
 @font-face {
   font-family: 'GoogleSans-Regular'; /* Nome que você dará para a fonte */
@@ -24,4 +26,5 @@ body {
   --color-interactive: 186,225,255;
   --circle-size: 80%;
   --blending: soft-light;
+  --fontegabi: "  'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif";
 }
