@@ -3,64 +3,62 @@
 .text-container {
   z-index: 100;
   width: 100vw;
-  /* 100% da largura da viewport */
   height: 100vh;
-  /* 100% da altura da viewport */
+
   display: flex;
   position: absolute;
   top: 0;
   left: 0;
   flex-direction: column;
-  /* Adiciona uma coluna para os elementos */
   justify-content: center;
-  /* Centraliza verticalmente */
   align-items: center;
-  /* Centraliza horizontalmente */
-  font-size: 40px;
+
+  font-size: 2.5rem;
   color: white;
   opacity: 0.8;
   user-select: none;
-  text-shadow: 1px 1px rgba(0, 0, 0, 0.1);
+  text-shadow: 0.063rem 0.063rem rgba(0, 0, 0, 0.1);
 }
 
 /*  Quadradinho preto trasnparente do form */
 form {
   display: flex;
-  /* Exibe o formulário como um flex container */
+
   flex-direction: column;
-  /* Alinha os elementos em coluna */
+
   justify-content: space-between; 
-  gap: 5px;
+  gap: 0.3125rem; /* 0.3rem */
   align-items: center;
-  /* Centraliza horizontalmente os elementos dentro do formulário */
+
   background-color: rgb(255, 255, 255);
-  height: 60%;
-  width: 25%;
-  padding: 20px;
-  border-radius: 20px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); 
+  height: 60%; /* 60% é uma porcentagem, não alterada */
+  width: 25%; /* 25% é uma porcentagem, não alterada */
+  padding: 1.25rem; /* 1.3rem */
+  border-radius: 1.25rem; /* 1.3rem */
+  box-shadow: 0px 0.25rem 0.5rem rgba(0, 0, 0, 0.2); /* 0px, 4px e 0.5rem */
 }
+
 
 h1 {
   margin: 0px;
   color: #000000;
-  font-size: 61px;
+  font-size: 3.813rem;
 }
 
 /* Estilização dos inputs */
 .bar {
   box-sizing: border-box;
   width: 80%;
-  padding: 10px;
-  font-size: 20px;
-  border: 2px solid #ccc;
-  border-radius: 10px;
+  padding: 0.6rem;
+  font-size: 1.3rem;
+  border: 0.13rem solid #ccc;
+  border-radius: 0.6rem;
 }
 
 .bar:focus {
   outline: none;
   border-color: rgba(90, 90, 90, 0.425);
-  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  box-shadow: 0 0 0.3rem rgba(0, 123, 255, 0.5);
 }
 
 /* Estilização dos botões */
@@ -68,48 +66,48 @@ h1 {
 .botao {
   box-sizing: border-box;
   width: 90%;
-  padding: 10px;
+  padding: 0.6rem;
 
-  font-size: 20px;
+  font-size: 1.3rem;
   /* Ajusta o tamanho da fonte */
-  border: 2px solid #ccc;
+  border: 0.13rem solid #ccc;
   /* Borda do campo de busca */
-  border-radius: 10px;
+  border-radius: 0.6rem;
   /* Cantos arredondados */
 }
 
 .botao-google{
   display: flex;
   align-items: center;
-  margin-bottom: 20px;
+  margin-bottom: 1.3rem;
   justify-content: flex-start;
-  padding: 8px 16px; /* ajuste o padding conforme necessário */
+  padding: 0.5rem 1rem; /* ajuste o padding conforme necessário */
   background-color: #ffff; /* cor de fundo do botão */
   color: #000;
-  border: 1px solid #ccc;
-  border-radius: 25px;
+  border: 0.06rem solid #ccc;
+  border-radius: 1.6rem;
   cursor: pointer;
   width: 60%;
   height: 7%;
   font-family: "GoogleSans-Regular", arial, sans-serif;
-  font-size: 15px;
+  font-size: 0.9rem;
 }
 .botao-google:hover{
    background-color: #F8FAFF;
-   border: 1px solid #afb8ff;
+   border: 0.06rem solid #afb8ff;
 }
 .botao-google span + * {
   margin: auto; /* Centraliza o conteúdo de texto */
 }
 
 .search-button {
-  width: 600px;
+  width: 37.5rem;
   /* Aumenta a largura do botão */
-  padding: 10px;
+  padding: 0.6rem;
   /* Adiciona um espaçamento interno */
-  margin-top: 20px;
+  margin-top: 1.3rem;
   /* Espaçamento acima do botão */
-  font-size: 20px;
+  font-size: 1.3rem;
   /* Ajusta o tamanho da fonte */
   background-color: #007BFF;
   /* Cor de fundo do botão */
@@ -117,7 +115,7 @@ h1 {
   /* Cor do texto */
   border: none;
   /* Remove a borda padrão */
-  border-radius: 5px;
+  border-radius: 0.3rem;
   /* Cantos arredondados */
   cursor: pointer;
   /* Muda o cursor ao passar o mouse */
@@ -129,7 +127,7 @@ h1 {
 }
 
 .logos--google-icon {
-  margin-right: 8px; /* espaço entre o ícone e o texto */
+  margin-right: 0.5rem; /* espaço entre o ícone e o texto */
   display: inline-flex;
   width: 0.98em;
   height: 1em;
@@ -198,7 +196,7 @@ h1 {
 
 
   .gradients-container {
-    filter: url(#goo) blur(40px);
+    filter: url(#goo) blur(3rem);
     width: 100%;
     height: 100%;
   }
@@ -229,7 +227,7 @@ h1 {
     top: calc(50% - var(--circle-size) / 2);
     left: calc(50% - var(--circle-size) / 2);
 
-    transform-origin: calc(50% - 400px);
+    transform-origin: calc(50% - 25rem);
     animation: moveInCircle 20s reverse infinite;
 
     opacity: 1;
@@ -242,10 +240,10 @@ h1 {
 
     width: var(--circle-size);
     height: var(--circle-size);
-    top: calc(50% - var(--circle-size) / 2 + 200px);
+    top: calc(50% - var(--circle-size) / 2 + 12.5rem);
     left: calc(50% - var(--circle-size) / 2 - 500px);
 
-    transform-origin: calc(50% + 400px);
+    transform-origin: calc(50% + 25rem);
     animation: moveInCircle 40s linear infinite;
 
     opacity: 1;
@@ -261,7 +259,7 @@ h1 {
     top: calc(50% - var(--circle-size) / 2);
     left: calc(50% - var(--circle-size) / 2);
 
-    transform-origin: calc(50% - 200px);
+    transform-origin: calc(50% - 12.5rem);
     animation: moveHorizontal 40s ease infinite;
 
     opacity: 0.7;
@@ -277,7 +275,7 @@ h1 {
     top: calc(50% - var(--circle-size));
     left: calc(50% - var(--circle-size));
 
-    transform-origin: calc(50% - 800px) calc(50% + 200px);
+    transform-origin: calc(50% - 50rem) calc(50% + 12.5rem);
     animation: moveInCircle 20s ease infinite;
 
     opacity: 1;
