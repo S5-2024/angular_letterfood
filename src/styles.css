@@ -8,14 +8,14 @@ body {
 
 
 :root {
-  --color-bg1: rgb(108, 0, 162);
-  --color-bg2: rgb(0, 17, 82);
-  --color1: 18, 113, 255;
-  --color2: 221, 74, 255;
-  --color3: 100, 220, 255;
-  --color4: 200, 50, 50;
-  --color5: 180, 180, 50;
-  --color-interactive: 140, 100, 255;
+  --color-bg1: rgb(255,132,132);
+  --color-bg2: rgb(199,140,160);
+  --color1: 236,186,208;
+  --color2: 255,146,253;
+   --color3: 255,255,	186;   /*amarelo  */
+  --color4: 186,255,201;  /* verde */
+  --color5: 255,223,186;  /* laranja */
+  --color-interactive: 186,225,255;
   --circle-size: 80%;
   --blending: hard-light;
 }

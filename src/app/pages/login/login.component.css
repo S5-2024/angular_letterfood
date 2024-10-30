@@ -1,9 +1,4 @@
-
-h1 {
-  margin: 0px;
-}
-
-.text-container  {
+.text-container {
   z-index: 100;
   width: 100vw;
   /* 100% da largura da viewport */
@@ -25,28 +20,60 @@ h1 {
   user-select: none;
   text-shadow: 1px 1px rgba(0, 0, 0, 0.1);
 }
+
 form {
-  display: flex; /* Exibe o formulário como um flex container */
-  flex-direction: column; /* Alinha os elementos em coluna */
-  align-items: center; /* Centraliza horizontalmente os elementos dentro do formulário */
+  display: flex;
+  /* Exibe o formulário como um flex container */
+  flex-direction: column;
+  /* Alinha os elementos em coluna */
+  align-items: center;
+  /* Centraliza horizontalmente os elementos dentro do formulário */
+  background-color: rgba(0, 0, 0, .7);
+  height: 60%;
+  width: 25%;
+  padding: 20px;
+  border-radius: 20px;
+
+}
+
+h1 {
+  margin: 0px;
+  color: #ffff;
+  font-size: 61px;
 }
 
 
 .bar {
   box-sizing: border-box;
-  width: 600px;
+  width: 80%;
   /* Aumenta a largura do campo de busca */
   padding: 10px;
   /* Adiciona um espaçamento interno */
-  margin-top: 0px;
+   
   /* Espaçamento acima do campo de busca */
   font-size: 20px;
   /* Ajusta o tamanho da fonte */
   border: 2px solid #ccc;
   /* Borda do campo de busca */
-  border-radius: 15px;
+  border-radius: 10px;
   /* Cantos arredondados */
 }
+
+
+.botao {
+  box-sizing: border-box;
+  width: 90%;
+  padding: 10px;
+  margin-top: 40px;
+  margin-bottom: 10px;
+  font-size: 20px;
+  /* Ajusta o tamanho da fonte */
+  border: 2px solid #ccc;
+  /* Borda do campo de busca */
+  border-radius: 10px;
+  /* Cantos arredondados */
+}
+
 
 .bar:focus {
   outline: none;
