@@ -5,7 +5,12 @@ body {
   box-sizing: border-box;
 }
 
-
+@font-face {
+  font-family: 'GoogleSans-Regular'; /* Nome que você dará para a fonte */
+  src: url('app/assets/GoogleSans-Regular.ttf') format('truetype'); /* Caminho para o arquivo da fonte */
+  font-weight: normal; /* Ou bold, se for uma fonte negrito */
+  font-style: normal; /* Ou italic, se for uma fonte itálica */
+}
 
 
 :root {
@@ -13,10 +18,10 @@ body {
   --color-bg2: rgb(199,140,160);
   --color1: 236,186,208;
   --color2: 255,146,253;
-   --color3: 255,255,	186;   /*amarelo  */
+   --color3: 199,140,160;   /*amarelo  */
   --color4: 186,255,201;  /* verde */
   --color5: 255,223,186;  /* laranja */
   --color-interactive: 186,225,255;
   --circle-size: 80%;
-  --blending: hard-light;
+  --blending: soft-light;
 }
