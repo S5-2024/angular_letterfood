@@ -45,8 +45,10 @@ body {
 
 
   /*  Fontes */
+  --fontegeral: " 'Courier Prime', serif "; 
   --fontegoogle: " 'GoogleSans-Regular', 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif";
   --fontefrases: " 'Manrope', serif";
+
 
 
   /* Paleta de cores */
