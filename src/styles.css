@@ -1,26 +1,72 @@
-/* You can add global styles to this file, and also import other style files */
-@import url("https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Manrope:wght@200..800&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Manrope:wght@200..800&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@font-face {
+  font-family: 'GoogleSans-Regular';
+  /* Nome que você dará para a fonte */
+  src: url('app/assets/GoogleSans-Regular.ttf') format('truetype');
+  /* Caminho para o arquivo da fonte */
+  font-weight: normal;
+  /* Ou bold, se for uma fonte negrito */
+  font-style: normal;
+  /* Ou italic, se for uma fonte itálica */
+}
+
 
 html,
-body {
-  height: 100%;
-}
 body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+
+}
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
 }
 
 :root {
+  /* Configurações para o Background Login */
   --color-bg1: rgb(255, 132, 132);
   --color-bg2: rgb(199, 140, 160);
   --color1: 236, 186, 208;
   --color2: 255, 146, 253;
-  --color3: 255, 255, 186; /*amarelo  */
-  --color4: 186, 255, 201; /* verde */
-  --color5: 255, 223, 186; /* laranja */
+  --color3: 199, 140, 160;
+  /*amarelo  */
+  --color4: 186, 255, 201;
+  /* verde */
+  --color5: 255, 223, 186;
+  /* laranja */
   --color-interactive: 186, 225, 255;
   --circle-size: 80%;
-  --blending: hard-light;
-  --general-font: "Courier Prime";
+  --blending: soft-light;
+
+
+  /*  Fontes */
+  --fontegeral: " 'Courier Prime', serif "; 
+  --fontegoogle: " 'GoogleSans-Regular', 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif";
+  --fontefrases: " 'Manrope', serif";
+
+
+
+  /* Paleta de cores */
+  /* Coquette pink  (na ordem do site) 
+  https://www.color-hex.com/color-palette/1039148*/
+  --rosa1: 252, 215, 215;
+  --rosa2: 255, 225, 237;
+  --rosa3: 255, 243, 250;
+  --rosa4: 236, 186, 208;
+  --rosa5: 199, 140, 160;
+
+  /* Cores de Suporte   (na ordem da imagem do site)
+  https://www.color-hex.com/color-palette/5361*/
+
+  --pink: 255,179,186;
+  --orange: 255,223,186;
+  --yellow: 255,255,186;
+  --green: 186,255,201;
+  --blue: 186,225,255;
+
+
 }
