@@ -18,6 +18,15 @@ body {
   padding: 0;
   box-sizing: border-box;
 
+<<<<<<< HEAD
+=======
+}
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+>>>>>>> e98ead7f2850d8f45676cf49a4392bbab7b56032
 }
 
 * {
@@ -26,6 +35,21 @@ body {
   box-sizing: border-box;
 }
 
+<<<<<<< HEAD
+=======
+@font-face {
+  font-family: 'GoogleSans-Regular';
+  /* Nome que você dará para a fonte */
+  src: url('app/assets/GoogleSans-Regular.ttf') format('truetype');
+  /* Caminho para o arquivo da fonte */
+  font-weight: normal;
+  /* Ou bold, se for uma fonte negrito */
+  font-style: normal;
+  /* Ou italic, se for uma fonte itálica */
+}
+
+
+>>>>>>> e98ead7f2850d8f45676cf49a4392bbab7b56032
 :root {
   /* Configurações para o Background Login */
   --color-bg1: rgb(255, 132, 132);
