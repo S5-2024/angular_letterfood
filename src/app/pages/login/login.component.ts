@@ -1,9 +1,11 @@
 import { Component, ElementRef, Renderer2, AfterViewInit } from '@angular/core';
-
+import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
+  imports: [CommonModule],
+  standalone: true
 })
 export class LoginComponent implements AfterViewInit {
   private curX = 0;
@@ -33,4 +35,16 @@ export class LoginComponent implements AfterViewInit {
       move();
     });
   }
+
+  // Script para mudar de login -> registro
+
+   // Variável para controlar qual formulário será exibido
+   isLogin: boolean = true;
+
+   // Alternar entre login e registro
+   toggleForm() {
+     this.isLogin = !this.isLogin;
+   }
+
+
 }
