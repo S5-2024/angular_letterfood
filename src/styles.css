@@ -1,32 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Manrope:wght@200..800&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Manrope:wght@200..800&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
-@font-face {
-  font-family: 'GoogleSans-Regular';
-  /* Nome que você dará para a fonte */
-  src: url('app/assets/GoogleSans-Regular.ttf') format('truetype');
-  /* Caminho para o arquivo da fonte */
-  font-weight: normal;
-  /* Ou bold, se for uma fonte negrito */
-  font-style: normal;
-  /* Ou italic, se for uma fonte itálica */
-}
-
-
 html,
 body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 
-<<<<<<< HEAD
-=======
-}
-
-* {
-  margin: 0px;
-  padding: 0px;
-  box-sizing: border-box;
->>>>>>> e98ead7f2850d8f45676cf49a4392bbab7b56032
 }
 
 * {
@@ -35,8 +12,9 @@ body {
   box-sizing: border-box;
 }
 
-<<<<<<< HEAD
-=======
+
+
+
 @font-face {
   font-family: 'GoogleSans-Regular';
   /* Nome que você dará para a fonte */
@@ -49,7 +27,6 @@ body {
 }
 
 
->>>>>>> e98ead7f2850d8f45676cf49a4392bbab7b56032
 :root {
   /* Configurações para o Background Login */
   --color-bg1: rgb(255, 132, 132);
@@ -68,7 +45,7 @@ body {
 
 
   /*  Fontes */
-  --fontegeral: " 'Courier Prime', serif "; 
+  --fontegeral: " 'Courier Prime', serif ";
   --fontegoogle: " 'GoogleSans-Regular', 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif";
   --fontefrases: " 'Manrope', serif";
 
@@ -85,12 +62,29 @@ body {
 
   /* Cores de Suporte   (na ordem da imagem do site)
   https://www.color-hex.com/color-palette/5361*/
+  --pink: 255, 179, 186;
+  --orange: 255, 223, 186;
+  --yellow: 255, 255, 186;
+  --green: 186, 255, 201;
+  --blue: 186, 225, 255;
 
-  --pink: 255,179,186;
-  --orange: 255,223,186;
-  --yellow: 255,255,186;
-  --green: 186,255,201;
-  --blue: 186,225,255;
+  /* brancos  (na ordem da img do site)
+  https://www.color-hex.com/color-palette/23730
+  */
+  --white1: #fffff2;
+  --white2: #f9f9f9;
+  --white3: 	#fffff4;
+  --white4: 	#fbf7f5;
+  --white5: #f9f1f1;
+
+  /* Cinzas e preto */
+
+  --grey1: 238,238,238;
+  --grey2: 221,221,221;
+  --grey3: 204,204,204;
+  --grey4: 187,187,187;
+  --grey5: 163,163,163;
 
 
+  
 }
