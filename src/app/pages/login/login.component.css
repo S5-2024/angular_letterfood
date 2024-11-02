@@ -212,11 +212,13 @@ span{
   align-content: space-between;
   align-items: center;
 }
-
+#myform{
+  margin-bottom: -10px;
+}
 
 
 #myForm, #registerForm{
-  height: 70%;
+  height: 65%;
   width: 30%;
   background-color: white;
   font-size: 20px;
@@ -225,7 +227,7 @@ span{
 
 .detalhes, .botoes{
   /* border: 1px  solid #000; */
-  height: 26%;
+  height: 30%;
   width: 100%;
 }
 
@@ -299,7 +301,7 @@ button > span{
 /* Agora configuração dos inputs:  */
 
 .infos {
-  height: 45%;                        /* Altura da div mãe */
+  height: 40%;                        /* Altura da div mãe */
   width: 100%;                        /* Largura total */
   /* border: 1px solid #000;            */
   align-self: center;                 /* Centraliza horizontalmente a div do meio */
@@ -313,15 +315,16 @@ button > span{
 
 .form-group {
    
-  width: 80%; 
-  height: 60%;                       /* Largura das divs filhas */
-  padding: 10px;                     /* Espaçamento interno, opcional */
+  width: 60%; 
+  height: 50%;                       /* Largura das divs filhas */
+                       /* Espaçamento interno, opcional */
   background-color: white;       /* Cor de fundo das divs filhas */
   display: flex;    
   flex-direction: column;                 /* Ativa o Flexbox */
   justify-content: center;           /* Centraliza horizontalmente */
   align-items: flex-start;               /* Centraliza verticalmente */
   text-align: center; 
+ 
  
 }
 
