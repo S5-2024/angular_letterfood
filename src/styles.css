@@ -30,17 +30,17 @@ body {
 
 :root {
   /* Configurações para o Background Login */
-  --color-bg1: rgb(255, 132, 132);
-  --color-bg2: rgb(199, 140, 160);
-  --color1: 236, 186, 208;
-  --color2: 255, 146, 253;
-  --color3: 199, 140, 160;
-  /*amarelo  */
-  --color4: 186, 255, 201;
-  /* verde */
-  --color5: 255, 223, 186;
-  /* laranja */
-  --color-interactive: 186, 225, 255;
+  --color-bg1: rgb(199,140,160);
+  --color-bg2: rgb(236,186,208);
+  --color1: 252,186,203;
+  --color2: 253,171,191;
+  --color3: 253,157,180; 
+  --color4: 254,142,168;  
+  --color5: 231,119,40;
+  --color6: 253,209,226;
+  --color7: 255,164,200; 
+
+  --color-interactive:252,155,218;
   --circle-size: 80%;
   --blending: soft-light;
 
