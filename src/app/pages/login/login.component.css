@@ -41,18 +41,21 @@
     transform: translateX(-50%) translateY(-10%);
   }
 }
+
 @keyframes moveDiagonal {
   0% {
     transform: translate(0, 0) rotate(0deg);
   }
+
   50% {
     transform: translate(20px, -20px) rotate(180deg);
   }
+
   100% {
     transform: translate(0, 0) rotate(360deg);
   }
 }
- 
+
 .gradient-bg {
   width: 100vw;
   height: 100vh;
@@ -152,35 +155,36 @@
 
     opacity: 1;
   }
+
   .g6 {
     position: absolute;
     background: radial-gradient(circle at center, rgba(var(--color6), 0.8) 0, rgba(var(--color6), 0) 50%) no-repeat;
     mix-blend-mode: var(--blending);
-  
+
     width: calc(var(--circle-size) * 1.5);
     height: calc(var(--circle-size) * 1.5);
     top: calc(25% - var(--circle-size) / 2);
     left: calc(90% - var(--circle-size) / 2);
-  
+
     transform-origin: calc(50% - 20rem) calc(50% - 10rem);
     animation: moveDiagonal 35s ease-in-out infinite;
-  
+
     opacity: 0.85;
   }
-  
+
   .g7 {
     position: absolute;
     background: radial-gradient(circle at center, rgba(var(--color7), 0.8) 0, rgba(var(--color7), 0) 50%) no-repeat;
     mix-blend-mode: var(--blending);
-  
+
     width: calc(var(--circle-size) * 1.2);
     height: calc(var(--circle-size) * 1.2);
     top: calc(10% - var(--circle-size) / 2);
     left: calc(80% - var(--circle-size) / 2);
-  
+
     transform-origin: calc(50% + 30rem) calc(50% - 15rem);
     animation: moveVertical 25s linear infinite reverse;
-  
+
     opacity: 0.9;
   }
 
@@ -197,6 +201,7 @@
     opacity: 0.7;
   }
 }
+
 /* FIM DO ESTILO DO BACKGROUND */
 
 
@@ -207,13 +212,13 @@
 
   display: flex;
   position: absolute;
-  
+
   justify-content: center;
   align-items: center;
   top: 0;
   left: 0;
   font-size: 2.5rem;
- 
+
   opacity: 0.8;
   user-select: none;
   text-shadow: 0.063rem 0.063rem rgba(0, 0, 0, 0.1);
@@ -221,7 +226,8 @@
 
 /* SVG do Icone do google */
 .logos--google-icon {
-  margin-right: 0.5rem; /* espaço entre o ícone e o texto */
+  margin-right: 0.5rem;
+  /* espaço entre o ícone e o texto */
   display: inline-flex;
   width: 1em;
   height: 1em;
@@ -249,31 +255,38 @@
   background-size: 100% 100%;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23ffb3ba' fill-rule='evenodd' d='M11.75 6.406c-1.48 0-1.628.157-2.394.157C8.718 6.563 6.802 5 5.845 5S3.77 5.563 3.77 7.188v1.875c.002.492.18 2 .88 1.597c-.827.978-.91 2.119-.899 3.223c-.223.064-.45.137-.671.212c-.684.234-1.41.532-1.737.744a.75.75 0 0 0 .814 1.26c.156-.101.721-.35 1.408-.585l.228-.075c.046.433.161.83.332 1.19l-.024.013c-.41.216-.79.465-1.032.623l-.113.074a.75.75 0 1 0 .814 1.26l.131-.086c.245-.16.559-.365.901-.545q.12-.064.231-.116C6.763 19.475 9.87 20 11.75 20s4.987-.525 6.717-2.148q.11.052.231.116c.342.18.656.385.901.545l.131.086a.75.75 0 0 0 .814-1.26l-.113-.074a13 13 0 0 0-1.032-.623l-.024-.013c.171-.36.286-.757.332-1.19l.228.075c.687.235 1.252.484 1.409.585a.75.75 0 0 0 .813-1.26c-.327-.212-1.053-.51-1.736-.744a16 16 0 0 0-.672-.213c.012-1.104-.072-2.244-.9-3.222c.7.403.88-1.105.881-1.598V7.188C19.73 5.563 18.613 5 17.655 5c-.957 0-2.873 1.563-3.51 1.563c-.767 0-.915-.157-2.395-.157m-.675 9.194c.202-.069.441-.1.675-.1s.473.031.676.1c.1.034.22.088.328.174a.62.62 0 0 1 .246.476c0 .23-.139.39-.246.476s-.229.14-.328.174c-.203.069-.442.1-.676.1s-.473-.031-.675-.1a1.1 1.1 0 0 1-.329-.174a.62.62 0 0 1-.246-.476c0-.23.139-.39.246-.476s.23-.14.329-.174m2.845-3.1c.137-.228.406-.5.81-.5s.674.272.81.5c.142.239.21.527.21.813s-.068.573-.21.811c-.136.229-.406.501-.81.501s-.673-.272-.81-.5a1.6 1.6 0 0 1-.21-.812c0-.286.068-.574.21-.812m-5.96 0c.137-.228.406-.5.81-.5s.674.272.81.5c.142.239.21.527.21.813s-.068.573-.21.811c-.136.229-.406.501-.81.501s-.673-.272-.81-.5a1.6 1.6 0 0 1-.21-.812c0-.286.068-.574.21-.812' clip-rule='evenodd'/%3E%3C/svg%3E");
 }
+
 /*  Não mexer com nada acima */
 
 
-span{
+span {
   align-content: center;
   text-align: center;
 }
 
-form{
-  box-shadow:  10px 15px 50px rgba(0, 0, 0, 0.4) ;
+form {
+  box-shadow: 10px 15px 50px rgba(0, 0, 0, 0.4);
 }
 
-#myForm, #registerForm, .detalhes,.infos,.botoes{
+#myForm,
+#registerForm,
+.detalhes,
+.infos,
+.botoes {
   display: flex;
   flex-direction: column;
   align-content: space-between;
   align-items: center;
 }
-#myform{
+
+#myform {
   margin-bottom: -10px;
-  
+
 }
 
 
-#myForm, #registerForm{
+#myForm,
+#registerForm {
   height: 65%;
   width: 30%;
   background-color: var(--white4);
@@ -281,7 +294,8 @@ form{
   border-radius: 1em;
 }
 
-.detalhes, .botoes{
+.detalhes,
+.botoes {
   /* border: 1px  solid #000; */
   height: 30%;
   width: 100%;
@@ -299,14 +313,16 @@ form{
 } */
 
 /* Botões:  */
-button{
+button {
   width: 60%;
   height: 3em;
   align-items: center;
   display: flex;
   justify-content: center;
-  padding: 0.5rem 1.5rem; /* ajuste o padding conforme necessário */
-  background-color: #ffff; /* cor de fundo do botão */
+  padding: 0.5rem 1.5rem;
+  /* ajuste o padding conforme necessário */
+  background-color: #ffff;
+  /* cor de fundo do botão */
   color: #000;
   border: 0.06rem solid #ccc;
   border-radius: 1.6rem;
@@ -315,10 +331,11 @@ button{
   font-family: var(--fontegoogle);
 }
 
-button > span{
+button>span {
   font-weight: 400;
 }
-.botoes{
+
+.botoes {
   padding: 20px;
   align-self: flex-end;
   align-content: space-between;
@@ -326,79 +343,94 @@ button > span{
 
 }
 
-.botao{
-  background-color:  var(--pink);
- 
-  box-shadow:  0px 4px 8px rgba(0, 0, 0, 0.1);
+.botao {
+  background-color: var(--pink);
+
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
   border: none;
 }
 
-.botao:hover{
- background-color: var(--pink-heavy) ;
- 
-  
+.botao:hover {
+  background-color: var(--pink-heavy);
+
+
 }
 
-.botao-google{
+.botao-google {
   justify-content: flex-start;
   font-family: 'GoogleSans-Regular';
   font-size: .7em;
- 
+
 }
-.botao-google:hover{
-   background-color: #F8FAFF;
-   border: 0.06rem solid #afb8ff;
+
+.botao-google:hover {
+  background-color: #F8FAFF;
+  border: 0.06rem solid #afb8ff;
 }
-.botao-google span + * {
-  margin: auto; /* Centraliza o conteúdo de texto */
+
+.botao-google span+* {
+  margin: auto;
+  /* Centraliza o conteúdo de texto */
 }
 
 /* Frase de Registrar / Login */
 
-.registrar{
+.registrar {
   font-family: var(--fontefrases);
   font-size: .9em;
   margin-bottom: 6px;
 }
 
-.links{
+.links {
   cursor: pointer;
 }
-.links:hover{
+
+.links:hover {
   text-decoration: underline;
 }
 
 /*  configuração dos inputs:  */
 
 .infos {
-  height: 40%;                        /* Altura da div mãe */
-  width: 100%;                        /* Largura total */
+  height: 40%;
+  /* Altura da div mãe */
+  width: 100%;
+  /* Largura total */
   /* border: 1px solid #000;            */
-  align-self: center;                 /* Centraliza horizontalmente a div do meio */
-  margin: auto;                       /* Centraliza verticalmente entre as divs superior e inferior */
+  align-self: center;
+  /* Centraliza horizontalmente a div do meio */
+  margin: auto;
+  /* Centraliza verticalmente entre as divs superior e inferior */
 
-  display: flex;                      /* Ativa o Flexbox */
-  flex-direction: column;             /* Organiza as divs filhas em coluna */
-  justify-content: space-between;     /* Espaço entre as divs filhas */
-   
+  display: flex;
+  /* Ativa o Flexbox */
+  flex-direction: column;
+  /* Organiza as divs filhas em coluna */
+  justify-content: space-between;
+  /* Espaço entre as divs filhas */
+
 }
 
 .form-group {
-   
-  width: 60%; 
-  height: 50%;                       /* Largura das divs filhas */
-                       /* Espaçamento interno, opcional */
-      /* Cor de fundo das divs filhas */
-  display: flex;    
-  flex-direction: column;                 /* Ativa o Flexbox */
-  justify-content: center;           /* Centraliza horizontalmente */
-  align-items: flex-start;               /* Centraliza verticalmente */
-  text-align: center; 
- 
- 
+
+  width: 60%;
+  height: 50%;
+  /* Largura das divs filhas */
+  /* Espaçamento interno, opcional */
+  /* Cor de fundo das divs filhas */
+  display: flex;
+  flex-direction: column;
+  /* Ativa o Flexbox */
+  justify-content: center;
+  /* Centraliza horizontalmente */
+  align-items: flex-start;
+  /* Centraliza verticalmente */
+  text-align: center;
+
+
 }
 
-.bar{
+.bar {
   width: 100%;
   height: 44%;
   align-self: center;
@@ -407,49 +439,380 @@ button > span{
   border: none;
   background-color: var(--white5);
   font-size: .7em;
-  box-shadow:  0px 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
+
 input[type="email"]:focus,
 input[type="password"]:focus,
 input[type="name"]:focus {
-    outline: none;               /* Remove o contorno padrão do navegador */
-    border: 1px solid var(--pink);   /* Define a cor e a espessura da borda ao focar */
-    box-shadow: 0 0 3px var(--pink); /* Adiciona um efeito de sombra ao redor da borda */
-    background-color: var(--white4);
-  }
+  outline: none;
+  /* Remove o contorno padrão do navegador */
+  border: 1px solid var(--pink);
+  /* Define a cor e a espessura da borda ao focar */
+  box-shadow: 0 0 3px var(--pink);
+  /* Adiciona um efeito de sombra ao redor da borda */
+  background-color: var(--white4);
+}
 
- 
-#remakepass{
+
+#remakepass {
   padding-top: 10px;
   font-size: .85em;
 }
-label{
+
+label {
   font-size: .8em;
   padding-bottom: 2px;
 }
 
 /* Detalhes (Icone + frases) */
-.detalhes{
-  justify-content: center;           /* Centraliza horizontalmente */
-  align-items: center;               /* Centraliza verticalmente */
-  text-align: center; 
+.detalhes {
+  justify-content: center;
+  /* Centraliza horizontalmente */
+  align-items: center;
+  /* Centraliza verticalmente */
+  text-align: center;
   gap: 5px;
 
 }
-.solar--cat-bold{
+
+.solar--cat-bold {
   width: 75px;
   height: 75px;
 
 }
-.frase{
+
+.frase {
   font-family: var(--fonteteste);
   font-size: 1.6em;
 
 }
 
 
-#registerForm > .infos > .form-group > .bar {
+#registerForm>.infos>.form-group>.bar {
   height: 60%;
- 
+
 }
 
+/*  Media queries */
+
+@media (max-width: 425px)  {
+
+  .text-container{
+    background-color: var(--rosa6);
+ 
+  }
+  .gradient-bg {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+
+    svg {
+      display: none;
+    }
+
+ 
+
+    .g1 {
+      display: none;
+    }
+
+    .g2 {
+      display: none;
+    }
+
+    .g3 {
+      display: none;
+    }
+
+    .g4 {
+      display: none;
+    }
+
+    .g5 {
+      display: none;
+    }
+
+    .g6 {
+      display: none;
+    }
+
+    .g7 {
+      display: none;
+    }
+
+    .interactive{
+      display: none;
+    }
+
+  }
+  form {
+    box-shadow: 6px 2px 13px rgba(0, 0, 0, 0.4);
+  }
+  #myForm,#registerForm{
+    width: 40%;
+    height: 50%;
+  
+  }
+  .solar--cat-bold {
+    display: none;
+  
+  }
+  .frase{
+    font-size: 1.1rem;
+  }
+
+  .detalhes{
+    height: 20%;
+    width: 100%;
+  }
+  .botoes {
+    /* border: 1px  solid #000; */
+    height: 50%;
+    width: 100%;
+  }
+
+ .form-group{
+  
+    width: 80%;
+  }
+  
+  button{
+    width: 80%;
+    font-size: 1rem;
+  
+  }
+
+  
+}
+
+
+@media (max-width: 770px) and (max-height: 950px)  {
+
+  .text-container{
+    background-color: var(--rosa6);
+  }
+  .gradient-bg {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+
+    svg {
+      display: none;
+    }
+
+ 
+
+    .g1 {
+      display: none;
+    }
+
+    .g2 {
+      display: none;
+    }
+
+    .g3 {
+      display: none;
+    }
+
+    .g4 {
+      display: none;
+    }
+
+    .g5 {
+      display: none;
+    }
+
+    .g6 {
+      display: none;
+    }
+
+    .g7 {
+      display: none;
+    }
+
+    .interactive{
+      display: none;
+    }
+
+  }
+  form {
+    box-shadow: 6px 2px 13px rgba(0, 0, 0, 0.4);
+  }
+  #myForm,#registerForm{
+    width: 80%;
+    height: 70%;
+  }
+  .solar--cat-bold {
+  width: 3.5rem;
+  height: 3.5rem;
+  
+  }
+  .frase{
+    font-size: 1.1rem;
+  }
+
+  .detalhes{
+    height: 20%;
+    width: 100%;
+  }
+  .botoes {
+    /* border: 1px  solid #000; */
+    height: 50%;
+    width: 100%;
+  }
+
+ .form-group{
+  
+    width: 80%;
+  }
+  
+  button{
+    width: 80%;
+    font-size: 1rem;
+  
+  }
+
+  
+}
+
+
+@media (min-width: 770px) and (min-height: 1000px)  {
+  form {
+    box-shadow: 10px 2px 15px rgba(0, 0, 0, 0.4);
+  }
+
+  #myForm,#registerForm{
+    width: 80%;
+    height: 70%;
+  }
+ 
+  .frase{
+    font-size: 1.3em;
+  }
+
+  .detalhes{
+    height: 20%;
+    width: 100%;
+  }
+  .botoes {
+    /* border: 1px  solid #000; */
+    height: 30%;
+    width: 100%;
+    font-size: 1.4em;
+  }
+
+  .form-group, button{
+  
+    width: 80%;
+  }
+  
+  .bar{
+    font-size: 1.23em;
+  }
+  #remakepass {
+    font-size: 1em;
+  }
+  label {
+    font-size: 1em;
+ 
+  }
+}
+
+
+@media (min-width: 1000px) and (max-height: 1000px)  {
+
+  .text-container{
+    background-color: var(--rosa6);
+  }
+  .gradient-bg {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+
+    svg {
+      display: none;
+    }
+
+ 
+
+    .g1 {
+      display: none;
+    }
+
+    .g2 {
+      display: none;
+    }
+
+    .g3 {
+      display: none;
+    }
+
+    .g4 {
+      display: none;
+    }
+
+    .g5 {
+      display: none;
+    }
+
+    .g6 {
+      display: none;
+    }
+
+    .g7 {
+      display: none;
+    }
+
+    .interactive{
+      display: none;
+    }
+
+  }
+  form {
+    box-shadow: 6px 2px 13px rgba(0, 0, 0, 0.4);
+  }
+  #myForm,#registerForm{
+    width: 90%;
+    height: 70%;
+  }
+  .solar--cat-bold {
+  width: 3.5rem;
+  height: 3.5rem;
+  
+  }
+  .frase{
+    font-size: 1.1rem;
+  }
+
+  .detalhes{
+    height: 20%;
+    width: 100%;
+  }
+  .botoes {
+    /* border: 1px  solid #000; */
+    height: 50%;
+    width: 100%;
+  }
+
+ .form-group{
+  
+    width: 80%;
+  }
+  
+  button{
+    width: 80%;
+    font-size: 1rem;
+  
+  }
+
+}
