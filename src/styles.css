@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Manrope:wght@200..800&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @font-face {
   font-family: 'GoogleSans-Regular';
   /* Nome que você dará para a fonte */
@@ -10,7 +11,6 @@
   font-style: normal;
   /* Ou italic, se for uma fonte itálica */
 }
-
 
 
 html,
@@ -54,6 +54,7 @@ body {
   --fontegeral: " 'Courier Prime', serif ";
   --fontegoogle: " 'GoogleSans-Regular', 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif";
   --fontefrases: " 'Manrope', serif";
+  --fonteteste: " 'Quicksand', sans-serif ";
 
 
 
@@ -66,12 +67,14 @@ body {
   --rosa5: rgb(199, 140, 160);
 
   /* Cores de Suporte */
-  --pink: 255, 179, 186;
-  --orange: 255, 223, 186;
-  --yellow: 255, 255, 186;
-  --green: 186, 255, 201;
-  --blue: 186, 225, 255;
-  --blue2: rgb(28, 124, 197);
+  --pink: rgb(255, 179, 186);
+  --pink-heavy: rgb(252, 148, 159);
+  --orange: rgb(255, 223, 186);
+  --yellow: rgb(255, 255, 186);
+  --green: rgb( 186, 255, 201);
+  --blue: rgb(186,225,255);
+ 
+ 
 
   /* brancos */
   --white1: #fffff2;

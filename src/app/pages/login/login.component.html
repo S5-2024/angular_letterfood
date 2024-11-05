@@ -1,75 +1,80 @@
 <div class="text-container">
 
   @if(isLogin){
-    <form action="get" id="myForm">
+  <form action="get" id="myForm">
 
-      <div class="detalhes">
-        <span class="openmoji--monkey"></span>
-       <h1 class="frase">Bem-Vindo(a) ao Letter Food </h1>
-      </div>
-      
-      <div class="infos">
-        <div class="form-group">
-          <label for="email">Email</label>
-          <input type="email" placeholder="example@gmail.com.br" id="email" class="bar">
-        </div>
-    
-        <div class="form-group">
-          <label for="senha">Senha</label>
-          <input type="password" placeholder="senha" id="senha" class="bar">
-          <span class="links" id="remakepass" > Esqueceu a senha?</span>
-        </div>
-      </div>
-     
-      
-  
-      <div class="botoes">
-        <button id="button" class="botao"> <span>Log In</span></button>
-        <button class="botao-google">
-          <span class="logos--google-icon"></span>
-          <span> Continuar com o Google</span>
+    <div class="detalhes">
+      <span class="openmoji--monkey"></span>
+      <h1 class="frase">Bem-Vindo(a) ao Letter Food </h1>
+    </div>
 
-        </button>
-        <span class="registrar" id="register">Não tem conta? <span class="links" (click)="toggleForm()" > Registrar</span> </span>
-      </div>
-    
-    </form>
-  }@else{
-    <form action="get" id="registerForm" [ngClass]="{'register-form': !isLogin}" >
-
-      <div class="detalhes">
-        <span class="openmoji--monkey"></span>
-       <h1 class="frase">Bem-Vindo(a) ao Letter Food </h1>
-      </div>
-      <div class="form-group">
-        <label for="name">Nome</label>
-        <input type="name" placeholder="Fulano de tal" id="name" class="bar">
-      </div>
-  
-      
+    <div class="infos">
       <div class="form-group">
         <label for="email">Email</label>
         <input type="email" placeholder="example@gmail.com.br" id="email" class="bar">
       </div>
-  
+
+      <div class="form-group">
+        <label for="senha">Senha</label>
+        <input type="password" placeholder="senha" id="senha" class="bar">
+        <span class="links" id="remakepass"> Esqueceu a senha?</span>
+      </div>
+    </div>
+
+
+
+    <div class="botoes">
+      <button id="button" class="botao"> <span>Log In</span></button>
+      <button class="botao-google">
+        <span class="logos--google-icon"></span>
+        <span> Continuar com o Google</span>
+
+      </button>
+      <span class="registrar" id="register">Não tem conta? <span class="links" (click)="toggleForm()"> Registrar</span>
+      </span>
+    </div>
+
+  </form>
+  }@else{
+  <form action="get" id="registerForm" [ngClass]="{'register-form': !isLogin}">
+
+    <div class="detalhes">
+      <span class="openmoji--monkey"></span>
+      <h1 class="frase">Bem-Vindo(a) ao Letter Food </h1>
+    </div>
+
+    <div class="infos">
+      <div class="form-group">
+        <label for="name">Nome</label>
+        <input type="name" placeholder="Fulano de tal" id="name" class="bar">
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" placeholder="example@gmail.com.br" id="email" class="bar">
+      </div>
+
       <div class="form-group">
         <label for="senha">Senha</label>
         <input type="password" placeholder="senha" id="senha" class="bar">
       </div>
+    </div>
 
-      <div class="botoes">
-        <button id="button" class="botao"> <span>Entrar</span></button>
-        <button class="botao-google">
-          <span class="logos--google-icon"></span>
-          <span> Continuar com o Google</span>
 
-        </button>
-        <span class="registrar" id="register">Já tem conta? <span class="links" (click)="toggleForm()" > Login</span> </span>
-      </div>
-    
-    </form>
+    <div class="botoes">
+      <button id="button" class="botao"> <span>Entrar</span></button>
+      <button class="botao-google">
+        <span class="logos--google-icon"></span>
+        <span> Continuar com o Google</span>
+
+      </button>
+      <span class="registrar" id="register">Já tem conta? <span class="links" (click)="toggleForm()"> Login</span>
+      </span>
+    </div>
+
+  </form>
   }
-  
+
 
 
 </div>
