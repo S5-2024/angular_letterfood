@@ -248,6 +248,10 @@ span{
   text-align: center;
 }
 
+form{
+  box-shadow:  10px 15px 50px rgba(0, 0, 0, 0.4) ;
+}
+
 #myForm, #registerForm, .detalhes,.infos,.botoes{
   display: flex;
   flex-direction: column;
@@ -256,7 +260,7 @@ span{
 }
 #myform{
   margin-bottom: -10px;
- 
+  
 }
 
 
@@ -306,18 +310,20 @@ button > span{
 }
 
 .botao{
-  background-color: var(--rosa4);
+  background-color:  rgba(var(--blue),1);
   box-shadow:  0px 4px 8px rgba(0, 0, 0, 0.1);
   border: none;
 }
 
 .botao:hover{
  
-  background-color: var(--rosa5);
+  background-color:  var(--blue2);
 }
 
 .botao-google{
   justify-content: flex-start;
+  font-family: 'GoogleSans-Regular';
+  font-size: .7em;
  
 }
 .botao-google:hover{
@@ -331,7 +337,7 @@ button > span{
 /* Frase de Registrar / Login */
 
 .registrar{
-  font-family: var(--fontegeral);
+  font-family: var(--fontefrases);
   font-size: .9em;
   margin-bottom: 6px;
 }
@@ -343,7 +349,7 @@ button > span{
   text-decoration: underline;
 }
 
-/* Agora configuração dos inputs:  */
+/*  configuração dos inputs:  */
 
 .infos {
   height: 40%;                        /* Altura da div mãe */
@@ -416,7 +422,7 @@ label{
 
 }
 .frase{
-  font-family: var(--fontefrases);
+  font-family: var(--fontegeral);
   font-size: 1.6em;
 
 }

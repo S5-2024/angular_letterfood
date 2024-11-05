@@ -1,3 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+
+@font-face {
+  font-family: 'GoogleSans-Regular';
+  /* Nome que você dará para a fonte */
+  src: url('app/assets/GoogleSans-Regular.ttf') format('truetype');
+  /* Caminho para o arquivo da fonte */
+  font-weight: normal;
+  /* Ou bold, se for uma fonte negrito */
+  font-style: normal;
+  /* Ou italic, se for uma fonte itálica */
+}
+
+
+
 html,
 body {
   margin: 0;
@@ -10,22 +25,12 @@ body {
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
-  font-family: var(--fontegeral);
+ 
 }
 
 
 
 
-@font-face {
-  font-family: 'GoogleSans-Regular';
-  /* Nome que você dará para a fonte */
-  src: url('app/assets/GoogleSans-Regular.ttf') format('truetype');
-  /* Caminho para o arquivo da fonte */
-  font-weight: normal;
-  /* Ou bold, se for uma fonte negrito */
-  font-style: normal;
-  /* Ou italic, se for uma fonte itálica */
-}
 
 
 :root {
@@ -61,11 +66,12 @@ body {
   --rosa5: rgb(199, 140, 160);
 
   /* Cores de Suporte */
-  --pink: rgb(255, 179, 186);
-  --orange: rgb(255, 223, 186);
-  --yellow: rgb(255, 255, 186);
-  --green: rgb(186, 255, 201);
-  --blue: rgb(186, 225, 255);
+  --pink: 255, 179, 186;
+  --orange: 255, 223, 186;
+  --yellow: 255, 255, 186;
+  --green: 186, 255, 201;
+  --blue: 186, 225, 255;
+  --blue2: rgb(28, 124, 197);
 
   /* brancos */
   --white1: #fffff2;
