@@ -496,7 +496,7 @@ label {
 
 /*  Media queries */
 
-@media (max-width: 425px)  {
+/* @media (max-width: 425px)  {
 
   .text-container{
     background-color: var(--rosa6);
@@ -570,7 +570,7 @@ label {
     width: 100%;
   }
   .botoes {
-    /* border: 1px  solid #000; */
+    
     height: 50%;
     width: 100%;
   }
@@ -587,61 +587,23 @@ label {
   }
 
   
-}
+} */
 
 
-@media (max-width: 770px) and (max-height: 950px)  {
+@media   (max-width: 760px) {
+  .gradient-bg {
+      svg {
+        display: none;
+      }
+    .g1 , .g2,.g3,.g4,.g5,.g6,.g7,.interactive {
+      display: none;
+    }
+  }
 
   .text-container{
     background-color: var(--rosa6);
   }
-  .gradient-bg {
-    width: 100vw;
-    height: 100vh;
-    position: relative;
-    overflow: hidden;
-    top: 0;
-    left: 0;
 
-    svg {
-      display: none;
-    }
-
- 
-
-    .g1 {
-      display: none;
-    }
-
-    .g2 {
-      display: none;
-    }
-
-    .g3 {
-      display: none;
-    }
-
-    .g4 {
-      display: none;
-    }
-
-    .g5 {
-      display: none;
-    }
-
-    .g6 {
-      display: none;
-    }
-
-    .g7 {
-      display: none;
-    }
-
-    .interactive{
-      display: none;
-    }
-
-  }
   form {
     box-shadow: 6px 2px 13px rgba(0, 0, 0, 0.4);
   }
@@ -673,125 +635,102 @@ label {
     width: 80%;
   }
   
-  button{
+  button, .botao-google{
     width: 80%;
+ 
+
+  }
+
+  button, .botao-google, label,#remakepass, .links {
     font-size: 1rem;
-  
   }
 
-  
+
 }
 
-
-@media (min-width: 770px) and (min-height: 1000px)  {
-  form {
-    box-shadow: 10px 2px 15px rgba(0, 0, 0, 0.4);
-  }
-
-  #myForm,#registerForm{
-    width: 80%;
-    height: 70%;
-  }
- 
-  .frase{
-    font-size: 1.3em;
-  }
-
-  .detalhes{
-    height: 20%;
-    width: 100%;
-  }
-  .botoes {
-    /* border: 1px  solid #000; */
-    height: 30%;
-    width: 100%;
-    font-size: 1.4em;
-  }
-
-  .form-group, button{
-  
-    width: 80%;
-  }
-  
-  .bar{
-    font-size: 1.23em;
-  }
-  #remakepass {
-    font-size: 1em;
-  }
-  label {
-    font-size: 1em;
- 
-  }
-}
-
-
-@media (min-width: 1000px) and (max-height: 1000px)  {
-
-  .text-container{
-    background-color: var(--rosa6);
-  }
+@media (min-width: 760px) and  (max-width: 920px)  {
   .gradient-bg {
-    width: 100vw;
-    height: 100vh;
-    position: relative;
-    overflow: hidden;
-    top: 0;
-    left: 0;
-
     svg {
       display: none;
     }
-
- 
-
-    .g1 {
-      display: none;
-    }
-
-    .g2 {
-      display: none;
-    }
-
-    .g3 {
-      display: none;
-    }
-
-    .g4 {
-      display: none;
-    }
-
-    .g5 {
-      display: none;
-    }
-
-    .g6 {
-      display: none;
-    }
-
-    .g7 {
-      display: none;
-    }
-
-    .interactive{
-      display: none;
-    }
-
+  .g1 , .g2,.g3,.g4,.g5,.g6,.g7,.interactive {
+    display: none;
   }
+}
+
+.text-container{
+  background-color: var(--rosa6);
+}
+form {
+  box-shadow: 10px 2px 15px rgba(0, 0, 0, 0.4);
+
+}
+#myForm,#registerForm{
+  width: 75%;
+  height: 70%;
+
+}
+.solar--cat-bold {
+width: 3.8rem;
+height: 3.8rem;
+
+}
+.frase{
+  font-size: 1.3rem;
+}
+
+.detalhes{
+  height: 20%;
+    width: 100%;
+
+}
+.botoes {
+  /* border: 1px  solid #000; */
+  height: 30%;
+}
+
+.form-group{
+  width: 70%;
+}
+
+button, .botao-google{
+  width: 80%;
+
+
+}
+
+button, .botao-google, label,#remakepass, .links {
+  font-size: 1.2rem;
+}
+}
+
+@media (min-width: 920px)   and   (max-width: 1550px) {
+  .gradient-bg {
+    svg {
+      display: none;
+    }
+  .g1 , .g2,.g3,.g4,.g5,.g6,.g7,.interactive {
+    display: none;
+  }
+}
+  .text-container{
+    background-color: var(--rosa6);
+  }
+
   form {
     box-shadow: 6px 2px 13px rgba(0, 0, 0, 0.4);
   }
   #myForm,#registerForm{
-    width: 90%;
+    width: 40%;
     height: 70%;
   }
   .solar--cat-bold {
-  width: 3.5rem;
-  height: 3.5rem;
+    width: 6rem;
+    height: 6rem;
   
   }
   .frase{
-    font-size: 1.1rem;
+    font-size: 2rem;
   }
 
   .detalhes{
@@ -805,14 +744,19 @@ label {
   }
 
  .form-group{
-  
-    width: 80%;
+
+    width: 70%;
   }
   
-  button{
+  button, .botao-google{
     width: 80%;
-    font-size: 1rem;
-  
+ 
+
   }
 
+  button, .botao-google, label,#remakepass, .links {
+    font-size: 1rem;
+  }
 }
+
+ 
