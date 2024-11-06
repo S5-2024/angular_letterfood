@@ -612,12 +612,11 @@ label {
     height: 70%;
   }
   .solar--cat-bold {
-  width: 3.5rem;
-  height: 3.5rem;
+ display: none;
   
   }
   .frase{
-    font-size: 1.1rem;
+    font-size: 1rem;
   }
 
   .detalhes{
@@ -671,8 +670,8 @@ form {
 
 }
 .solar--cat-bold {
-width: 3.8rem;
-height: 3.8rem;
+width: 4rem;
+height: 4rem;
 
 }
 .frase{
@@ -704,15 +703,8 @@ button, .botao-google, label,#remakepass, .links {
 }
 }
 
-@media (min-width: 920px)   and   (max-width: 1550px) {
-  .gradient-bg {
-    svg {
-      display: none;
-    }
-  .g1 , .g2,.g3,.g4,.g5,.g6,.g7,.interactive {
-    display: none;
-  }
-}
+@media (min-width: 920px) and (max-width: 1910px) {
+ 
   .text-container{
     background-color: var(--rosa6);
   }
@@ -725,12 +717,11 @@ button, .botao-google, label,#remakepass, .links {
     height: 70%;
   }
   .solar--cat-bold {
-    width: 6rem;
-    height: 6rem;
-  
+    width: 4rem;
+    height: 4rem;
   }
   .frase{
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
 
   .detalhes{
