@@ -302,7 +302,8 @@ form {
 }
 
 /* Cores background para ajudar na edição */
-/* .botoes{
+
+.botoes{
   background-color: brown;
 }
 .infos{
@@ -310,7 +311,7 @@ form {
 }
 .detalhes{
     background-color: crimson;
-} */
+}
 
 /* Botões:  */
 button {
@@ -494,22 +495,42 @@ label {
 
 }
 
-#recover-password{
-  background-color: var(--white2);
-  height: 70% ;
- 
-  .infos, .botoes,.detalhes{
-    height: 80%;
-    
 
+#recover-password {
+  background-color: var(--white2);
+
+  p {
+    text-align: justify;
+    color: #000;
+    font-size: 1rem;
   }
 
-  .infos{
-   padding: auto;
+  .infos,
+  .botoes,
+  .detalhes {
+    height: 80%;
+  }
+
+  .form-group {
+    width: 85%;
+    height: 100%;
+     
+    gap: 1rem;
+  }
+
+  .infos {
+    padding: auto;
+  }
+  label{
+    font-size: 1.2rem;
   }
 
   input {
-    height: 40%;
+    height: 25%;
+  }
+
+  h1{
+    font-size: 1.5rem;
   }
 
 }
