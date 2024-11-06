@@ -1,5 +1,6 @@
 import { Component, ElementRef, Renderer2, AfterViewInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -37,15 +38,11 @@ export class LoginComponent implements AfterViewInit {
     });
   }
 
-  // Script para mudar de login -> registro
+  // Script para mudar de login -> registro ou recuperar senha
+  formType: string = 'login'; // Inicia com o formulário de login
 
-   // Variável para controlar qual formulário será exibido
-   isLogin: boolean = true;
-
-   // Alternar entre login e registro
-   toggleForm() {
-     this.isLogin = !this.isLogin;
-   }
-
-
+  toggleForm(type: string) {
+    this.formType = type;
+  }
+ 
 }

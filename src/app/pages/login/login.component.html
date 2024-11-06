@@ -1,80 +1,118 @@
 <div class="text-container">
 
-  @if(isLogin){
+  @if(formType === 'login'){
   <form action="get" id="myForm">
-
+  
     <div class="detalhes">
       <span class="solar--cat-bold"></span>
       <h1 class="frase">Bem-Vindo(a) ao Letter Food </h1>
     </div>
-
+  
     <div class="infos">
       <div class="form-group">
         <label for="email">Email</label>
         <input type="email" placeholder="example@gmail.com.br" id="email" class="bar">
       </div>
-
+  
       <div class="form-group">
         <label for="senha">Senha</label>
         <input type="password" placeholder="senha" id="senha" class="bar">
-        <span class="links" id="remakepass"> Esqueceu a senha?</span>
+        <span class="links" id="remakepass" (click)="toggleForm('recover-password')">Esqueceu a senha?</span>
+  
+  
       </div>
     </div>
-
-
-
+  
+  
+  
     <div class="botoes">
       <button id="button" class="botao"> <span>Log In</span></button>
       <button class="botao-google">
         <span class="logos--google-icon"></span>
         <span> Continuar com o Google</span>
-
+  
       </button>
-      <span class="registrar" id="register">Não tem conta? <span class="links" (click)="toggleForm()"> Registrar</span>
-      </span>
+      <span class="registrar">Não tem conta? <span class="links"
+          (click)="toggleForm('registerForm')">Registrar</span></span>
+  
     </div>
-
+  
   </form>
-  }@else{
-  <form action="get" id="registerForm" [ngClass]="{'register-form': !isLogin}">
-
+  }
+  
+  @else if(formType === 'registerForm'){
+  <form action="get" id="registerForm">
+  
     <div class="detalhes">
       <span class="solar--cat-bold"></span>
       <h1 class="frase">Bem-Vindo(a) ao Letter Food </h1>
     </div>
-
+  
     <div class="infos">
       <div class="form-group">
         <label for="name">Nome</label>
         <input type="name" placeholder="Fulano de tal" id="name" class="bar">
       </div>
-
+  
       <div class="form-group">
         <label for="email">Email</label>
         <input type="email" placeholder="example@gmail.com.br" id="email" class="bar">
+        <h3> Este e-mail será usado para login e recuperação de senha.
+          Confira seu email para recuperar a senha.
+        </h3>
+  
       </div>
-
+     
       <div class="form-group">
         <label for="senha">Senha</label>
         <input type="password" placeholder="senha" id="senha" class="bar">
       </div>
     </div>
-
-
+  
+  
     <div class="botoes">
       <button id="button" class="botao"> <span>Entrar</span></button>
       <button class="botao-google">
         <span class="logos--google-icon"></span>
         <span> Continuar com o Google</span>
-
+  
       </button>
-      <span class="registrar" id="register">Já tem conta? <span class="links" (click)="toggleForm()"> Login</span>
+      <span class="registrar" id="register">Já tem conta? <span class="links" (click)="toggleForm('login')"> Login</span>
       </span>
     </div>
-
+  
   </form>
   }
 
+  @else{
+  <form id="recover-password" [ngClass]="{'recover-password-form': formType === 'recover-password'}">
+  
+    <div class="detalhes">
+      <span class="solar--cat-bold"></span>
+      <h1 class="frase">Recuperando a senha</h1>
+    </div>
+  
+    <div class="infos">
+  
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" placeholder="example@gmail.com.br" id="email" class="bar">
+      </div>
+  
+  
+    </div>
+  
+  
+    <div class="botoes">
+      <button id="button" class="botao"> <span>Enviar Código</span></button>
+  
+      <span class="registrar" id="register">Voltar para o  <span class="links" (click)="toggleForm('login')"> Login</span>
+      </span>
+    </div>
+  
+  </form>
+  }
+  
 
 
 </div>
