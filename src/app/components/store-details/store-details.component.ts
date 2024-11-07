@@ -4,6 +4,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 import { MatIconRegistry, MatIconModule } from '@angular/material/icon';
 import { environment } from '../../../environments/environment.development';
 import { Chart, ChartConfiguration, ChartItem } from 'chart.js/auto';
+import { ReviewCardComponent } from '../review-card/review-card.component';
 
 const MONEY_BAG = environment.icons['money-bag']
 const REVIEW_STAR = environment.icons['review-star']
@@ -12,7 +13,7 @@ const DISTANCE_FOOT = environment.icons['distance-foot']
 @Component({
   selector: 'store-details',
   standalone: true,
-  imports: [MatTabsModule, MatIconModule],
+  imports: [MatTabsModule, MatIconModule, ReviewCardComponent],
   host: {
     //Customizando componentes do Angular Material
     '[style.--mdc-tab-indicator-active-indicator-color]': '_color',
@@ -31,24 +32,10 @@ const DISTANCE_FOOT = environment.icons['distance-foot']
 })
 export class StoreDetailsComponent {
   @Input() storeInfo !: any;
-  private _color: any = '#C78CA0'
-  private _size: any = '104px'
-  private _labelSize: any = '1.875rem'
-  private _textColor: any = '#C78CA0'
-
-  constructor() {
-    const iconRegistry = inject(MatIconRegistry)
-    const sanitizer = inject(DomSanitizer)
-
-    iconRegistry.addSvgIconLiteral('money-bag',
-      sanitizer.bypassSecurityTrustHtml(MONEY_BAG));
-    iconRegistry.addSvgIconLiteral('review-star',
-      sanitizer.bypassSecurityTrustHtml(REVIEW_STAR)
-    );
-    iconRegistry.addSvgIconLiteral('distance-foot',
-      sanitizer.bypassSecurityTrustHtml(DISTANCE_FOOT)
-    );
-  }
+  private _color: any = '#C78CA0';
+  private _size: any = '104px';
+  private _labelSize: any = '1.875rem';
+  private _textColor: any = '#C78CA0';
 
 
   onTabChange($event: MatTabChangeEvent){
@@ -67,6 +54,7 @@ export class StoreDetailsComponent {
         },
         options:{
           indexAxis: 'y',
+          
           scales: {
             y: {
               beginAtZero: true,
