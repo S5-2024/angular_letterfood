@@ -1,29 +1,73 @@
-.mae{
-width: 100vw;
-height: 100vh;
-background-color: rgba(0, 0, 0, 0.151);
-display: flex;
-flex-direction: row;
+.mae {
+  display: flex;
+  padding: 20px;
 }
 
-
-.navbar{
-  width: 15%;
-  height: 100vh;
-  background-color: rgba(137, 43, 226, 0.349);
+.navbar {
+  width: 200px; /* Ajuste conforme necessário */
+  background-color: #f0f0f0;
+  height: 100vh; /* A navbar ocupará a altura total da página */
+  position: fixed; /* Fixar a navbar à esquerda */
+  top: 0;
+  left: 0;
+  padding: 20px;
+  box-sizing: border-box;
 }
 
-.perfil{
-  background-color: rgba(43, 107, 226, 0.349);
+.perfil-container {
+  margin-left: 220px; /* Para dar espaço para a navbar */
+  display: flex;
+  justify-content: center;
+  width: calc(100% - 220px); /* Deixe o perfil ocupar o restante da largura */
+}
 
-  width: 60%;
-  height: 100vh;
+.perfil {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  width: 100%;
+  max-width: 800px;
+  border: 1px solid #ddd;
+  padding: 20px;
+  border-radius: 10px;
+}
 
+.infos {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin-right: 20px;
+  float: left;
+}
+
+.nome-botoes {
+  display: flex;
   align-items: center;
-  margin: auto;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 25px;
+}
 
-  .infos{
-    display: flex;
-    flex-direction: column;
-  }
+.nome {
+  margin-right: 20px;
+  font-size: 24px;
+}
+
+.botoes {
+  display: flex;
+  gap: 10px;
+}
+
+.avaliacoes {
+  margin-top: 25px;
+}
+
+.bio {
+  margin-top: 10px;
 }
