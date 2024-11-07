@@ -1,24 +1,69 @@
 .mae {
   display: flex;
+  flex-direction: column;
+  align-items: center;
   padding: 20px;
+ 
+  height: 100vw;
 }
 
 .navbar {
-  width: 200px; /* Ajuste conforme necessário */
-  background-color: #f0f0f0;
-  height: 100vh; /* A navbar ocupará a altura total da página */
-  position: fixed; /* Fixar a navbar à esquerda */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;  /* Isso garante que os itens sejam distribuídos verticalmente */
+  height: 100vh;  /* Define a altura da navbar para preencher a tela */
+  width: 200px;   /* Ajuste conforme necessário */
+  position: fixed; /* Para fixar a navbar */
   top: 0;
   left: 0;
   padding: 20px;
   box-sizing: border-box;
+  background-color: #f0f0f0;
+  align-items: center;
+  border-right: 1px solid var(--grey3);
+   
+
+  .solar--cat-bold {
+    /* Estilo para o ícone fixado no topo */
+    font-size: 24px;
+    margin-bottom: 20px;  /* Para dar algum espaçamento inferior */
+  }
+  
+  li {
+    list-style-type: none;  /* Remove a marcação de lista */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+   
+    flex-grow: 1;  /* Isso faz com que a li ocupe o espaço restante */
+  }
+  
+  ul {
+    margin: 10px 0;  /* Adiciona algum espaçamento entre os itens */
+    font-size: 1.5rem;
+    cursor: pointer;
+  
+    align-self: flex-start;
+  }
+  
+  .material-symbols--settings-heart {
+    
+    font-size: 24px;
+    margin-top: 20px;  /* Para dar algum espaçamento superior */
+  }
 }
 
+
+
+
 .perfil-container {
-  margin-left: 220px; /* Para dar espaço para a navbar */
+ 
   display: flex;
+  height: 15%;
   justify-content: center;
-  width: calc(100% - 220px); /* Deixe o perfil ocupar o restante da largura */
+  width: 60%; 
+  border-bottom: 1px solid #333edb;
 }
 
 .perfil {
@@ -27,7 +72,7 @@
   align-items: flex-start;
   width: 100%;
   max-width: 800px;
-  border: 1px solid #ddd;
+   
   padding: 20px;
   border-radius: 10px;
 }
@@ -70,4 +115,12 @@
 
 .bio {
   margin-top: 10px;
+}
+
+
+
+.postagens-container{
+ 
+  height: 85%;
+  width: 60%; 
 }
