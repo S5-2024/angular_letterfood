@@ -1,9 +1,13 @@
 import { Component, ElementRef, Renderer2, AfterViewInit } from '@angular/core';
-
+import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
+  standalone: true,
+  imports: [CommonModule]
+  
 })
 export class LoginComponent implements AfterViewInit {
   private curX = 0;
@@ -33,4 +37,12 @@ export class LoginComponent implements AfterViewInit {
       move();
     });
   }
+
+  // Script para mudar de login -> registro ou recuperar senha
+  formType: string = 'login'; // Inicia com o formulário de login
+
+  toggleForm(type: string) {
+    this.formType = type;
+  }
+ 
 }

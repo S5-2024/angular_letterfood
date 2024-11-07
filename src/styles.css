@@ -1,29 +1,102 @@
-/* You can add global styles to this file, and also import other style files */
-@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Kumbh+Sans:wght@100..900&display=swap');
-html,
-body {
-  height: 100%;
-}
-body {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: var(--general-font);
+
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Manrope:wght@200..800&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@font-face {
+  font-family: 'GoogleSans-Regular';
+  /* Nome que você dará para a fonte */
+  src: url('app/assets/GoogleSans-Regular.ttf') format('truetype');
+  /* Caminho para o arquivo da fonte */
+  font-weight: normal;
+  /* Ou bold, se for uma fonte negrito */
+  font-style: normal;
+  /* Ou italic, se for uma fonte itálica */
 }
 
+
+
+
+
+
+
+}
+/* Movido do 
+html,
+body{
+
+} */
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: var(--general-font);
+
+}
+
+
 :root {
-  --color-bg1: rgb(255, 132, 132);
-  --color-bg2: rgb(199, 140, 160);
-  --color1: 236, 186, 208;
-  --color2: 255, 146, 253;
-  --color3: 255, 255, 186; /*amarelo  */
-  --color4: 186, 255, 201; /* verde */
-  --color5: 255, 223, 186; /* laranja */
-  --color-interactive: 186, 225, 255;
+  /* Configurações para o Background Login */
+  --color-bg1: rgb(199,140,160);
+  --color-bg2: rgb(236,186,208);
+  --color1: 252,186,203;
+  --color2: 253,171,191;
+  --color3: 253,157,180; 
+  --color4: 254,142,168;  
+  --color5: 231,119,40;
+  --color6: 253,209,226;
+  --color7: 255,164,200; 
+
+  --color-interactive:252,155,218;
   --circle-size: 80%;
-  --blending: hard-light;
+
   /* --general-font: "Courier Prime"; */
   --general-font: "Kumbh Sans";
+
+  --blending: soft-light;
+
+
+  /*  Fontes */
+  --fontegeral: " 'Courier Prime', serif ";
+  --fontegoogle: " 'GoogleSans-Regular', 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif";
+  --fontefrases: " 'Manrope', serif";
+  --fonteteste: " 'Quicksand', sans-serif ";
+
+
+
+    /* Paleta de cores */
+  /* Coquette pink  (na ordem do site) */
+  --rosa1: rgb(252, 215, 215);
+  --rosa2: rgb(255, 225, 237);
+  --rosa3: rgb(255, 243, 250);
+  --rosa4: rgb(236, 186, 208);
+  --rosa5: rgb(199, 140, 160);
+
+  /* Cores de Suporte */
+  --pink: rgb(255, 179, 186);
+  --pink-heavy: rgb(252, 148, 159);
+  --orange: rgb(255, 223, 186);
+  --yellow: rgb(255, 255, 186);
+  --green: rgb( 186, 255, 201);
+  --blue: rgb(186,225,255);
+ 
+ 
+
+  /* brancos */
+  --white1: #fffff2;
+  --white2: #f9f9f9;
+  --white3: #fffff4;
+  --white4: #fbf7f5;
+  --white5: #f9f1f1;
+
+  /* Cinzas e preto */
+  --grey1: rgb(238, 238, 238);
+  --grey2: rgb(221, 221, 221);
+  --grey3: rgb(204, 204, 204);
+  --grey4: rgb(187, 187, 187);
+  --grey5: rgb(163, 163, 163);
+
+  
+
 }
 
 .teste_class{

@@ -2,12 +2,14 @@ import { Component, ViewChild } from '@angular/core';
 import { StoreDetailsComponent } from '../../components/store-details/store-details.component';
 import {Overlay, OverlayConfig, OverlayModule} from '@angular/cdk/overlay';
 import { CdkPortal,PortalModule } from '@angular/cdk/portal';
-
+import { StoreCardComponent } from "../../components/store-card/store-card.component";
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [StoreDetailsComponent, OverlayModule, PortalModule],
+
+  imports: [StoreDetailsComponent, StoreCardComponent,  OverlayModule, PortalModule],
+
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
