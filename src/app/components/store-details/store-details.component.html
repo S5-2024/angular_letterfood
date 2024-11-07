@@ -1,5 +1,9 @@
 <div class="store_details_container">
-  <mat-tab-group class="navigation" headerPosition="below">
+  <mat-tab-group
+    class="navigation"
+    headerPosition="below"
+    (selectedTabChange)="onTabChange($event)"
+  >
     <mat-tab label="Geral" class="tab">
       <div class="content">
         <div class="general_header">
@@ -29,31 +33,46 @@
             <div class="classification">
               <span>Custo:</span>
               <div class="icons">
-                <mat-icon svgIcon="money-bag" aria-label="Money Bag Icon"/>
-                <mat-icon svgIcon="money-bag" aria-label="Money Bag Icon"/>
-                <mat-icon svgIcon="money-bag" aria-label="Money Bag Icon"/>
-                <mat-icon svgIcon="money-bag" aria-label="Money Bag Icon"/>
-                <mat-icon svgIcon="money-bag" aria-label="Money Bag Icon"/>
+                <mat-icon svgIcon="money-bag" aria-label="Money Bag Icon" />
+                <mat-icon svgIcon="money-bag" aria-label="Money Bag Icon" />
+                <mat-icon svgIcon="money-bag" aria-label="Money Bag Icon" />
+                <mat-icon svgIcon="money-bag" aria-label="Money Bag Icon" />
+                <mat-icon svgIcon="money-bag" aria-label="Money Bag Icon" />
               </div>
             </div>
             <div class="classification review">
               <span>Avaliação:</span>
               <div class="icons">
-                <mat-icon svgIcon="review-star" aria-label="Review Star Icon"/>
-                <mat-icon svgIcon="review-star" aria-label="Review Star Icon"/>
-                <mat-icon svgIcon="review-star" aria-label="Review Star Icon"/>
-                <mat-icon svgIcon="review-star" aria-label="Review Star Icon"/>
-                <mat-icon svgIcon="review-star" aria-label="Review Star Icon"/>
+                <mat-icon svgIcon="review-star" aria-label="Review Star Icon" />
+                <mat-icon svgIcon="review-star" aria-label="Review Star Icon" />
+                <mat-icon svgIcon="review-star" aria-label="Review Star Icon" />
+                <mat-icon svgIcon="review-star" aria-label="Review Star Icon" />
+                <mat-icon svgIcon="review-star" aria-label="Review Star Icon" />
               </div>
             </div>
             <div class="classification distance">
               <span>Distancia:</span>
               <div class="icons">
-                <mat-icon svgIcon="distance-foot" aria-label="Distance Foot Icon"/>
-                <mat-icon svgIcon="distance-foot" aria-label="Distance Foot Icon"/>
-                <mat-icon svgIcon="distance-foot" aria-label="Distance Foot Icon"/>
-                <mat-icon svgIcon="distance-foot" aria-label="Distance Foot Icon"/>
-                <mat-icon svgIcon="distance-foot" aria-label="Distance Foot Icon"/>
+                <mat-icon
+                  svgIcon="distance-foot"
+                  aria-label="Distance Foot Icon"
+                />
+                <mat-icon
+                  svgIcon="distance-foot"
+                  aria-label="Distance Foot Icon"
+                />
+                <mat-icon
+                  svgIcon="distance-foot"
+                  aria-label="Distance Foot Icon"
+                />
+                <mat-icon
+                  svgIcon="distance-foot"
+                  aria-label="Distance Foot Icon"
+                />
+                <mat-icon
+                  svgIcon="distance-foot"
+                  aria-label="Distance Foot Icon"
+                />
               </div>
             </div>
           </div>
@@ -61,6 +80,16 @@
       </div>
     </mat-tab>
     <mat-tab label="Mapa"></mat-tab>
-    <mat-tab label="Avaliações"></mat-tab>
+    <mat-tab label="Avaliações">
+      <div class="content">
+        <div class="review_header">
+          <img
+            src="https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png"
+            alt=""
+          />
+          <canvas id="canvas"></canvas>
+        </div>
+      </div>
+    </mat-tab>
   </mat-tab-group>
 </div>
