@@ -1,0 +1,118 @@
+.navbar {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* Isso garante que os itens sejam distribuídos verticalmente */
+  height: 100vh;
+  /* Define a altura da navbar para preencher a tela */
+  width: 200px;
+  /* Ajuste conforme necessário */
+  position: fixed;
+  /* Para fixar a navbar */
+  top: 0;
+  left: 0;
+
+  background-color: whitesmoke;
+
+  box-sizing: border-box;
+
+  align-items: center;
+  border-right: 1px solid var(--rosa4);
+
+  a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    text-decoration: none;
+    color: black;
+    transition: color 0.5s ease;
+  }
+
+  .solar--cat-bold {
+    /* Estilo para o ícone fixado no topo */
+    font-size: 24px;
+    margin-bottom: 20px;
+    /* Para dar algum espaçamento inferior */
+  }
+
+  li {
+    list-style-type: none;
+    /* Remove a marcação de lista */
+    display: flex;
+    flex-direction: column;
+    justify-content: first baseline;
+    align-items: center;
+    align-content: center;
+    flex-grow: 1;
+    width: 100%;
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+  ul {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    gap: 15px;
+    margin: 10px 0;
+    /* Adiciona algum espaçamento entre os itens */
+    font-size: 1.5rem;
+    cursor: pointer;
+    /* background-color: brown; */
+    width: 100%;
+    height: 6%;
+    align-self: flex-start;
+    padding: 20px;
+    transition: background-color 0.5s ease;
+
+
+  }
+
+  ul:hover {
+
+    background-color: var(--rosa4);
+
+    a {
+      color: var(--white3);
+    }
+
+    .material-symbols--search-rounded {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='white' d='M9.5 16q-2.725 0-4.612-1.888T3 9.5t1.888-4.612T9.5 3t4.613 1.888T16 9.5q0 1.1-.35 2.075T14.7 13.3l5.6 5.6q.275.275.275.7t-.275.7t-.7.275t-.7-.275l-5.6-5.6q-.75.6-1.725.95T9.5 16m0-2q1.875 0 3.188-1.312T14 9.5t-1.312-3.187T9.5 5T6.313 6.313T5 9.5t1.313 3.188T9.5 14'/%3E%3C/svg%3E");
+    }
+
+    .solar--heart-bold {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='white' d='M2 9.137C2 14 6.02 16.591 8.962 18.911C10 19.729 11 20.5 12 20.5s2-.77 3.038-1.59C17.981 16.592 22 14 22 9.138S16.5.825 12 5.501C7.5.825 2 4.274 2 9.137'/%3E%3C/svg%3E");
+    }
+
+    .material-symbols--family-home-rounded {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='white' d='M12 17.65q.2 0 .363-.062t.312-.188q.8-.725 1.525-1.425t1.263-1.375t.862-1.312t.325-1.238q0-1.1-.75-1.825T14.1 9.5q-.65 0-1.187.263T12 10.45q-.375-.425-.937-.687T9.9 9.5q-1.05 0-1.8.725t-.75 1.825q0 .6.325 1.238t.863 1.312T9.8 15.975t1.525 1.425q.15.125.313.188t.362.062M6 21q-.825 0-1.412-.587T4 19v-7.375L3 12.4q-.35.25-.75.2t-.65-.4t-.187-.75t.387-.65l8.975-6.875q.275-.2.588-.3t.637-.1t.638.1t.587.3l9 6.875q.325.25.375.65t-.2.75q-.25.325-.65.375t-.725-.2L20 11.625V19q0 .825-.587 1.413T18 21z'/%3E%3C/svg%3E");
+
+
+    }
+
+
+
+
+  }
+
+  .material-symbols--settings-heart {
+
+    font-size: 24px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    /* Para dar algum espaçamento superior */
+  }
+
+
+}
+
+
+
+@media (max-width: 760px ) {
+  .navbar{
+    display: none;
+  }
+ 
+}
