@@ -30,12 +30,13 @@
 
     padding: 20px;
     border-radius: 10px;
+
     .infos {
       display: flex;
       flex-direction: column;
       width: 100%;
     }
-  
+
     .img {
       width: 150px;
       height: 150px;
@@ -44,28 +45,28 @@
       float: left;
       background-color: cyan;
     }
-  
+
     .nome-botoes {
       /* background-color: darkolivegreen; */
       display: flex;
       align-items: center;
       justify-content: space-evenly;
-  
+
       width: 100%;
       margin-bottom: 25px;
-  
+
       .nome {
         /* background-color: deeppink; */
         margin-right: 20px;
         font-size: 1.5rem;
       }
-  
+
       .botoes {
         display: flex;
         flex-direction: row;
         gap: 20px;
         /* background-color: brown; */
-  
+
         button {
           background-color: var(--rosa4);
           border: none;
@@ -75,14 +76,15 @@
           font-weight: 600;
           cursor: pointer;
         }
-        button:hover{
+
+        button:hover {
           background-color: var(--rosa5);
-  
+
         }
       }
     }
-  
-  
+
+
     .avaliacoes {
       display: flex;
       align-items: center;
@@ -93,16 +95,16 @@
       font-size: 1.2rem;
       font-family: var(--fonteteste);
     }
-  
+
     .bio {
       margin-top: 10px;
       font-size: 1.2rem;
       font-family: var(--fontegeral);
     }
-  
+
   }
-  
-  }
+
+}
 
 .postagens-container {
 
@@ -111,23 +113,23 @@
 }
 
 
-@media (max-width: 760px ) {
+@media (max-width: 760px) {
 
-  .perfil-container{
-    width: 100%;
+  .mae{
+    padding: 0px;
   }
 
-.postagens-container{
-  display: none;
-}
+  .perfil-container {
+    display:none
+
+  }
+    
+  
+  
   
 }
 
 
-@media (min-width: 760px ) and (max-width: 920px )  {
-  
-}
+@media (min-width: 760px) and (max-width: 920px) {}
 
-@media (min-width: 920px ) and (max-width: 1910px )  {
-  
-}
+@media (min-width: 920px) and (max-width: 1910px) {}
