@@ -15,11 +15,11 @@
 .perfil-container {
   background-color: darkviolet;
   display: flex;
-  height: 15%;
+
   justify-content: center;
   width: 60%;
   border-bottom: 1px solid var(--rosa4);
-  overflow: hidden;
+ 
 
   .perfil {
     display: flex;
@@ -38,8 +38,8 @@
     }
 
     .img {
-      width: 150px;
-      height: 150px;
+      width: 6rem;
+      height: 6rem;
       border-radius: 50%;
       margin-right: 20px;
       float: left;
@@ -47,7 +47,7 @@
     }
 
     .nome-botoes {
-      /* background-color: darkolivegreen; */
+ 
       display: flex;
       align-items: center;
       justify-content: space-evenly;
@@ -56,7 +56,7 @@
       margin-bottom: 25px;
 
       .nome {
-        /* background-color: deeppink; */
+      
         margin-right: 20px;
         font-size: 1.5rem;
       }
@@ -65,8 +65,7 @@
         display: flex;
         flex-direction: row;
         gap: 20px;
-        /* background-color: brown; */
-
+   
         button {
           background-color: var(--rosa4);
           border: none;
@@ -113,23 +112,106 @@
 }
 
 
-@media (max-width: 760px) {
+@media (max-width: 770px) {
 
-  .mae{
+  .mae {
     padding: 0px;
   }
 
   .perfil-container {
-    display:none
+    width: 100%;
+    background-color: darkgrey;
+    display: flex;
+    justify-content: center;
 
+
+
+    .perfil {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 10px;
+    }
+
+    .botoes {
+      display: none;
+    }
+
+
+
+    .img {
+      width: 6rem;
+      height: 6rem;
+      border-radius: 50%;
+      align-self: center;
+
+      outline: 1px solid var(--rosa5);
+      outline-offset: 2px;
+    }
+
+
+    .bio {
+      font-size: 1rem;
+    }
+
+    .avaliacoes {
+      font-size: 1rem;
+      font-weight: 700;
+      display: flex;
+      gap: 5px;
+      align-self: center;
+      align-items: center;
+      padding: 10px;
+
+    }
+
+    .material-symbols--kid-star {
+      width: 1rem;
+      height: 1rem;
+    }
   }
+
+
+  .menu-container {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
     
+    background-color: #f1f1f1; /* Cor de fundo */
+    padding: 10px 0;
+     
+  }
   
+  .menu-container ul {
+    display: flex;
+    justify-content: space-around; /* Espaça os botões igualmente */
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+  }
   
+  .menu-container li {
+    flex: 1; /* Cada botão ocupa o mesmo espaço */
+    text-align: center;
+  }
   
+  .menu-container li a {
+    display: block;
+    padding: 10px;
+    color: #333;
+    text-decoration: none;
+    font-size: 16px;
+  }
+  
+  .menu-container li a:hover {
+    background-color: #ddd; /* Efeito hover */
+  }
+  
+
+
 }
 
 
-@media (min-width: 760px) and (max-width: 920px) {}
-
-@media (min-width: 920px) and (max-width: 1910px) {}
