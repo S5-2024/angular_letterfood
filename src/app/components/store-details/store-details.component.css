@@ -17,14 +17,15 @@
   display: grid;
   grid-auto-flow: column;
   grid-template-columns: 1fr 2fr;
-  padding: 20px 40px 80px 40px;
+  align-items: center;
+  gap: 2.813rem;
+  padding: 2rem 2.875rem 6rem 2.875rem;
 }
 .general_header{
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-
 .general_header > h1 {
   color: #c78ca0;
   font-style: normal;
@@ -32,40 +33,40 @@
   line-height: normal;
 }
 .general_header > img {
-  width: 27vw;
-  height: 41vh;
-  border-radius: 2.9rem;
+  width: 31.688em;
+  height: 23.75em;
+  border-radius: 2.9em;
+  margin-bottom: 1.813em;
 }
 .categories{
   display: inherit;
   width: 100%;
   justify-content: space-evenly;
+  margin-top: 1.375em;
 }
 .category{
   background-color: #C78CA0;
   border-radius: 10px;
-  padding: .7rem 1.2rem;
-  font-size: 1rem;
+  padding: .7em 1.2em;
+  font-size: 16px;
   text-align: center;
   color: white;
 }
-
 .general_body{
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 0 20px;
 }
 .general_body > p {
   text-align: justify;
-  font-size: 30px;
+  font-size:1.875em;
   color: #9F7E8D;
 }
 .classifications{
   width: 100%;
   display: flex;
   justify-content: space-between;
-  margin-top: 2.5rem;
+  margin-top: 2.5em;
 }
 .classification{
   display: inherit;
@@ -74,15 +75,13 @@
   width: 100%;
 }
 .classification > span{
-  font-size: 28px;
+  font-size: 1.75em;
   font-weight: 800;
   color: #C78CA0;
 }
 .icons > mat-icon{
   margin: 0 5px;
 }
-
-
 /*| REVIEW SECTION*/
 .review_header{
   display: flex;
@@ -90,10 +89,58 @@
   align-items: center;
 }
 .review_header > img{
-  width: 27vw;
-  height: 41vh;
+  width: 31.688em;
+  height: 23.75em;
   border-radius: 2.9rem;
 }
 .review_body{
-  padding: 20px 40px 80px 40px;
+  /* padding: 20px 40px 80px 40px; */
+  padding: 5% 10% 20% 10%;
+}
+
+
+
+@media (min-width: 600px) and  (max-width: 1060px)  {
+  .content{
+    font-size: 10px;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 2.875rem 6rem 2.875rem;
+  }
+  .icons > mat-icon{
+    width: 2em;
+  }
+}
+
+@media (min-width: 1060px) and (max-width: 1200px){
+  .content{
+    font-size: 10px;
+  }
+  .general_body > span {
+    font-size: 1em;
+  }
+}
+
+@media (min-width: 1060px) and (max-width: 1110px){
+  .icons > mat-icon{
+    width: 1.5em;
+  }
+}
+@media (min-width: 1110px) and (max-width: 1200px){
+  .icons > mat-icon{
+    width: 1.5em;
+  }
+}
+@media (min-width: 1200px) and (max-width: 1600px){
+  .content{
+    font-size: 12px;
+    padding: 2rem 2.875rem 6rem 2.875rem;
+  }
+}
+
+@media (min-width: 1600px) and (max-width: 1800px){
+  .content{
+    font-size: 14px;
+    padding: 2rem 2.875rem 6rem 2.875rem;
+  }
 }

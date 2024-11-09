@@ -33,10 +33,15 @@ const DISTANCE_FOOT = environment.icons['distance-foot']
 export class StoreDetailsComponent {
   @Input() storeInfo !: any;
   private _color: any = '#C78CA0';
-  private _size: any = '104px';
+  private _size: any = "104px";
   private _labelSize: any = '1.875rem';
   private _textColor: any = '#C78CA0';
 
+
+
+  ngOnInit(){
+    console.log((window.innerWidth * 0.055).toString)
+  }
 
   onTabChange($event: MatTabChangeEvent){
     const tabLabel = $event.tab.textLabel
