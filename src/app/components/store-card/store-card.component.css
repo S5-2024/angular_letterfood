@@ -3,31 +3,100 @@
     flex-direction: column;
     align-items: center;
     margin: 10px;
-    height: 30vh;
+    height: 35vh;
     width: 10vw;
 
+    .image_container{
+        display: flex;
+        align-items: center;
+        height: 90%;
+        width: 100%;
+        border-radius: 10px ;
+        background-color: #fff3fa;
+        border: 2px solid #C78CA0;
+        box-shadow: 2px 2px 7px #a77485;
+
+        img{
+            width:100%;
+            border-radius: 10px ;
+        }
+    }
+
+    .review{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        margin-top: 5px;
+        
+        .mat-icon {
+            width: 13%;
+        }
+
+        p{
+            margin-left: 10px;
+            font-size: 1.2em;
+            color: #C78CA0;
+        } 
+    }
+}
+
+
+
+@media (max-width: 768px) {
+    .card_container{
+        height: 27vh;
+        width: 12vw;
+    
         .image_container{
-            display: flex;
-            align-items: center;
             height: 90%;
             width: 100%;
-            border-radius: 10px ;
-            border: 2px solid black;
-            box-shadow: 2px 2px 7px #999999;
-
+    
             img{
                 width:100%;
-                border-radius: 10px ;
             }
         }
-
+    
         .review{
-            display: flex;
-            flex-direction: row;
-            margin-top: 5px;
-
+            margin-top: 3px;
+            
+            .mat-icon {
+                width: 13%;
+            }
+    
             p{
-                margin-left: 10px;
+                margin-left:5px;
+                font-size: 0.8em;
             } 
         }
+    }
+}
+
+@media (max-width: 992px) {
+    .card_container{
+        height: 30vh;
+        width: 10vw;
+    
+        .image_container{
+            height: 90%;
+            width: 100%;
+    
+            img{
+                width:100%;
+            }
+        }
+    
+        .review{
+            margin-top: 5px;
+            
+            .mat-icon {
+                width: 14%;
+            }
+    
+            p{
+                margin-left:5px;
+                font-size: 1em;
+            } 
+        }
+    }
 }
