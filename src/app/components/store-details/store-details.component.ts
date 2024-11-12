@@ -5,6 +5,7 @@ import { MatIconRegistry, MatIconModule } from '@angular/material/icon';
 import { environment } from '../../../environments/environment.development';
 import { Chart, ChartConfiguration, ChartItem } from 'chart.js/auto';
 import { ReviewCardComponent } from '../review-card/review-card.component';
+import * as echarts from 'echarts';
 
 const MONEY_BAG = environment.icons['money-bag']
 const REVIEW_STAR = environment.icons['review-star']
@@ -39,40 +40,138 @@ export class StoreDetailsComponent {
 
 
 
-  ngOnInit(){
-    console.log((window.innerWidth * 0.055).toString)
+  ngOnInit() {
+    console.log(typeof(this.encodeSvgToDataURI(environment.icons['review-star'])))
   }
 
-  onTabChange($event: MatTabChangeEvent){
+  onTabChange($event: MatTabChangeEvent) {
+    const tabLabel = $event.tab.textLabel
+    if (tabLabel == "Avaliações") {
+      this.configureChart()
+    }
+  }
+
+
+  configureChart() {
+    const svgURL = "https://raw.githubusercontent.com/material-icons/material-icons/af0ed9c0e1276bad43c4d6ca8e8aaa283e425195/svg/star/round.svg"
+    const chart = echarts.init(document.getElementById('canvas'), null, {
+      width: 300,
+      height: 300
+    })
+    const options: echarts.EChartsOption = {
+      title: {
+        text: "Placeholder"
+      },
+      symbol: `image://${svgURL}`,
+      tooltip: {},
+      xAxis: {},
+      yAxis: {
+        data: [1, 2, 3, 4, 5],
+        axisLabel: {
+          formatter: (value:any) => {
+            return '{' + value + '| }\n{value|'  + '}';
+          },
+          rich: {
+            1:{
+              height: 20,
+              align: 'center',
+              backgroundColor: {
+                image: this.encodeSvgToDataURI(environment.icons['review-star'])
+              }
+            },
+          }
+        }
+
+      },
+      series: [
+        {
+          type: 'bar',
+          data: [10, 5, 30, 40, 50]
+        }
+      ]
+    }
+
+
+
+    chart.setOption(options)
+  }
+
+   encodeSvgToDataURI(svg:any) {
+    return (
+      'data:image/svg+xml;charset=utf8,' +
+      encodeURIComponent(
+        svg.replace(
+          '<svg',
+          svg.indexOf('xmlns') > -1
+            ? '<svg'
+            : '<svg xmlns="http://www.w3.org/2000/svg"'
+        )
+      )
+    );
+  }
+
+
+  /*onTabChange($event: MatTabChangeEvent) {
     const tabLabel = $event.tab.textLabel
 
-    if(tabLabel == "Avaliações"){
-      const canvas = <ChartItem> document.getElementById("canvas");
+    const customPlugin = {
+
+    }
+
+
+
+
+    if (tabLabel == "Avaliações") {
+      const canvas = <ChartItem>document.getElementById("canvas");
       const config: ChartConfiguration = {
         type: "bar",
         data: {
-          labels: [1,2,3,4,5],
+          labels: [5, 4, 3, 2, 1],
           datasets: [{
             borderWidth: 1,
-            data: [0,10,20,30,40],
+
+            data: [40, 30, 20, 10, 5],
           }]
         },
-        options:{
+
+        options: {
           indexAxis: 'y',
-          
           scales: {
             y: {
               beginAtZero: true,
+              grid: {
+                display: false
+              },
+              border: {
+                display: false
+              },
+              ticks: {
+                callback(tickValue, index, ticks) {
+
+                  return ""
+                },
+              }
+
             },
-            x:{
+            x: {
+              display: false,
               min: 0,
-              max: 60
-            }
+              max: 60,
+            },
+          },
+          plugins: {
+            legend: {
+              display: false
+            },
+            
           }
         }
       };
       new Chart(canvas, config);
     }
   }
+    */
+
+
 
 }
