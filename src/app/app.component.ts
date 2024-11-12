@@ -13,6 +13,10 @@ const IC_ROUND_SETTINGS = environment.icons['ic--round-settings']
 const HOME_2_FILL = environment.icons['home-2-fill']
 const BASELINE_SEARCH = environment.icons['baseline-search']
 const SOLAR_HEART_BOLD = environment.icons['solar-heart-bold']
+const TRESURE_IMAGE = environment.icons['tresure-image']
+const LOCATION_IMAGE = environment.icons['location-image']
+const ORDER_FOOD_IMAGE = environment.icons['order-food-image']
+const GITHUB_ICON = environment.icons['github-icon']
 
 @Component({
   selector: 'app-root',
@@ -54,6 +58,18 @@ export class AppComponent {
     ); 
       iconRegistry.addSvgIconLiteral('solar-heart-bold',
       sanitizer.bypassSecurityTrustHtml(SOLAR_HEART_BOLD)
+    ); 
+      iconRegistry.addSvgIconLiteral('tresure-image',
+      sanitizer.bypassSecurityTrustHtml(TRESURE_IMAGE)
+    ); 
+      iconRegistry.addSvgIconLiteral('location-image',
+      sanitizer.bypassSecurityTrustHtml(LOCATION_IMAGE)
+    ); 
+      iconRegistry.addSvgIconLiteral('order-food-image',
+      sanitizer.bypassSecurityTrustHtml(ORDER_FOOD_IMAGE)
+    ); 
+      iconRegistry.addSvgIconLiteral('github-icon',
+      sanitizer.bypassSecurityTrustHtml(GITHUB_ICON)
     ); 
     
   }
