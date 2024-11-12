@@ -7,6 +7,9 @@ import { environment } from '../environments/environment.development';
 const MONEY_BAG = environment.icons['money-bag']
 const REVIEW_STAR = environment.icons['review-star']
 const DISTANCE_FOOT = environment.icons['distance-foot']
+const TRESURE_IMAGE = environment.icons['tresure-image']
+const LOCATION_IMAGE = environment.icons['location-image']
+const ORDER_FOOD_IMAGE = environment.icons['order-food-image']
 
 @Component({
   selector: 'app-root',
@@ -30,6 +33,15 @@ export class AppComponent {
     );
     iconRegistry.addSvgIconLiteral('distance-foot',
       sanitizer.bypassSecurityTrustHtml(DISTANCE_FOOT)
+    );
+    iconRegistry.addSvgIconLiteral('tresure-image',
+      sanitizer.bypassSecurityTrustHtml(TRESURE_IMAGE)
+    );
+    iconRegistry.addSvgIconLiteral('location-image',
+      sanitizer.bypassSecurityTrustHtml(LOCATION_IMAGE)
+    );
+    iconRegistry.addSvgIconLiteral('order-food-image',
+      sanitizer.bypassSecurityTrustHtml(ORDER_FOOD_IMAGE)
     );
   }
 }
