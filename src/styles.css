@@ -42,10 +42,6 @@ body{
 
   --color-interactive:252,155,218;
   --circle-size: 80%;
-
-  /* --general-font: "Courier Prime"; */
-  --general-font: "Kumbh Sans";
-
   --blending: soft-light;
 
 
@@ -54,7 +50,8 @@ body{
   --fontegoogle: " 'GoogleSans-Regular', 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif";
   --fontefrases: " 'Manrope', serif";
   --fonteteste: " 'Quicksand', sans-serif ";
-
+  /* --general-font: "Courier Prime"; */
+  --general-font: "Kumbh Sans";
 
 
     /* Paleta de cores */
