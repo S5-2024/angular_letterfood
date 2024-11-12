@@ -269,7 +269,10 @@ form {
   height: 30%;
   width: 100%;
 }
-
+.icones{
+  width: 4rem;
+  height: 4rem;
+}
 /* Cores background para ajudar na edição */
 
 /* .botoes{
@@ -337,8 +340,12 @@ button>span {
   background-color: #F8FAFF;
   border: 0.06rem solid #afb8ff;
 }
+mat-icon{
+  width: 1em;
+  height: 1em;
+}
 
-.botao-google span+* {
+.botao-google mat-icon+* {
   margin: auto;
   /* Centraliza o conteúdo de texto */
 }

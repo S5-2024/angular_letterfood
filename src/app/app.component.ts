@@ -7,6 +7,12 @@ import { environment } from '../environments/environment.development';
 const MONEY_BAG = environment.icons['money-bag']
 const REVIEW_STAR = environment.icons['review-star']
 const DISTANCE_FOOT = environment.icons['distance-foot']
+const LOGOS_GOOGLE_ICON = environment.icons['logos--google-icon']
+const SOLAR_CAT_BOLD = environment.icons['solar--cat-bold']
+const IC_ROUND_SETTINGS = environment.icons['ic--round-settings']
+const HOME_2_FILL = environment.icons['home-2-fill']
+const BASELINE_SEARCH = environment.icons['baseline-search']
+const SOLAR_HEART_BOLD = environment.icons['solar-heart-bold']
 
 @Component({
   selector: 'app-root',
@@ -31,5 +37,24 @@ export class AppComponent {
     iconRegistry.addSvgIconLiteral('distance-foot',
       sanitizer.bypassSecurityTrustHtml(DISTANCE_FOOT)
     );
+    iconRegistry.addSvgIconLiteral('logos--google-icon',
+      sanitizer.bypassSecurityTrustHtml(LOGOS_GOOGLE_ICON)
+    );
+      iconRegistry.addSvgIconLiteral('solar--cat-bold',
+      sanitizer.bypassSecurityTrustHtml(SOLAR_CAT_BOLD)
+    );  
+      iconRegistry.addSvgIconLiteral('ic--round-settings',
+      sanitizer.bypassSecurityTrustHtml(IC_ROUND_SETTINGS)
+    ); 
+      iconRegistry.addSvgIconLiteral('home-2-fill',
+      sanitizer.bypassSecurityTrustHtml(HOME_2_FILL)
+    ); 
+      iconRegistry.addSvgIconLiteral('baseline-search',
+      sanitizer.bypassSecurityTrustHtml(BASELINE_SEARCH)
+    ); 
+      iconRegistry.addSvgIconLiteral('solar-heart-bold',
+      sanitizer.bypassSecurityTrustHtml(SOLAR_HEART_BOLD)
+    ); 
+    
   }
 }
