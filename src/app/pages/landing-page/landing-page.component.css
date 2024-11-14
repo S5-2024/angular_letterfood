@@ -1,60 +1,86 @@
-*{
+/*  Configurações globais */
+* {
     font-family: var(--fontegeral);
 }
 
-header{
+button {
+    border: none;
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2em;
+    font-weight: bold;
+    box-shadow: 2px 2px 2px 0px rgba(0, 0, 0, 0.2);
+    color: white;
+    background-color: var(--rosa6);
+
+
+}
+
+button:hover {
+    background-color: var(--rosa7);
+}
+
+
+
+
+
+
+header {
     display: flex;
     position: fixed;
     width: 100vw;
     flex-direction: row;
     justify-content: space-between;
-    height: 5vh;
-    background-color: var(--white1);
+    height: 5.4vh;
+
+    background-color: var(--rosa2);
+
 }
 
-.lfd_logo{
+
+
+
+
+
+.lfd_logo {
     display: flex;
     flex-direction: row;
     align-items: center;
     margin-left: 2%;
     width: 20%;
 
-    .mat-icon{
+    .mat-icon {
         height: 110%;
         width: 20%
     }
 
-    p{
+    p {
         color: var(--rosa6);
         font-size: 1.3em;
         font-weight: bold;
     }
 }
 
-.header_sign_up_button{
+.header_sign_up_button {
     /* position: fixed; */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.2em;
-    font-weight: bold;
     width: 35%;
     height: 75%;
     border-radius: 5px;
-    box-shadow: 2px 2px 2px 0px rgba(0, 0, 0, 0.2);
-    color: white;
-    background-color: var(--rosa6);
+
 }
 
-.navi_links{
-    display : flex;
+.navi_links {
+    display: flex;
     flex-direction: row;
     justify-content: space-between;
     width: 17%;
     align-items: center;
     margin-right: 4%;
 
-    p{
+    p {
         color: var(--rosa6);
         font-size: 1.2em;
         font-weight: bold;
@@ -65,28 +91,31 @@ header{
 
 /* images start */
 
-.search_section_image{
+.search_section_image {
     width: 40%;
     height: 100%;
-    .mat-icon{
+
+    .mat-icon {
         width: 100%;
         height: 100%;
     }
 }
 
-.discover_section_image{
+.discover_section_image {
     width: 40%;
     height: 100%;
-    .mat-icon{
+
+    .mat-icon {
         width: 100%;
         height: 100%;
     }
 }
 
-.rating_section_image{
+.rating_section_image {
     width: 40%;
     height: 100%;
-    .mat-icon{
+
+    .mat-icon {
         width: 85%;
         height: 85%;
     }
@@ -96,26 +125,20 @@ header{
 
 /* Content start */
 
-.sign_up_button{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.2em;
-    font-weight: bold;
+.sign_up_button {
+
     width: 23%;
     height: 15%;
     border-radius: 10px;
-    box-shadow: 2px 2px 2px 0px rgba(0, 0, 0, 0.2);
-    color: white;
-    background-color: var(--rosa6);
+
 }
 
-.section_container{
+.section_container {
     height: 95vh;
-    width: 100vw;
+
 }
 
-.section_content{
+.section_content {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -123,13 +146,14 @@ header{
     height: 100%;
     width: 90%;
     margin-left: 5%;
+    
 }
 
-.info{
+.info {
     height: 50%;
     width: 40%;
 
-    h1{
+    h1 {
         width: 90%;
         font-size: 4em;
         font-family: var(--fonteteste);
@@ -142,6 +166,62 @@ header{
 
 /* footer start */
 
+footer {
+    height: 5.4vh;
+    width: 100%;
+
+     
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    bottom: 0;
+     
+
+
+    
+
+    .footer_links {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        
+        width: 50%;
+    }
+
+    .about_us,
+    .home {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        font-size: 1rem;
+       
+        width: 50%;
+    }
+
+    .footer_botoes {
+         
+        width: 20%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        gap: 20px;
+        align-items: center;
+        justify-content: center;
+
+        .footer_sign_up_button {
+            width: 35%;
+            height: 75%;
+            border-radius: 5px;
+
+        }
+
+        .github-icon{
+            
+            align-self: center;
+        }
+
+    }
+}
 
 
 /* footer end */
