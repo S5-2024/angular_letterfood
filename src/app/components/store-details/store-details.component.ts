@@ -41,7 +41,7 @@ export class StoreDetailsComponent {
 
 
   ngOnInit() {
-    console.log(typeof(this.encodeSvgToDataURI(environment.icons['review-star'])))
+
   }
 
   onTabChange($event: MatTabChangeEvent) {
@@ -52,41 +52,119 @@ export class StoreDetailsComponent {
   }
 
 
-  configureChart() {
+  async configureChart() {
     const svgURL = "https://raw.githubusercontent.com/material-icons/material-icons/af0ed9c0e1276bad43c4d6ca8e8aaa283e425195/svg/star/round.svg"
     const chart = echarts.init(document.getElementById('canvas'), null, {
-      width: 300,
-      height: 300
+      width: 500,
+      height: 250,
     })
     const options: echarts.EChartsOption = {
-      title: {
-        text: "Placeholder"
-      },
-      symbol: `image://${svgURL}`,
       tooltip: {},
-      xAxis: {},
+      grid: {
+        height: 150,
+        top: 40,
+        left: '25%',
+        right: '30%',
+
+      },
+
+      xAxis: {
+        show: false,
+      },
       yAxis: {
+        offset: 20,
+        axisLine: {
+          show: false,
+          onZero: false,
+        },
+        axisTick: {
+          show: false,
+          alignWithLabel: true
+        },
         data: [1, 2, 3, 4, 5],
         axisLabel: {
-          formatter: (value:any) => {
-            return '{' + value + '| }\n{value|'  + '}';
+          formatter: (value: any) => {
+            let txt = `{${value}|}`
+            if (parseInt(value) != 1) {
+              for (let i = 1; i < parseInt(value); i++) {
+                txt += `{${value}|}`
+              }
+            }
+            return txt
           },
+          align: 'right',
           rich: {
-            1:{
-              height: 20,
+            1: {
+              width: 'auto',
+              height: 15,
               align: 'center',
               backgroundColor: {
-                image: this.encodeSvgToDataURI(environment.icons['review-star'])
+                image: this.encodeSvgToDataURI(environment.icons['review-star']),
               }
             },
-          }
+            2: {
+              width: 'auto',
+              height: 15,
+              align: 'center',
+              backgroundColor: {
+                image: this.encodeSvgToDataURI(environment.icons['review-star']),
+              },
+              baseline: 'bottom',
+              verticalAlign: 'bottom',
+
+            },
+            3: {
+              width: 'auto',
+              height: 15,
+              align: 'center',
+              backgroundColor: {
+                image: this.encodeSvgToDataURI(environment.icons['review-star']),
+              },
+              baseline: 'bottom',
+              verticalAlign: 'bottom',
+
+            },
+            4: {
+              width: 'auto',
+              height: 15,
+              align: 'center',
+              backgroundColor: {
+                image: this.encodeSvgToDataURI(environment.icons['review-star']),
+              },
+              baseline: 'bottom',
+              verticalAlign: 'bottom',
+
+            },
+            5: {
+              width: 'auto',
+              height: 15,
+              align: 'center',
+
+              backgroundColor: {
+                image: this.encodeSvgToDataURI(environment.icons['review-star']),
+              },
+              baseline: 'bottom',
+              verticalAlign: 'bottom',
+
+            }
+          },
         }
 
       },
       series: [
         {
           type: 'bar',
-          data: [10, 5, 30, 40, 50]
+          label:{
+            show: true,
+            position: 'outside',
+            align: 'left'
+          },
+          data: [10, 5, 30, 40, 50],
+          color: '#C78CA0',
+          itemStyle: {
+            borderRadius: 20,
+          },
+          barMinHeight: 80,
         }
       ]
     }
@@ -95,8 +173,7 @@ export class StoreDetailsComponent {
 
     chart.setOption(options)
   }
-
-   encodeSvgToDataURI(svg:any) {
+  encodeSvgToDataURI(svg: any) {
     return (
       'data:image/svg+xml;charset=utf8,' +
       encodeURIComponent(

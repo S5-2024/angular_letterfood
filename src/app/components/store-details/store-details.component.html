@@ -1,9 +1,11 @@
 <div class="store_details_container">
+  <!--| dynamicHeight => Desabilita overflow-->
   <mat-tab-group
+   dynamicHeight 
     class="navigation"
     headerPosition="below"
     (selectedTabChange)="onTabChange($event)"
-  >
+  > 
     <mat-tab label="Geral" class="tab">
       <div class="content">
         <div class="general_header">
@@ -33,7 +35,7 @@
             <div class="classification">
               <span>Custo:</span>
               <div class="icons">
-                <mat-icon color="red" svgIcon="money-bag" aria-label="Money Bag Icon" />
+                <mat-icon svgIcon="money-bag" aria-label="Money Bag Icon" />
                 <mat-icon svgIcon="money-bag" aria-label="Money Bag Icon" />
                 <mat-icon svgIcon="money-bag" aria-label="Money Bag Icon" />
                 <mat-icon svgIcon="money-bag" aria-label="Money Bag Icon" />
@@ -91,6 +93,8 @@
            <div id="canvas"></div>
         </div>
         <div class="review_body">
+          <h2 style="color: var(--rosa5);">Comentarios</h2>
+          <br>
           <review-card/>
           <review-card/>
           <review-card/>
