@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-
+import { MatIconModule } from '@angular/material/icon';
 @Component({
   selector: 'store-card',
   standalone: true,
-  imports: [],
+  imports: [MatIconModule],
   templateUrl: './store-card.component.html',
   styleUrl: './store-card.component.css'
 })

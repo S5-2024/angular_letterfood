@@ -2,96 +2,80 @@
 
   @if(formType === 'login'){
   <form action="get" id="myForm">
-  
     <div class="detalhes">
-      <span class="solar--cat-bold"></span>
+      <mat-icon svgIcon="solar--cat-bold" aria-label="Solar Cat Bold" class="icones" />
       <h1 class="frase">Bem-Vindo(a) ao Letter Food </h1>
     </div>
-  
     <div class="infos">
       <div class="form-group">
         <label for="email">Email</label>
         <input type="email" placeholder="example@gmail.com.br" id="email" class="bar">
       </div>
-  
       <div class="form-group">
         <label for="senha">Senha</label>
         <input type="password" placeholder="senha" id="senha" class="bar">
         <span class="links" id="remakepass" (click)="toggleForm('recover-password')">Esqueceu a senha?</span>
-  
-  
       </div>
     </div>
-  
-  
-  
     <div class="botoes">
       <button id="button" class="botao"> <span>Log In</span></button>
       <button class="botao-google">
-        <span class="logos--google-icon"></span>
+        <mat-icon svgIcon="logos--google-icon" aria-label="googleicon" />
         <span> Continuar com o Google</span>
-  
       </button>
       <span class="registrar">Não tem conta? <span class="links"
           (click)="toggleForm('registerForm')">Registrar</span></span>
-  
     </div>
-  
   </form>
   }
-  
+
+
+
+
+
   @else if(formType === 'registerForm'){
   <form action="get" id="registerForm">
-  
     <div class="detalhes">
-      <span class="solar--cat-bold"></span>
+      <mat-icon svgIcon="solar--cat-bold" aria-label="Solar Cat Bold" class="icones" />
       <h1 class="frase">Bem-Vindo(a) ao Letter Food </h1>
     </div>
-  
     <div class="infos">
       <div class="form-group">
         <label for="name">Nome</label>
         <input type="name" placeholder="Fulano de tal" id="name" class="bar">
       </div>
-  
       <div class="form-group">
         <label for="email">Email</label>
         <input type="email" placeholder="example@gmail.com.br" id="email" class="bar">
-      
-  
       </div>
-     
       <div class="form-group">
         <label for="senha">Senha</label>
         <input type="password" placeholder="senha" id="senha" class="bar">
       </div>
     </div>
-  
-  
     <div class="botoes">
       <button id="button" class="botao"> <span>Entrar</span></button>
       <button class="botao-google">
-        <span class="logos--google-icon"></span>
+        <mat-icon svgIcon="logos--google-icon" aria-label="googleicon"/>
         <span> Continuar com o Google</span>
-  
       </button>
-      <span class="registrar" id="register">Já tem conta? <span class="links" (click)="toggleForm('login')"> Login</span>
+      <span class="registrar" id="register">Já tem conta? <span class="links" (click)="toggleForm('login')">
+          Login</span>
       </span>
     </div>
-  
   </form>
   }
 
+
+
+
   @else{
   <form id="recover-password" [ngClass]="{'recover-password-form': formType === 'recover-password'}">
-  
     <div class="detalhes">
-      <span class="solar--cat-bold"></span>
+      <mat-icon svgIcon="solar--cat-bold" aria-label="Solar Cat Bold" class="icones" />
       <h1 class="frase">Recuperando a senha</h1>
     </div>
-  
     <div class="infos">
-  
       <div class="form-group">
         <label for="email">Email</label>
         <input type="email" placeholder="example@gmail.com.br" id="email" class="bar">
@@ -99,24 +83,18 @@
           Confira seu email para recuperar a senha.
         </p>
       </div>
-  
-  
     </div>
-  
-  
-    <div class="botoes">
+  <div class="botoes">
       <button id="button" class="botao"> <span>Enviar Código</span></button>
-  
-      <span class="registrar" id="register">  <span class="links" (click)="toggleForm('login')">Voltar para o Login</span>
+      <span class="registrar" id="register"> <span class="links" (click)="toggleForm('login')">Voltar para o Login</span>
       </span>
     </div>
-  
   </form>
   }
-  
 
 
 </div>
+
 
 <div class="gradient-bg">
   <svg xmlns="http://www.w3.org/2000/svg">

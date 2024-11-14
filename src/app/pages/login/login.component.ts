@@ -1,12 +1,13 @@
 import { Component, ElementRef, Renderer2, AfterViewInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
+import { MatIconModule } from '@angular/material/icon';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
   standalone: true,
-  imports: [CommonModule]
+  imports: [CommonModule, MatIconModule]
   
 })
 export class LoginComponent implements AfterViewInit {
