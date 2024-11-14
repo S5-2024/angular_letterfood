@@ -54,5 +54,4 @@ export class LoginComponent implements AfterViewInit {
   senha = '';
 
  
-
 }
