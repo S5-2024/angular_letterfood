@@ -118,12 +118,17 @@
   ;
   grid-template-columns: 1fr 1fr;
   gap: 10px;
+  margin-top: 2em;
 }
 .local_info > span{
   display: flex;
   align-items: center;
   font-size: 1.2em;
   color: #9F7E8D;
+}
+.maps_body > h2 {
+  color: var(--rosa5);
+  font-size: 1.75rem;
 }
 .local_info  mat-icon{
   margin-right: .3rem;

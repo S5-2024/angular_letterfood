@@ -90,6 +90,7 @@
         <div class="maps_header">
           <img src="{{ storeInfo.image }}" alt="" class="logo"/>
           <div class="local_info">
+            
             <span style="grid-area: a"
               ><mat-icon svgIcon="telephone-icon" />(31) 99999-9999</span
             >
@@ -106,6 +107,7 @@
           </div>
         </div>
         <div class="maps_body">
+          <h2>Localização:</h2>
           <google-map width="100%" [options]="mapOptions">
             <map-advanced-marker #markerElem="mapAdvancedMarker" [position]="center"/>
           </google-map>

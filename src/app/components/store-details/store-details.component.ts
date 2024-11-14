@@ -40,12 +40,13 @@ export class StoreDetailsComponent {
   private _labelSize: any = '1.875rem';
   private _textColor: any = '#C78CA0';
   protected center: google.maps.LatLngLiteral = {
-    lat: -19.92496980306213,
-    lng: -44.07508944406674
+    lat: -19.939296680492138, 
+    lng:-44.053810119331914
   };
   protected mapOptions: google.maps.MapOptions = {
     mapId: "LOCATION_MAP",
     center: this.center,
+    zoom: 33,
     cameraControl: false,
     streetViewControl: false,
     mapTypeControl: false,
