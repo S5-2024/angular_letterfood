@@ -68,7 +68,8 @@ body {
   --rosa3: rgb(255, 243, 250);
   --rosa4: rgb(236, 186, 208);
   --rosa5: rgb(199, 140, 160);
-  --rosa6: #ff81ae;
+  --rosa6: rgb(255, 129, 174);
+  --rosa7: rgb(202, 101, 136);
 
   /* Cores de Suporte */
   --pink: rgb(255, 179, 186);
