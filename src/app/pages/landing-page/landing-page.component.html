@@ -5,18 +5,19 @@
             <p>LetterFood</p>
         </div>
         <div class="navi_links">
-            <p>home</p>
+            <p>Home</p>
             <p>Sobre nós</p>
-            <button class="sign_up_button">Juntar-se</button>
+            <div class="header_sign_up_button"><a routerLink="/login">Juntar-se</a></div>
         </div>
     </header>
-    <div class="search_section_container">
-        <div class="search_section_content">
-            <div class="search_info">
+
+<!-- Location -->
+
+    <div class="section_container">
+        <div class="section_content">
+            <div class="info">
                 <h1>Busque os melhores restaurantes da região</h1>
-                <div class="info_navigation_links">
-                    <button class="sign_up_button">Começe agora</button>
-                </div>
+                    <div class="sign_up_button">Começe agora</div>
             </div>
             <div class="search_section_image">
                 <mat-icon svgIcon="location-image" aria-label="Pessoa procurando restaurantes bem avaliados na região" />
@@ -24,27 +25,27 @@
         </div>
     </div>
     
-    <div class="discover_section_container">
-        <div class="discover_section_content">
-            <div class="discover_info">
-                <h1>Descubra novas experiências</h1>
-                <div class="info_navigation_links">
-                    <button class="sign_up_button">Começe agora</button>
-                </div>
-            </div>
+<!-- Discover -->
+
+    <div class="section_container">
+        <div class="section_content">
             <div class="discover_section_image">
                 <mat-icon svgIcon="tresure-image" aria-label="Pessoa abrindo um baú" />
+            </div>
+            <div class="info">
+                <h1>Descubra novas experiências</h1>
+                    <div class="sign_up_button">Começe agora</div>
             </div>
         </div>
     </div>
 
-    <div class="rating_section_container">
-        <div class="rating_section_content">
-            <div class="rating_info">
+<!-- Rating -->
+
+    <div class="section_container">
+        <div class="section_content">
+            <div class="info">
                 <h1>Avalie os restaurantes que você visitou</h1>
-                <div class="info_navigation_links">
-                    <button class="sign_up_button">Começe agora</button>
-                </div>
+                    <div class="sign_up_button">Começe agora</div>
             </div>
             <div class="rating_section_image">
                 <mat-icon svgIcon="order-food-image" aria-label="Pessoa avaliando um restaurante" />
@@ -67,6 +68,6 @@
                 <p>informações da empresa</p>
             </div>
         </div>
-        <button class="sign_up_button">Começe agora</button>
+        <div class="sign_up_button">Começe agora</div>
         <mat-icon svgIcon="github-icon" aria-label="GitHub logo" />
     </footer>
