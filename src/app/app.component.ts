@@ -32,45 +32,10 @@ export class AppComponent {
   constructor(){
     const iconRegistry = inject(MatIconRegistry)
     const sanitizer = inject(DomSanitizer)
-
-    iconRegistry.addSvgIconLiteral('money-bag',
-      sanitizer.bypassSecurityTrustHtml(MONEY_BAG));
-    iconRegistry.addSvgIconLiteral('review-star',
-      sanitizer.bypassSecurityTrustHtml(REVIEW_STAR)
-    );
-    iconRegistry.addSvgIconLiteral('distance-foot',
-      sanitizer.bypassSecurityTrustHtml(DISTANCE_FOOT)
-    );
-    iconRegistry.addSvgIconLiteral('logos--google-icon',
-      sanitizer.bypassSecurityTrustHtml(LOGOS_GOOGLE_ICON)
-    );
-      iconRegistry.addSvgIconLiteral('solar--cat-bold',
-      sanitizer.bypassSecurityTrustHtml(SOLAR_CAT_BOLD)
-    );  
-      iconRegistry.addSvgIconLiteral('ic--round-settings',
-      sanitizer.bypassSecurityTrustHtml(IC_ROUND_SETTINGS)
-    ); 
-      iconRegistry.addSvgIconLiteral('home-2-fill',
-      sanitizer.bypassSecurityTrustHtml(HOME_2_FILL)
-    ); 
-      iconRegistry.addSvgIconLiteral('baseline-search',
-      sanitizer.bypassSecurityTrustHtml(BASELINE_SEARCH)
-    ); 
-      iconRegistry.addSvgIconLiteral('solar-heart-bold',
-      sanitizer.bypassSecurityTrustHtml(SOLAR_HEART_BOLD)
-    ); 
-      iconRegistry.addSvgIconLiteral('tresure-image',
-      sanitizer.bypassSecurityTrustHtml(TRESURE_IMAGE)
-    ); 
-      iconRegistry.addSvgIconLiteral('location-image',
-      sanitizer.bypassSecurityTrustHtml(LOCATION_IMAGE)
-    ); 
-      iconRegistry.addSvgIconLiteral('order-food-image',
-      sanitizer.bypassSecurityTrustHtml(ORDER_FOOD_IMAGE)
-    ); 
-      iconRegistry.addSvgIconLiteral('github-icon',
-      sanitizer.bypassSecurityTrustHtml(GITHUB_ICON)
-    ); 
     
+    for(let icon in Object.entries(environment.icons)){
+      iconRegistry.addSvgIconLiteral(Object.entries(environment.icons)[icon][0], 
+            sanitizer.bypassSecurityTrustHtml(Object.entries(environment.icons)[icon][1]))
+
   }
 }
