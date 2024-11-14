@@ -19,7 +19,6 @@
 
 
 
-
 /* Movido do 
 html,
 body{
@@ -69,7 +68,7 @@ body{
   --rosa2: rgb(255, 225, 237);
   --rosa3: rgb(255, 243, 250);
   --rosa4: rgb(236, 186, 208);
-  --rosa5: rgb(199, 140, 160);
+  --rosa5: rgb(199, 140, 160); /*#C78CA0*/
 
   /* Cores de Suporte */
   --pink: rgb(255, 179, 186);

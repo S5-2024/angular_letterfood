@@ -22,14 +22,14 @@ export class AppComponent {
   constructor(){
     const iconRegistry = inject(MatIconRegistry)
     const sanitizer = inject(DomSanitizer)
+    
+    for(let icon in Object.entries(environment.icons)){
+      iconRegistry.addSvgIconLiteral(Object.entries(environment.icons)[icon][0], 
+            sanitizer.bypassSecurityTrustHtml(Object.entries(environment.icons)[icon][1]))
+    }
 
-    iconRegistry.addSvgIconLiteral('money-bag',
-      sanitizer.bypassSecurityTrustHtml(MONEY_BAG));
-    iconRegistry.addSvgIconLiteral('review-star',
-      sanitizer.bypassSecurityTrustHtml(REVIEW_STAR)
-    );
-    iconRegistry.addSvgIconLiteral('distance-foot',
-      sanitizer.bypassSecurityTrustHtml(DISTANCE_FOOT)
-    );
-  }
+    }
+    ngOnInit(){
+      console.log(Object.entries(environment.icons))
+    }
 }
