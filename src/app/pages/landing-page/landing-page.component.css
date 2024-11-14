@@ -1,0 +1,41 @@
+header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 5vh;
+    background-color: grey;
+}
+
+.lfd_logo{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 2%;
+    width: 10%;
+
+    .mat-icon{
+        height: 110%;
+        width: 100%
+    }
+
+    p{
+        color: var(--rosa6);
+    }
+}
+
+.navi_links{
+    display : flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 15%;
+    align-items: center;
+    margin-right: 4%;
+
+    .sign_up_button{
+        width: 35%;
+        border-radius: 5px;
+        color: white;
+        background-color: var(--rosa6);
+    }
+}
+
