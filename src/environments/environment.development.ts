@@ -1,3 +1,5 @@
+import { Restaurant } from "../app/models/restaurant";
+
 const icons = {
   'money-bag': `<svg xmlns="http://www.w3.org/2000/svg" width="31" height="31" viewBox="0 0 31 31" fill="none">
 <path fill-rule="evenodd" clip-rule="evenodd" d="M15.5337 0C11.4459 0 7.72192 1.28489 5.5183 2.33467C5.3192 2.4294 5.13338 2.52183 4.96083 2.61197C4.61875 2.78937 4.32735 2.95472 4.09567 3.10026L6.60246 6.61216L7.78256 7.05911C12.3943 9.27322 18.5789 9.27322 23.1916 7.05911L24.531 6.39773L26.9011 3.10026C26.4096 2.79635 25.8992 2.52113 25.3726 2.27611C23.1799 1.23752 19.5446 0 15.5346 0M9.70473 3.97522C8.81725 3.81629 7.94057 3.60693 7.07939 3.34828C9.14364 2.4759 12.2197 1.55013 15.5346 1.55013C17.8305 1.55013 20.0016 1.9945 21.797 2.55771C19.693 2.83932 17.4477 3.31728 15.3084 3.90546C13.6251 4.36878 11.6577 4.31883 9.70473 3.97522ZM24.1482 8.33625L23.9256 8.44304C18.8522 10.8785 12.1228 10.8785 7.04952 8.44304L6.83866 8.34142C-0.783969 16.2996 -6.60298 31 15.5337 31C37.6704 31 31.7102 16.0266 24.1482 8.33625ZM14.5934 15.5013C14.1134 15.5013 13.653 15.6828 13.3136 16.0058C12.9742 16.3288 12.7835 16.7669 12.7835 17.2237C12.7835 17.6805 12.9742 18.1185 13.3136 18.4416C13.653 18.7646 14.1134 18.946 14.5934 18.946V15.5013ZM16.4034 13.7789V12.9177H14.5934V13.7789C13.6334 13.7789 12.7126 14.1419 12.0338 14.7879C11.3549 15.4339 10.9735 16.3101 10.9735 17.2237C10.9735 18.1373 11.3549 19.0134 12.0338 19.6594C12.7126 20.3055 13.6334 20.6684 14.5934 20.6684V24.1131C13.8061 24.1131 13.1355 23.6352 12.8857 22.9652C12.8487 22.8555 12.7889 22.7541 12.7099 22.6669C12.6309 22.5796 12.5344 22.5083 12.426 22.4572C12.3175 22.4061 12.1994 22.3762 12.0787 22.3693C11.9579 22.3624 11.8368 22.3785 11.7228 22.4169C11.6087 22.4553 11.5038 22.515 11.4144 22.5926C11.325 22.6702 11.2529 22.7641 11.2022 22.8687C11.1516 22.9732 11.1236 23.0864 11.1197 23.2015C11.1159 23.3166 11.1363 23.4313 11.1798 23.5387C11.4294 24.2105 11.8916 24.7921 12.503 25.2034C13.1143 25.6148 13.8447 25.8356 14.5934 25.8355V26.6967H16.4034V25.8355C17.3634 25.8355 18.2842 25.4726 18.963 24.8265C19.6419 24.1805 20.0233 23.3044 20.0233 22.3908C20.0233 21.4772 19.6419 20.601 18.963 19.955C18.2842 19.3089 17.3634 18.946 16.4034 18.946V15.5013C17.1907 15.5013 17.8613 15.9792 18.1111 16.6492C18.1481 16.7589 18.2079 16.8603 18.2869 16.9475C18.3659 17.0348 18.4624 17.1061 18.5708 17.1572C18.6793 17.2083 18.7974 17.2382 18.9181 17.2451C19.0389 17.2521 19.16 17.2359 19.274 17.1975C19.3881 17.1591 19.493 17.0994 19.5824 17.0218C19.6718 16.9442 19.7439 16.8503 19.7946 16.7458C19.8452 16.6412 19.8732 16.528 19.8771 16.4129C19.8809 16.2978 19.8605 16.1831 19.817 16.0757C19.5674 15.4039 19.1052 14.8223 18.4938 14.411C17.8825 13.9996 17.1521 13.7788 16.4034 13.7789ZM16.4034 20.6684V24.1131C16.8834 24.1131 17.3438 23.9317 17.6832 23.6087C18.0226 23.2856 18.2133 22.8476 18.2133 22.3908C18.2133 21.934 18.0226 21.4959 17.6832 21.1729C17.3438 20.8499 16.8834 20.6684 16.4034 20.6684Z" fill="#C78CA0"/>
@@ -10,8 +12,48 @@ const icons = {
 </svg>`,
   'close-icon': `<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M6.4 19L5 17.6l5.6-5.6L5 6.4L6.4 5l5.6 5.6L17.6 5L19 6.4L13.4 12l5.6 5.6l-1.4 1.4l-5.6-5.6z"/></svg>`
 }
+const restaurants: Restaurant[] = [
+  {
+    name: "China in Box",
+    categories: ["Comida Chinesa"],
+    description: "O Maior delivery de Comida Chinesa, a caixinha mais conhecida do Brasil. Pratos tradicionais como yakissoba, rolinho primavera, macarrão oriental, frango xadrez, carne com batata, carne com brócolis, yakimeshi e sobremesas. Com uma variedade de proteínas (camarão, frango, carne e lombo). Pratos com alta qualidade e com opções vegetarianas. Venha experimentar nossos sabores e aproveitar nossas promoções e descontos. Peça agora! ",
+    image: "https://upload.wikimedia.org/wikipedia/pt/7/7d/Logo-china_in_china.jpg",
+    reviews: [
+      {
+        user: {
+          username: "Robertin Cleitovisk",
+          image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9Pe68oq409W00aqhW1tJtuHSUng_4Zk265g&s"
+        },
+        comment: "Mt bom comer chines",
+        createdOn: new Date().toLocaleDateString(),
+        rate: 5
+      },
+      {
+        user: {
+          username: "Xerox Romer",
+          image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMaL8ADYeMTI_d05vO12jbizVKahEtBc_nmQ&s"
+        },
+        comment: "N gosto mt de chines, acho bem pequeno e só gosto de coisas grandes",
+        createdOn: new Date().toLocaleDateString(),
+        rate: 1
+      },
+      {
+        user: {
+          username: "Anton Ego",
+          image: "https://static1.personality-database.com/profile_images/0c806bb0412e42dc892d6e5653020aa3.png"
+        },
+        comment: "Interessante o sabor, não é a melhor comida do mundo mas me lembra da vez que peguei leptospiroze na França.",
+        createdOn: new Date().toLocaleDateString(),
+        rate: 3
+      },
+    ]
+  }
+
+]
+
+
 
 
 export const environment = {
-  icons
+  icons, restaurants
 };
