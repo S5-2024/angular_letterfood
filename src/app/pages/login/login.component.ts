@@ -1,15 +1,17 @@
 import { Component, ElementRef, Renderer2, AfterViewInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, NgFor } from '@angular/common';
 import { Router } from '@angular/router';
 import { MatIconModule } from '@angular/material/icon';
-import {FormsModule} from '@angular/forms';
+import { FormsModule, NgForm } from '@angular/forms';
+import { UserService } from '../../services/user.service';
+import { User } from '../../models/user';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
   standalone: true,
-  imports: [CommonModule, MatIconModule,FormsModule]
-  
+  imports: [CommonModule, MatIconModule, FormsModule],
 })
 export class LoginComponent implements AfterViewInit {
   private curX = 0;
@@ -17,7 +19,15 @@ export class LoginComponent implements AfterViewInit {
   private tgX = 0;
   private tgY = 0;
 
-  constructor(private el: ElementRef, private renderer: Renderer2) {}
+  user = {} as User;
+  users: User[] = [];
+
+  constructor(
+    private el: ElementRef,
+    private renderer: Renderer2,
+    private router: Router,
+    private userService: UserService
+  ) {}
 
   ngAfterViewInit() {
     const interBubble = this.el.nativeElement.querySelector('.interactive');
@@ -46,12 +56,45 @@ export class LoginComponent implements AfterViewInit {
   toggleForm(type: string) {
     this.formType = type;
   }
- 
+
   // Tentando fazer conexão com o BD
 
-  nome = '';
-  email = '';
-  senha = '';
+  ngOnInit() {
+    this.userService.getUsers();
+  }
 
- 
+  saveUser(form: NgForm) {
+    if (this.user.id !== undefined) {
+      this.userService.updateUser(this.user).subscribe(() => {
+        console.log('User updated');
+        this.cleanForm(form);
+      });
+    } else {
+      this.userService
+        .saveUser(this.user)
+        .subscribe(() => this.cleanForm(form));
+    }
+  }
+
+  getUsers() {
+    this.userService.getUsers().subscribe((users: User[]) => {
+      this.users = users;
+    });
+  }
+
+  deleteUser(user: User) {
+    this.userService.deleteUser(user).subscribe(() => {
+      this.getUsers();
+    });
+  }
+
+  editUser(user:User){
+    this.user = {...user};
+  }
+
+  cleanForm(form: NgForm) {
+    this.getUsers();
+    form.resetForm();
+     
+  }
 }
