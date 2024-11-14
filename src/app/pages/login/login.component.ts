@@ -1,22 +1,32 @@
-import { Component, ElementRef, Renderer2, AfterViewInit } from '@angular/core';
+import { Component, ElementRef, Renderer2, AfterViewInit,inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 import { MatIconModule } from '@angular/material/icon';
+import { Pessoas } from './pessoas';
+import { FormsModule } from '@angular/forms';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
   standalone: true,
-  imports: [CommonModule, MatIconModule]
+  imports: [CommonModule, MatIconModule, FormsModule]
   
 })
 export class LoginComponent implements AfterViewInit {
+
+
+
+
   private curX = 0;
   private curY = 0;
   private tgX = 0;
   private tgY = 0;
 
-  constructor(private el: ElementRef, private renderer: Renderer2) {}
+  constructor(private el: ElementRef, private renderer: Renderer2) {
+  }
+
+
 
   ngAfterViewInit() {
     const interBubble = this.el.nativeElement.querySelector('.interactive');
@@ -46,4 +56,40 @@ export class LoginComponent implements AfterViewInit {
     this.formType = type;
   }
  
+  name: string = '';
+  email: string = '';
+  senha: string = '';
+
+  pessoas: { nome: string, email: string, senha: string }[] = [];
+
+    // Função para adicionar uma pessoa ao array
+    adicionarPessoa(nome: string, email: string, senha: string) {
+      this.pessoas.push({ nome, email, senha });
+      console.log(this.pessoas); // Exibe o array no console para verificação
+    }
+  
+    // Função chamada ao submeter o formulário de registro
+    onRegisterSubmit(nome: string, email: string, senha: string) {
+      this.adicionarPessoa(nome, email, senha); // Adiciona a pessoa ao array
+      alert('Usuário registrado com sucesso!');
+      this.toggleForm('login'); // Alterna para o formulário de login após o registro
+    }
+
+   // Função de login
+   onLoginSubmit(email: string, senha: string) {
+    // Verifica se o email e a senha correspondem a algum usuário
+    const usuario = this.pessoas.find(user => user.email === email && user.senha === senha);
+
+    if (usuario) {
+      alert('Login bem-sucedido!');
+      console.log('Usuário logado:', usuario); // Exibe o usuário no console
+    } else {
+      alert('Email ou senha incorretos!');
+    }
+  }
+
+  // Função para exibir todos os usuários no console
+  mostrarUsuarios() {
+    console.log('Usuários registrados:', this.pessoas);
+  }
 }
