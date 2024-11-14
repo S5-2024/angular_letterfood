@@ -2,12 +2,13 @@ import { Component, ElementRef, Renderer2, AfterViewInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 import { MatIconModule } from '@angular/material/icon';
+import {FormsModule} from '@angular/forms';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
   standalone: true,
-  imports: [CommonModule, MatIconModule]
+  imports: [CommonModule, MatIconModule,FormsModule]
   
 })
 export class LoginComponent implements AfterViewInit {
@@ -46,4 +47,12 @@ export class LoginComponent implements AfterViewInit {
     this.formType = type;
   }
  
+  // Tentando fazer conexão com o BD
+
+  nome = '';
+  email = '';
+  senha = '';
+
+ 
+
 }
