@@ -1,0 +1,10 @@
+.modal > mat-icon{
+    position: absolute;
+    top: 5%;
+    right: 3%;
+    transform: scale(2);
+    cursor: pointer;
+}
+.teste{
+    color:var(--rosa5);
+}

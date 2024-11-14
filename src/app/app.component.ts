@@ -27,9 +27,5 @@ export class AppComponent {
       iconRegistry.addSvgIconLiteral(Object.entries(environment.icons)[icon][0], 
             sanitizer.bypassSecurityTrustHtml(Object.entries(environment.icons)[icon][1]))
     }
-
-    }
-    ngOnInit(){
-      console.log(Object.entries(environment.icons))
-    }
+  }
 }

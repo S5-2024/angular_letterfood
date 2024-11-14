@@ -1,5 +1,7 @@
 <ng-template cdkPortal>
-    <store-details/>
+  <div class="modal">
+    <store-details />
+    <mat-icon svgIcon="close-icon" (click)="closeModal()" class="teste"/>
+  </div>
 </ng-template>
 <store-card (click)="openModal()"/>
-
