@@ -7,7 +7,7 @@
         <div class="navi_links">
             <p>Home</p>
             <p>Sobre nós</p>
-            <button class="header_sign_up_button"><a routerLink="/login">Juntar-se</a></button>
+            <button class="header_sign_up_button" (click)="redirectToLogin()"><a>Juntar-se</a></button>
         </div>
     </header>
 
@@ -17,7 +17,7 @@
         <div class="section_content">
             <div class="info">
                 <h1>Busque os melhores restaurantes da região</h1>
-                    <button class="sign_up_button">Começe agora</button>
+                    <button class="sign_up_button" (click)="redirectToLogin()">Começe agora</button>
             </div>
             <div class="search_section_image">
                 <mat-icon svgIcon="location-image" aria-label="Pessoa procurando restaurantes bem avaliados na região" />
@@ -34,7 +34,7 @@
             </div>
             <div class="info">
                 <h1>Descubra novas experiências</h1>
-                    <button class="sign_up_button">Começe agora</button>
+                    <button class="sign_up_button" (click)="redirectToLogin()" >Começe agora</button>
             </div>
         </div>
     </div>
@@ -45,7 +45,7 @@
         <div class="section_content">
             <div class="info">
                 <h1>Avalie os restaurantes que você visitou</h1>
-                    <button class="sign_up_button">Começe agora</button>
+                    <button class="sign_up_button" (click)="redirectToLogin()">Começe agora</button>
             </div>
             <div class="rating_section_image">
                 <mat-icon svgIcon="order-food-image" aria-label="Pessoa avaliando um restaurante" />
@@ -77,7 +77,7 @@
         </div>
 
         <div class="footer_botoes">
-            <button class="footer_sign_up_button">Começe agora</button>
+            <button class="footer_sign_up_button" (click)="redirectToLogin()" >Começe agora</button>
             <mat-icon svgIcon="github-icon" aria-label="GitHub logo" />
         </div>
        
