@@ -1,0 +1,2 @@
+instalações para conectador no bd:
+npm install axios
