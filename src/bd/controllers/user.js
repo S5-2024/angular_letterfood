@@ -51,16 +51,4 @@ export const deleteUser = async (req, res) => {
   } catch (err) {
     return res.status(500).json(err.message);
   }
-
-export const login = async(red,res) => {
-  const { email, senha } = req.body;
-  try {
-    const user = await db`SELECT * FROM users WHERE email = ${email} AND senha = ${senha}`;
-    if (user) {
-      return res.status(200).json(user);
-      } else { return res.status(401).json("usuário não encontrado"); }
-} catch (err) { return res.status(500).json(err.message); }
-
-}
-  
 };
