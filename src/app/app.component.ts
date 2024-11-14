@@ -3,6 +3,8 @@ import { RouterOutlet } from '@angular/router';
 import { MatIconRegistry, MatIconModule } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
 import { environment } from '../environments/environment.development';
+import { HttpClientModule } from '@angular/common/http';
+import { ApiService } from './services/api.service'; 
 
 const MONEY_BAG = environment.icons['money-bag']
 const REVIEW_STAR = environment.icons['review-star']
@@ -17,12 +19,14 @@ const SOLAR_HEART_BOLD = environment.icons['solar-heart-bold']
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, MatIconModule],
+  imports: [RouterOutlet, MatIconModule,HttpClientModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 
 export class AppComponent {
+
+
   title = 'letterfood';
   
   constructor(){
@@ -56,5 +60,15 @@ export class AppComponent {
       sanitizer.bypassSecurityTrustHtml(SOLAR_HEART_BOLD)
     ); 
     
+  }
+
+
+
+  apiService = inject(ApiService);
+
+  ngOnInit() {
+    this.apiService.getData().subscribe((response) => {
+      console.log(response); // Processa os dados recebidos
+    });
   }
 }
