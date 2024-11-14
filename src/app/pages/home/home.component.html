@@ -1,6 +1,6 @@
 <ng-template cdkPortal>
   <div class="modal">
-    <store-details />
+    <store-details [storeInfo]="storeList[0]"/>
     <mat-icon svgIcon="close-icon" (click)="closeModal()" class="teste"/>
   </div>
 </ng-template>

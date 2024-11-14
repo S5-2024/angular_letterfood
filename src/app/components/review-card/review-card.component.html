@@ -2,25 +2,29 @@
   <div class="card-header">
     <div class="info">
       <img
-        src="https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png"
+        src="{{review.user.image}}"
         alt=""
       />
-      <span class="user-name">PLACEHOLDER NAME</span>
+      <span class="user-name">{{review.user.username}}</span>
       <div>
-        <mat-icon svgIcon="review-star" />
-        <mat-icon svgIcon="review-star" />
-        <mat-icon svgIcon="review-star" />
-        <mat-icon svgIcon="review-star" />
-        <mat-icon svgIcon="review-star" />
+        @for (rateNum of getRateIndex(); track $index) {
+          <mat-icon svgIcon="review-star" />
+        }
+<!--         <mat-icon svgIcon="review-star" /> -->
+<!--         <mat-icon svgIcon="review-star" /> -->
+<!--         <mat-icon svgIcon="review-star" /> -->
+<!--         <mat-icon svgIcon="review-star" /> -->
+<!--         <mat-icon svgIcon="review-star" /> -->
       </div>
     </div>
-    <p style="text-align: center">01/01/2024</p>
+    <p style="text-align: center">{{review.createdOn}}</p>
   </div>
   <div class="card-body">
-    <p>
+    <p>{{this.review.comment}}</p>
+    <!-- <p>
       Lorem ipsum dolor sit amet. Cum Cum Cum Cum Cum Cum Cum Cum Cum Cum Cum
       Cum Cum Cumiure consequatur est quia alias eum quod saepe ea molestias
       adipisci.
-    </p>
+    </p> -->
   </div>
 </div>

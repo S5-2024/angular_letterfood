@@ -4,7 +4,7 @@ import {Overlay, OverlayConfig, OverlayModule} from '@angular/cdk/overlay';
 import { CdkPortal,PortalModule } from '@angular/cdk/portal';
 import { StoreCardComponent } from "../../components/store-card/store-card.component";
 import { MatIconModule } from '@angular/material/icon';
-
+import { environment } from '../../../environments/environment.development';
 
 @Component({
   selector: 'app-home',
@@ -16,9 +16,9 @@ import { MatIconModule } from '@angular/material/icon';
   styleUrl: './home.component.css'
 })
 export class HomeComponent {
-
   @ViewChild(CdkPortal) portal !: CdkPortal
   private overlayRef;
+  protected storeList = environment.restaurants
   constructor(private overlay: Overlay){
     const config = new OverlayConfig(
       {
@@ -27,7 +27,7 @@ export class HomeComponent {
         /* panelClass: "teste_class" */
       }
     );
-    this.overlayRef = this.overlay.create(config)
+    this.overlayRef = this.overlay.create(config);
   }
 
 
