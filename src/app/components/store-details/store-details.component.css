@@ -32,10 +32,12 @@
   line-height: normal;
 }
 .general_header > img {
+  margin-bottom: 1.813em;
+}
+.logo {
   width: 31.688em;
   height: 23.75em;
   border-radius: 2.9em;
-  margin-bottom: 1.813em;
 }
 .categories{
   display: inherit;
@@ -94,6 +96,40 @@
 .cut{
   clip-path: inset(0 50% 0 0);
 }
+
+/*| MAP SECTION */
+.content_map{
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: 1fr 2fr;
+  align-items: center;
+  gap: 2.813rem;
+  padding: 2rem 2.875rem 6rem 2.875rem;
+}
+.maps_header{
+  
+}
+.local_info{
+  display: grid;
+  grid-template-areas: 
+    "a b"
+    "c c"
+    "d d"
+  ;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+.local_info > span{
+  display: flex;
+  align-items: center;
+  font-size: 1.2em;
+  color: #9F7E8D;
+}
+.local_info  mat-icon{
+  margin-right: .3rem;
+}
+
+
 /*| REVIEW SECTION*/
 .review_header{
   display: flex;

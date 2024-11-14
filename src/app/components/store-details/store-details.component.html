@@ -9,14 +9,12 @@
     <mat-tab label="Geral" class="tab">
       <div class="content">
         <div class="general_header">
-          <img
-            src="{{storeInfo.image}}"
-            alt=""
-          /> <!--| PLACEHOLDER IMAGE: https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png-->
-          <h1>{{storeInfo.name}}</h1>
+          <img src="{{ storeInfo.image }}" alt="" class="logo" />
+          <!--| PLACEHOLDER IMAGE: https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png-->
+          <h1>{{ storeInfo.name }}</h1>
           <div class="categories">
             @for (category of storeInfo.categories; track $index) {
-              <span class="category">{{category}}</span>
+            <span class="category">{{ category }}</span>
             }
             <!-- <span class="category">CATEGORIA 1</span>
             <span class="category">CATEGORIA 2</span> -->
@@ -24,7 +22,7 @@
         </div>
         <div class="general_body">
           <div class="description">
-            <h2>Descrição: </h2>
+            <h2>Descrição:</h2>
             <p>{{ storeInfo.description }}</p>
           </div>
           <!-- optio corporis et optio corporis et ssumenda culpa! Est nesciunt
@@ -88,77 +86,29 @@
       </div>
     </mat-tab>
     <mat-tab label="Mapa">
-      <div class="content">
-        <div class="general_header">
-          <img
-            src="https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png"
-            alt=""
-          />
-          <h1>NOME DA LOJA</h1>
-          <div class="categories">
-            <span class="category">CATEGORIA 1</span>
-            <span class="category">CATEGORIA 2</span>
+      <div class="content_map">
+        <div class="maps_header">
+          <img src="{{ storeInfo.image }}" alt="" class="logo"/>
+          <div class="local_info">
+            <span style="grid-area: a"
+              ><mat-icon svgIcon="telephone-icon" />(31) 99999-9999</span
+            >
+            <span style="grid-area: b"
+              ><mat-icon svgIcon="city-icon" />Xique-Xique Bahia</span
+            >
+            <span style="grid-area: c"
+              ><mat-icon svgIcon="location-icon" />
+              Rua Temporarios, 00 - Sem Criatividade
+            </span>
+            <span style="grid-area: d"
+              ><mat-icon svgIcon="globe-icon" />http://placeholder.com.br/</span
+            >
           </div>
         </div>
-        <div class="general_body">
-          <p>
-            optio corporis et optio corporis et ssumenda culpa! Est nesciunt
-            officioptio corporis et a est vitae temporibus eos autem
-            perspicoptio corporis et iatis et omnis aliquam et optio corporis et
-            voluptates odit. Ut adipisci odit ut molestiae eius sit quia
-            commodi.<br />
-            ssumenda culpa! Est nesciunt officia est vitae temporibus eos
-            auoptio corporis et tem perspiciatis et omnis aliquam et optioptio
-            corporis et o corporis et voluptates odit. Ut adipisci odit ut
-            molestiae eius sit quia commodi.
-          </p>
-          <div class="classifications">
-            <div class="classification">
-              <span>Custo:</span>
-              <div class="icons">
-                <mat-icon svgIcon="money-bag" aria-label="Money Bag Icon" />
-                <mat-icon svgIcon="money-bag" aria-label="Money Bag Icon" />
-                <mat-icon svgIcon="money-bag" aria-label="Money Bag Icon" />
-                <mat-icon svgIcon="money-bag" aria-label="Money Bag Icon" />
-                <mat-icon svgIcon="money-bag" aria-label="Money Bag Icon" />
-              </div>
-            </div>
-            <div class="classification review">
-              <span>Avaliação:</span>
-              <div class="icons">
-                <mat-icon svgIcon="review-star" aria-label="Review Star Icon" />
-                <mat-icon svgIcon="review-star" aria-label="Review Star Icon" />
-                <mat-icon svgIcon="review-star" aria-label="Review Star Icon" />
-                <mat-icon svgIcon="review-star" aria-label="Review Star Icon" />
-                <mat-icon svgIcon="review-star" aria-label="Review Star Icon" />
-              </div>
-            </div>
-            <div class="classification distance">
-              <span>Distancia:</span>
-              <div class="icons">
-                <mat-icon
-                  svgIcon="distance-foot"
-                  aria-label="Distance Foot Icon"
-                />
-                <mat-icon
-                  svgIcon="distance-foot"
-                  aria-label="Distance Foot Icon"
-                />
-                <mat-icon
-                  svgIcon="distance-foot"
-                  aria-label="Distance Foot Icon"
-                />
-                <mat-icon
-                  svgIcon="distance-foot"
-                  aria-label="Distance Foot Icon"
-                />
-                <mat-icon
-                  svgIcon="distance-foot"
-                  aria-label="Distance Foot Icon"
-                />
-              </div>
-            </div>
-          </div>
+        <div class="maps_body">
+          <google-map width="100%" [options]="mapOptions">
+            <map-advanced-marker #markerElem="mapAdvancedMarker" [position]="center"/>
+          </google-map>
         </div>
       </div>
     </mat-tab>
@@ -166,10 +116,7 @@
     <mat-tab label="Avaliações">
       <div class="content">
         <div class="review_header">
-          <img
-            src="{{storeInfo.image}}"
-            alt=""
-          />
+          <img src="{{ storeInfo.image }}" alt="" class="logo"/>
           <!-- <canvas id="canvas"></canvas> -->
           <div id="canvas"></div>
         </div>
@@ -177,9 +124,9 @@
           <h2 style="color: var(--rosa5)">Comentarios:</h2>
           <br />
           @for (review of storeInfo.reviews; track $index) {
-            <review-card [review]="review" />
+          <review-card [review]="review" />
           }
-     <!--      <review-card />
+          <!--      <review-card />
           <review-card />
           <review-card /> -->
         </div>
