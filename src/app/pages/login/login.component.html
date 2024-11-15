@@ -34,7 +34,7 @@
 
 
   @else if(formType === 'registerForm'){
-  <form action="get" id="registerForm">
+  <form #registerForm="ngForm" (ngSubmit)="saveUser(registerForm)" id="registerForm">
     <div class="detalhes">
       <mat-icon svgIcon="solar--cat-bold" aria-label="Solar Cat Bold" class="icones" />
       <h1 class="frase">Bem-Vindo(a) ao Letter Food </h1>
@@ -42,15 +42,18 @@
     <div class="infos">
       <div class="form-group">
         <label for="name">Nome</label>
-        <input [(ngModel)]="nome" type="name" placeholder="Fulano de tal" id="name" class="bar">
+        <input [(ngModel)]="user.nome"
+        required type="name" placeholder="Fulano de tal" id="name" class="bar">
       </div>
       <div class="form-group">
         <label for="email">Email</label>
-        <input type="email" placeholder="example@gmail.com.br" id="email" class="bar">
+        <input [(ngModel)]="user.email"
+        required  type="email" placeholder="example@gmail.com.br" id="email" class="bar">
       </div>
       <div class="form-group">
         <label for="senha">Senha</label>
-        <input type="password" placeholder="senha" id="senha" class="bar">
+        <input   [(ngModel)]="user.senha"
+        required type="password" placeholder="senha" id="senha" class="bar">
       </div>
     </div>
     <div class="botoes">
