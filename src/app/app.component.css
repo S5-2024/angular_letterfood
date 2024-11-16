@@ -1,3 +1,11 @@
+.main{
+  height: 100vh;
+  width: fit-content;
+  
+}
+
+
+
 button {
   border: none;
   cursor: pointer;
