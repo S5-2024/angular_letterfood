@@ -13,7 +13,6 @@ export class LandingPageComponent {
 
   constructor(private router: Router) {}
 
-
   redirectToLogin() {
     this.router.navigate(['/login']); // Define o caminho para a página de login
   }
