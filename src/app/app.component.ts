@@ -39,6 +39,10 @@ export class AppComponent {
             sanitizer.bypassSecurityTrustHtml(Object.entries(environment.icons)[icon][1]))
 
   }
+
+
+
+  
 }
 
 

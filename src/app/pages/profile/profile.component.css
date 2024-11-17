@@ -103,11 +103,11 @@
    z-index: 1;
  }
 
- /* .subitem {
+ .subitem {
 
-   background-color: brown;
+   /* background-color: brown; */
   
- } */
+ }
 
  #foto{
   display: flex;

@@ -32,6 +32,12 @@ body {
 
 }
 
+body{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
 
 :root {
   /* Configurações para o Background Login */

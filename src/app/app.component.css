@@ -1,12 +1,4 @@
-.main{
-  height: 100vh;
-  width: fit-content;
-  display: flex;
-  flex-direction: column;
- align-items: center;
-  
-}
-
+ 
 
 
 button {
@@ -35,13 +27,10 @@ button:hover {
   flex-direction: row;
   justify-content: space-between;
   height: 5.4vh;
- 
+
   background-color: var(--rosa2);
 
 }
-
-
-
 
 
 
@@ -53,14 +42,14 @@ button:hover {
   width: 20%;
 
   .mat-icon {
-      height: 110%;
-      width: 20%
+    height: 110%;
+    width: 20%
   }
 
   p {
-      color: var(--rosa6);
-      font-size: 1.3em;
-      font-weight: bold;
+    color: var(--rosa6);
+    font-size: 1.3em;
+    font-weight: bold;
   }
 }
 
@@ -81,8 +70,27 @@ button:hover {
   margin-right: 4%;
 
   p {
-      color: var(--rosa6);
-      font-size: 1.2em;
-      font-weight: bold;
+    color: var(--rosa6);
+    font-size: 1.2em;
+    font-weight: bold;
   }
+}
+
+
+button {
+  border: none;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2em;
+  font-weight: bold;
+  box-shadow: 2px 2px 2px 0px rgba(0, 0, 0, 0.2);
+  color: white;
+  background-color: var(--rosa6);
+}
+
+button:hover {
+  background-color: var(--rosa7);
 }
