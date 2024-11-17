@@ -2,7 +2,6 @@ import { Component, inject, Input } from '@angular/core';
 import { MatTabChangeEvent, MatTabsModule } from '@angular/material/tabs';
 
 import { BrowserModule, DomSanitizer } from '@angular/platform-browser';
-import { MatIconRegistry, MatIconModule } from '@angular/material/icon';
 
 import { MatIconModule } from '@angular/material/icon';
 

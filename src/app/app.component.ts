@@ -36,6 +36,6 @@ export class AppComponent {
     for(let icon in Object.entries(environment.icons)){
       iconRegistry.addSvgIconLiteral(Object.entries(environment.icons)[icon][0], 
             sanitizer.bypassSecurityTrustHtml(Object.entries(environment.icons)[icon][1]))
-
-  }
+      }
+    }
 }

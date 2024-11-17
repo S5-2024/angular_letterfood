@@ -1,7 +1,7 @@
 <div class="text-container">
 
   @if(formType === 'login'){
-  <form action="get" id="myForm">
+  <form id="myForm" (submit)="auth()">
     <div class="detalhes">
       <mat-icon svgIcon="solar--cat-bold" aria-label="Solar Cat Bold" class="icones" />
       <h1 class="frase">Bem-Vindo(a) ao Letter Food </h1>

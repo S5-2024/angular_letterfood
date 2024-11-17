@@ -2,6 +2,7 @@ import { Component, ElementRef, Renderer2, AfterViewInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 import { MatIconModule } from '@angular/material/icon';
+import { environment } from '../../../environments/environment.development';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -16,7 +17,7 @@ export class LoginComponent implements AfterViewInit {
   private tgX = 0;
   private tgY = 0;
 
-  constructor(private el: ElementRef, private renderer: Renderer2) {}
+  constructor(private el: ElementRef, private renderer: Renderer2, private router: Router) {}
 
   ngAfterViewInit() {
     const interBubble = this.el.nativeElement.querySelector('.interactive');
@@ -44,6 +45,20 @@ export class LoginComponent implements AfterViewInit {
 
   toggleForm(type: string) {
     this.formType = type;
+  }
+
+
+  auth(){
+    const login = (<HTMLInputElement>document.getElementById("email")).value
+    const password = (<HTMLInputElement>document.getElementById("senha")).value
+
+    environment.users.forEach(user => {
+      if (login == user.login){
+        if(password == user.password){
+          this.router.navigate(["/homelander"])
+        }
+      }
+    });
   }
  
 }
