@@ -47,8 +47,8 @@
  }
 
  #n1 {
-  
-   background-color: aqua;
+/*   
+   background-color: aqua; */
    width: 20%;
    height: fit-content;
    align-self: flex-end;
@@ -63,10 +63,10 @@
    right: 0;
 
   button{
-    width: 30%;
+    width: 40%;
     border: none;
     border-radius: 15px;
-    height: 2em;
+    height: 2.5em;
     background-color: var(--rosa6);
     color: white;
     font-size: .8em;
@@ -105,7 +105,7 @@
 
  .subitem {
 
-   background-color: brown;
+   /* background-color: brown; */
   
  }
 
@@ -128,7 +128,7 @@
  
    justify-self: center;
    text-align: justify;
-   background-color: chocolate;
+   /* background-color: chocolate; */
 
    display: flex;
    justify-content: center;
@@ -165,7 +165,7 @@
  
   #n1 {
  
-    background-color: aqua;
+     
     width: 50%;
     height: 10%;
     align-self: flex-end;
@@ -178,7 +178,7 @@
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    background-color: yellow;
+     
     height: 90%;
     width: 90%;
   }
@@ -192,8 +192,55 @@
      justify-self: center;
   
      text-align: justify;
-     background-color: chocolate;
+      
    }
   
 
+}
+
+@media(min-width: 800px) and (max-width: 1900px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    background-color: white;
+    height: 450px;
+    width: 60%;
+  }
+ 
+  .item { 
+    align-self: center;
+  }
+ 
+  #n1 {
+ 
+
+    width: 50%;
+    height: 10%;
+    align-self: flex-end;
+  }
+ 
+  #n2 {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  
+    height: 100%;
+    width: 90%;
+  }
+  #foto{
+    width: 40%;
+    height: 40%;
+   }
+   #bio {
+     width: 100%;
+     height: 50%;
+     justify-self: center;
+  
+     text-align: justify;
+  
+   }
 }
