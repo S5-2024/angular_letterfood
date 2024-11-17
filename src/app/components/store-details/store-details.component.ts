@@ -3,8 +3,6 @@ import { MatTabChangeEvent, MatTabsModule } from '@angular/material/tabs';
 
 import { BrowserModule, DomSanitizer } from '@angular/platform-browser';
 
-import { MatIconModule } from '@angular/material/icon';
-
 import { environment } from '../../../environments/environment.development';
 import { Chart, ChartConfiguration, ChartItem } from 'chart.js/auto';
 import { ReviewCardComponent } from '../review-card/review-card.component';

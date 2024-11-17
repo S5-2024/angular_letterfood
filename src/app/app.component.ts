@@ -3,6 +3,7 @@ import { RouterOutlet } from '@angular/router';
 import { MatIconRegistry, MatIconModule } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
 import { environment } from '../environments/environment.development';
+import { Router } from '@angular/router';
 
 const MONEY_BAG = environment.icons['money-bag']
 const REVIEW_STAR = environment.icons['review-star']
@@ -29,7 +30,7 @@ const GITHUB_ICON = environment.icons['github-icon']
 export class AppComponent {
   title = 'letterfood';
   
-  constructor(){
+  constructor(private router: Router){
     const iconRegistry = inject(MatIconRegistry)
     const sanitizer = inject(DomSanitizer)
     
