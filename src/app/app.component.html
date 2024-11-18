@@ -16,7 +16,8 @@
     </div>
 
     <div class="navi_links">
-      <a *ngIf="currentRoute !== '' && currentRoute !== '/profile'" href="http://localhost:4200/" >Home</a>
+      <a *ngIf="currentRoute !== '/' && currentRoute !== '/profile'" href="http://localhost:4200/" >Home</a>
+      <a *ngIf="currentRoute !== '' && currentRoute !== '/profile'" href="https://github.com/S5-2024/angular_letterfood" >GitHub</a>
       <a *ngIf="currentRoute !== '' && currentRoute !== '/profile'" href="http://localhost:4200/about">Sobre nós</a>
     
       <button 
