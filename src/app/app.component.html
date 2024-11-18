@@ -1,16 +1,31 @@
  
+ 
   <header class="navbar">
     <div class="lfd_logo">
         <mat-icon svgIcon="solar--cat-bold" aria-label="LetterFood logo" />
         <p>LetterFood</p>
     </div>
+    
+    <input 
+    type="text" 
+    class="search-bar" 
+    placeholder="Pesquisar..." 
+    *ngIf="currentRoute === '/homelander'">
 
     <div class="navi_links">
-        <p>Home</p>
-        <p>Sobre nós</p>
-        <button class="header_sign_up_button" (click)="redirectToLogin()"><a>Juntar-se</a></button>
+      <p *ngIf="currentRoute !== '' && currentRoute !== '/profile'">Home</p>
+      <p *ngIf="currentRoute !== '' && currentRoute !== '/profile'">Sobre nós</p>
+      <button 
+      class="header_sign_up_button" 
+      *ngIf="currentRoute !== '/profile'" 
+      (click)="redirectToLogin()">
+      <a *ngIf="currentRoute === '/homelander' ">Perfil</a>
+      <a *ngIf="currentRoute == '/' ">Juntar-se</a>
+    </button>
     </div>
   </header>
+ 
+
   
  
 

@@ -4,6 +4,7 @@ import { MatIconRegistry, MatIconModule } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
 import { environment } from '../environments/environment.development';
 import { Router } from '@angular/router';
+import { NgIf } from '@angular/common';
 
 const MONEY_BAG = environment.icons['money-bag']
 const REVIEW_STAR = environment.icons['review-star']
@@ -22,7 +23,7 @@ const GITHUB_ICON = environment.icons['github-icon']
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, MatIconModule],
+  imports: [RouterOutlet, MatIconModule,NgIf],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
@@ -44,7 +45,15 @@ export class AppComponent {
 
   
 }
+ 
 
+currentRoute: string = '';
+
+ngOnInit() {
+  this.router.events.subscribe(() => {
+    this.currentRoute = this.router.url; // Obtém a URL atual
+  });
+}
 
 redirectToLogin() {
   this.router.navigate(['/login']); // Define o caminho para a página de login
