@@ -37,6 +37,15 @@ export class AppComponent {
     for(let icon in Object.entries(environment.icons)){
       iconRegistry.addSvgIconLiteral(Object.entries(environment.icons)[icon][0], 
             sanitizer.bypassSecurityTrustHtml(Object.entries(environment.icons)[icon][1]))
-      }
-    }
+
+  }
+}
+
+
+redirectToLogin() {
+  this.router.navigate(['/login']); // Define o caminho para a página de login
+}
+redirectToProfile() {
+  this.router.navigate(['/profile']); // Define o caminho para a página de login
+}
 }
