@@ -7,7 +7,7 @@
 button {
     border: none;
     cursor: pointer;
-  
+
     display: flex;
     align-items: center;
     justify-content: center;
@@ -16,16 +16,13 @@ button {
     box-shadow: 2px 2px 2px 0px rgba(0, 0, 0, 0.2);
     color: white;
     background-color: var(--rosa6);
-  
-  
-  }
-  
-  button:hover {
+
+
+}
+
+button:hover {
     background-color: var(--rosa7);
-  }
-
-
-
+}
 
 
 
@@ -68,12 +65,19 @@ button {
 /* Content start */
 
 .sign_up_button {
-
+    background-color: var(--blue);
+    color: black;
+    font-weight: 400;
     width: 23%;
     height: 15%;
     border-radius: 10px;
 
 }
+
+.sign_up_button:hover {
+    background-color: var(--blue-dark);
+}
+
 
 .section_container {
     height: 95vh;
@@ -86,22 +90,34 @@ button {
     align-items: center;
     justify-content: space-between;
     height: 100%;
-    width: 90%;
-    margin-left: 5%;
-    
+    width: 100%;
+    padding-left: 5%;
+    padding-right: 3%;
+
+
 }
 
 .info {
     height: 50%;
     width: 40%;
 
-    h1 {
-        width: 90%;
-        font-size: 4em;
-        font-family: var(--fonteteste);
-        text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.20);
-        margin-bottom: 5%;
-    }
+
+}
+
+h1 {
+
+    font-size: 4em;
+    font-family: var(--fontegeral);
+    text-shadow: 1px 1px 1px rgba(56, 18, 48, 0.849);
+    margin-bottom: 5%;
+
+}
+
+p {
+    font-family: var(--fontefrases);
+    font-size: 1.5em;
+    text-align: justify;
+
 }
 
 /* Content end */
@@ -112,21 +128,21 @@ footer {
     height: 5.4vh;
     width: 100%;
 
-     
+
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     bottom: 0;
-     
 
 
-    
+
+
 
     .footer_links {
         display: flex;
         flex-direction: row;
         justify-content: space-evenly;
-        
+
         width: 50%;
     }
 
@@ -136,12 +152,12 @@ footer {
         flex-direction: column;
         justify-content: space-evenly;
         font-size: 1rem;
-       
+
         width: 50%;
     }
 
     .footer_botoes {
-         
+
         width: 20%;
         display: flex;
         flex-direction: row;
@@ -157,31 +173,32 @@ footer {
 
         }
 
-        .github-icon{
-            
+        .github-icon {
+
             align-self: center;
         }
 
     }
 }
+
 .lfd_logo_footer {
     display: flex;
     flex-direction: row;
     align-items: center;
     margin-left: 2%;
     width: 20%;
-  
+
     .mat-icon {
         height: 110%;
         width: 20%
     }
-  
+
     p {
         color: var(--rosa6);
         font-size: 1.3em;
         font-weight: bold;
     }
-  }
-  
+}
+
 
 /* footer end */
