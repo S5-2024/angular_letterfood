@@ -1,20 +1,24 @@
  
  
-  <header class="navbar">
-    <div class="lfd_logo">
-        <mat-icon svgIcon="solar--cat-bold" aria-label="LetterFood logo" />
-        <p>LetterFood</p>
+  <header class="navbar" *ngIf="showHeader">
+    <div class="lfd_logo" > 
+        <mat-icon svgIcon="solar--cat-bold" aria-label="LetterFood logo" (click)="redirectToHome()" />
+         <p (click)="redirectToHome()">LetterFood</p>
     </div>
     
-    <input 
-    type="text" 
-    class="search-bar" 
-    placeholder="Pesquisar..." 
-    *ngIf="currentRoute === '/homelander'">
+    <div class="search-container" *ngIf="currentRoute === '/homelander'">
+      <mat-icon class="search-icon">search</mat-icon> <!-- Ícone Material -->
+      <input 
+        type="text" 
+        class="search-bar" 
+        placeholder="Pesquisar..." 
+        >
+    </div>
 
     <div class="navi_links">
-      <p *ngIf="currentRoute !== '' && currentRoute !== '/profile'">Home</p>
-      <p *ngIf="currentRoute !== '' && currentRoute !== '/profile'">Sobre nós</p>
+      <a *ngIf="currentRoute !== '' && currentRoute !== '/profile'" href="http://localhost:4200/" >Home</a>
+      <a *ngIf="currentRoute !== '' && currentRoute !== '/profile'" href="http://localhost:4200/about">Sobre nós</a>
+    
       <button 
       class="header_sign_up_button" 
       *ngIf="currentRoute !== '/profile'" 
