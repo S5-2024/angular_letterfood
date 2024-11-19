@@ -106,9 +106,6 @@
   gap: 2.813rem;
   padding: 2rem 2.875rem 6rem 2.875rem;
 }
-.maps_header{
-  
-}
 .local_info{
   display: grid;
   grid-template-areas: 

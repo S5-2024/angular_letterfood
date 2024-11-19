@@ -3,9 +3,9 @@ import { RouterOutlet } from '@angular/router';
 import { MatIconRegistry, MatIconModule } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
 import { environment } from '../environments/environment.development';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { Router, NavigationEnd } from '@angular/router';
 import { NgIf } from '@angular/common';
- 
 
 const MONEY_BAG = environment.icons['money-bag'];
 const REVIEW_STAR = environment.icons['review-star'];
@@ -44,7 +44,7 @@ export class AppComponent {
       );
     }
   }
-
+  
   ngOnInit() {
     // Monitorar mudanças na rota
     this.router.events.subscribe((event) => {
@@ -71,7 +71,3 @@ export class AppComponent {
     this.router.navigate(['/profile']); // Define o caminho para o perfil
   }
 }
-
-
-
- 
