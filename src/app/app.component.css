@@ -33,6 +33,19 @@
   }
 }
 
+.links{
+  text-decoration: none;
+  color: var(--black);
+  font-weight: 700;
+  font-size: 1.06em;
+  transition: all 1s ease ;
+
+}
+
+.links:hover{
+  color: var(--rosa7);
+}
+
 .header_sign_up_button {
   /* position: fixed; */
   width: 35%;

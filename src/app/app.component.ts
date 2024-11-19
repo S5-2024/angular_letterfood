@@ -59,9 +59,13 @@ export class AppComponent {
   }
 
   redirectToHome() {
-    this.router.navigate(['']); // Define o caminho para a página inicial
+    if (this.router.url === '/profile' ) { 
+      // Verifica se a rota atual é 'profile'
+      this.router.navigate(['/homelander']); // Redireciona para a página '/homelander'
+    } else {
+      this.router.navigate(['']); // Redireciona para a página inicial padrão
+    }
   }
-
   redirectToProfile() {
     this.router.navigate(['/profile']); // Define o caminho para o perfil
   }
