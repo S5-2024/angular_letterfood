@@ -5,6 +5,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 import { environment } from '../environments/environment.development';
 import { Router, NavigationEnd } from '@angular/router';
 import { NgIf } from '@angular/common';
+ 
 
 const MONEY_BAG = environment.icons['money-bag'];
 const REVIEW_STAR = environment.icons['review-star'];
@@ -29,15 +30,9 @@ const GITHUB_ICON = environment.icons['github-icon'];
 })
 export class AppComponent {
   title = 'letterfood';
+  showHeader = true; // Controle da visibilidade do header
+  currentRoute: string = '';
   
-  constructor(private router: Router){
-    const iconRegistry = inject(MatIconRegistry)
-    const sanitizer = inject(DomSanitizer)
-    
-    for(let icon in Object.entries(environment.icons)){
-      iconRegistry.addSvgIconLiteral(Object.entries(environment.icons)[icon][0], 
-            sanitizer.bypassSecurityTrustHtml(Object.entries(environment.icons)[icon][1]))
-
   constructor(private router: Router) {
     const iconRegistry = inject(MatIconRegistry);
     const sanitizer = inject(DomSanitizer);
@@ -78,10 +73,5 @@ export class AppComponent {
 }
 
 
-redirectToLogin() {
-  this.router.navigate(['/login']); // Define o caminho para a página de login
-}
-redirectToProfile() {
-  this.router.navigate(['/profile']); // Define o caminho para a página de login
-}
-}
+
+ 

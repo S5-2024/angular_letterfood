@@ -18,7 +18,7 @@ import{
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
   standalone: true,
-  imports: [CommonModule, MatIconModule, ReactiveFormsModule, FormsModule],
+  imports: [CommonModule, MatIconModule, ReactiveFormsModule, FormsModule]
 })
 export class LoginComponent implements AfterViewInit {
   private curX = 0;
@@ -58,15 +58,15 @@ export class LoginComponent implements AfterViewInit {
     });
   }
 
-  // depois colocar a lógica certa
-  // onSubmit() {
-  //   if (this.registerForm) {
-  //     console.log(this.registerForm.status)
-  //     console.log("valido!")
-  //   }else{
-  //     console.log("invalido!")
-  //   }
-  // }
+  //depois colocar a lógica certa
+  onSubmit() {
+    if (this.registerForm) {
+      console.log(this.registerForm.status)
+      console.log("valido!")
+    }else{
+      console.log("invalido!")
+    }
+  }
 
   // Reactive form ends
 
@@ -99,17 +99,6 @@ export class LoginComponent implements AfterViewInit {
   }
 
 
-  auth(){
-    const login = (<HTMLInputElement>document.getElementById("email")).value
-    const password = (<HTMLInputElement>document.getElementById("senha")).value
-
-    environment.users.forEach(user => {
-      if (login == user.login){
-        if(password == user.password){
-          this.router.navigate(["/homelander"])
-        }
-      }
-    });
-  }
+ 
  
 }
