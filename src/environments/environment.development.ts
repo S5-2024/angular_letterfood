@@ -65,12 +65,21 @@ const restaurants: Restaurant[] = [
       },
     ]
   }
+]
 
+const users = [
+  {
+    login: "admin@gmail.com",
+    password: "admin"
+  },
+  {
+    login: "placeholder@gmail.com",
+    password: "nocreativity"
+  }
 ]
 
 
 
-
 export const environment = {
-  icons, restaurants
+  icons, restaurants, users
 };

@@ -2,6 +2,7 @@ import { Component, ElementRef, Renderer2, AfterViewInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 import { MatIconModule } from '@angular/material/icon';
+<<<<<<< HEAD
 import {RegisterService} from '../../services/register.service';
  
 import{
@@ -13,6 +14,9 @@ import{
 } from '@angular/forms';
  
 
+=======
+import { environment } from '../../../environments/environment.development';
+>>>>>>> 04c479b28595a2a6df1ae4eff4accabe94e4b42f
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -96,4 +100,22 @@ export class LoginComponent implements AfterViewInit {
   toggleForm(type: string) {
     this.formType = type;
   }
+<<<<<<< HEAD
+=======
+
+
+  auth(){
+    const login = (<HTMLInputElement>document.getElementById("email")).value
+    const password = (<HTMLInputElement>document.getElementById("senha")).value
+
+    environment.users.forEach(user => {
+      if (login == user.login){
+        if(password == user.password){
+          this.router.navigate(["/homelander"])
+        }
+      }
+    });
+  }
+ 
+>>>>>>> 04c479b28595a2a6df1ae4eff4accabe94e4b42f
 }
