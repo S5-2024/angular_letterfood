@@ -3,6 +3,7 @@ import { RouterOutlet } from '@angular/router';
 import { MatIconRegistry, MatIconModule } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
 import { environment } from '../environments/environment.development';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 const MONEY_BAG = environment.icons['money-bag']
 const REVIEW_STAR = environment.icons['review-star']
@@ -37,5 +38,6 @@ export class AppComponent {
       iconRegistry.addSvgIconLiteral(Object.entries(environment.icons)[icon][0], 
             sanitizer.bypassSecurityTrustHtml(Object.entries(environment.icons)[icon][1]))
 
+    }
   }
 }
