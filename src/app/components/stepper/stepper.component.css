@@ -17,7 +17,8 @@
 }
 
 .current-step{
-    background-color: var(--rosa4);
+  background-color: var(--rosa3);
+  border: 3px solid var(--rosa5);
 }
 
 .step-item{

@@ -1,13 +1,13 @@
 import { Component } from '@angular/core';
 import {CdkStepper, CdkStepperModule} from '@angular/cdk/stepper';
-import { NgTemplateOutlet } from '@angular/common';
+import { CommonModule, NgTemplateOutlet } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @Component({
   selector: 'custom-stepper',
   standalone: true,
-  imports: [CdkStepperModule, NgTemplateOutlet],
+  imports: [CdkStepperModule, NgTemplateOutlet, CommonModule],
   providers: [{provide: CdkStepper, useExisting: StepperComponent}, BrowserAnimationsModule],
   templateUrl: './stepper.component.html',
   styleUrl: './stepper.component.css',

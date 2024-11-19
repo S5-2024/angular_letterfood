@@ -10,7 +10,10 @@
     </div>
     
   </header>
-  <div [ngTemplateOutlet]="selected ? selected.content : null"></div>
+  <!-- <div [ngTemplateOutlet]="selected ? selected.content : null"></div> -->
+  <div *ngFor="let step of steps; let i = index" [hidden]="i !== selectedIndex">
+    <ng-container [ngTemplateOutlet]="step.content"></ng-container>
+  </div>
   <footer>
     @if(selectedIndex != 0){
       <button cdkStepperPrevious>Voltar</button>
