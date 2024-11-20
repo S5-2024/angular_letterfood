@@ -1,0 +1,52 @@
+.icons-container {
+  display: flex;
+  justify-content: space-around;
+  margin: 1em;
+}
+
+.progress-icon {
+  height: 50px;
+  width: 50px;
+  background-color: var(--rosa5);
+  border-radius: 100%;
+  display: inline-block;
+  font-size: 1.2rem;
+  text-align: center;
+  align-content: center;
+  z-index: 5;
+}
+
+.current-step{
+  background-color: var(--rosa3);
+  border: 3px solid var(--rosa5);
+}
+
+.step-item{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+}
+.step-item:not(:last-child):after{
+    position: absolute;
+    content: "";
+    border-bottom: 2px solid var(--rosa5);
+    width: 100%;
+    top: .85em;
+    left: 50%;
+    z-index: 3;
+}
+
+
+footer {
+  display: flex;
+  justify-content: end;
+}
+footer > button {
+  width: 10em;
+  height: 3em;
+}
+.submit-button {
+  margin-left: 20px;
+}

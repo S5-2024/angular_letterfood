@@ -5,6 +5,9 @@
     margin: 10px;
     height: 36vh;
     width: 10vw;
+}
+
+
 
     .image_container{
         display: flex;
@@ -15,6 +18,7 @@
         background-color: #fff3fa;
         border: 2px solid #C78CA0;
         box-shadow: 2px 2px 7px #a77485;
+
 
         img{
             width:100%;
@@ -39,7 +43,6 @@
             color: #C78CA0;
         } 
     }
-}
 
 @media (max-width: 468px) {
     .card_container{

@@ -1,0 +1,173 @@
+<div class="register-content">
+  <custom-stepper
+    #stepper
+    [linear]="true"
+    cdkStepperMulti
+    (selectionChange)="onStepChange($event)"
+  >
+    <cdk-step>
+      <form
+        class="initialForms step-content"
+        [formGroup]="registerForm"
+        [@stepAnimation]="stepper.selectedIndex === 0 ? 'current' : 'inactive'"
+        (submit)="onSubmit()"
+      >
+        <div class="formsContent">
+          <div>
+            <label for="">CNPJ: </label>
+            <input
+              class="bar"
+              type="text"
+              placeholder="00.000.000/0000-00"
+              formGroupName="cnpj"
+              id="cnpj"
+              (focusout)="checkCNPJ()"
+            />
+          </div>
+          <div>
+            <label for="">Nome: </label>
+            <input
+              class="bar"
+              type="text"
+              formControlName="name"
+              id="name"
+              placeholder="Rodrigo Lanches"
+            />
+          </div>
+          <div>
+            <label for="">Email: </label>
+            <input
+              class="bar"
+              id="email"
+              type="email"
+              placeholder="exemplo@email.com"
+            />
+          </div>
+          <div>
+            <label for="">Telefone: </label>
+            <input
+              class="bar"
+              type="text"
+              placeholder="(00)99999-9999"
+              id="phone"
+            />
+          </div>
+        </div>
+      </form>
+    </cdk-step>
+    <cdk-step>
+      <form
+        class="addressForms .step-content"
+        [formGroup]="registerForm"
+        [@stepAnimation]="stepper.selectedIndex === 1 ? 'current' : 'inactive'"
+        (submit)="onSubmit()"
+      >
+        <div class="formsContent">
+          <div>
+            <label for="">CEP: </label>
+            <input
+              class="bar"
+              type="text"
+              placeholder="0000-000"
+              formGroupName="cep"
+              id="cep"
+            />
+          </div>
+
+          <div>
+            <label for="">Rua: </label>
+            <input
+              class="bar"
+              type="text"
+              formControlName="street"
+              id="street"
+              placeholder="Av. Sem criatividade"
+            />
+          </div>
+          <div>
+            <label for="">Bairro: </label>
+            <input
+              class="bar"
+              id="neighborhood"
+              type="text"
+              placeholder="Rogerio Kuquecheque"
+            />
+          </div>
+          <div>
+            <label for="">Número: </label>
+            <input class="bar" id="houseNumber" type="text" placeholder="00" />
+          </div>
+          <div>
+            <label for="">Cidade: </label>
+            <input class="bar" id="city" type="text" placeholder="São Paulo" />
+          </div>
+          <div>
+            <label for="">Estado: </label>
+            <input class="bar" id="state" type="text" placeholder="SP" />
+          </div>
+        </div>
+      </form>
+    </cdk-step>
+    <cdk-step>
+      <form
+        class=""
+        [@stepAnimation]="stepper.selectedIndex === 2 ? 'current' : 'inactive'"
+      >
+        <h3>Selecione as categorias do restaurante</h3>
+        <div class="checkbox-formsContent">
+          <div class="checkbox">
+            <input type="checkbox" />
+            <label for="">Fast-food</label>
+          </div>
+          <div class="checkbox">
+            <input type="checkbox" />
+            <label for="">Fast-food</label>
+          </div>
+          <div class="checkbox">
+            <input type="checkbox" />
+            <label for="">Fast-food</label>
+          </div>
+          <div class="checkbox">
+            <input type="checkbox" />
+            <label for="">Fast-food</label>
+          </div>
+          <div class="checkbox">
+            <input type="checkbox" />
+            <label for="">Fast-food</label>
+          </div>
+          <div class="checkbox">
+            <input type="checkbox" />
+            <label for="">Fast-food</label>
+          </div>
+        </div>
+      </form>
+    </cdk-step>
+  </custom-stepper>
+
+  <div class="gradient-bg">
+    <svg xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <filter id="goo">
+          <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+          <feColorMatrix
+            in="blur"
+            mode="matrix"
+            values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -8"
+            result="goo"
+          />
+          <feBlend in="SourceGraphic" in2="goo" />
+        </filter>
+      </defs>
+    </svg>
+
+    <div class="gradients-container">
+      <div class="g1"></div>
+      <div class="g2"></div>
+      <div class="g3"></div>
+      <div class="g4"></div>
+      <div class="g6"></div>
+      <div class="g7"></div>
+      <div class="interactive"></div>
+    </div>
+  </div>
+</div>

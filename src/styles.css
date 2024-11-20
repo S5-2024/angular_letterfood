@@ -13,6 +13,7 @@
   /* Ou italic, se for uma fonte itálica */
 }
 
+
 /* Movido do 
 html,
 body {
@@ -30,6 +31,8 @@ body {
   font-family: var(--general-font);
 
 }
+
+
 
 
 :root {
@@ -67,7 +70,7 @@ body {
   --rosa2: rgb(255, 225, 237);
   --rosa3: rgb(255, 243, 250);
   --rosa4: rgb(236, 186, 208);
-  --rosa5: rgb(199, 140, 160);
+  --rosa5: rgb(199, 140, 160); /*#C78CA0*/
   --rosa6: rgb(255, 129, 174);
   --rosa7: rgb(202, 101, 136);
 
@@ -78,6 +81,7 @@ body {
   --yellow: rgb(255, 255, 186);
   --green: rgb( 186, 255, 201);
   --blue: rgb(186,225,255);
+  --blue-dark: rgb(91, 180, 248);
  
  
 

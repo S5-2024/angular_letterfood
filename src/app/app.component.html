@@ -1,1 +1,44 @@
-<router-outlet />
+ 
+ 
+  <header class="navbar" *ngIf="showHeader">
+    <div class="lfd_logo" > 
+        <mat-icon svgIcon="solar--cat-bold" aria-label="LetterFood logo" (click)="redirectToHome()" />
+         <p (click)="redirectToHome()">LetterFood</p>
+    </div>
+    
+    <div class="search-container" *ngIf="currentRoute === '/homelander'">
+      <mat-icon class="search-icon">search</mat-icon> <!-- Ícone Material -->
+      <input 
+        type="text" 
+        class="search-bar" 
+        placeholder="Pesquisar..." 
+        >
+    </div>
+
+    <div class="navi_links">
+      <a *ngIf="currentRoute !== '/' && currentRoute !== '/profile'" href="http://localhost:4200/" class="links">Home</a>
+      <a *ngIf="currentRoute !== '' && currentRoute !== '/profile'" href="https://github.com/S5-2024/angular_letterfood"  class="links">GitHub</a>
+      <a *ngIf="currentRoute !== '' && currentRoute !== '/profile'" href="http://localhost:4200/about" class="links">Sobre nós</a>
+    
+      <button 
+      class="header_sign_up_button" 
+      *ngIf="currentRoute !== '/profile'" 
+      (click)="redirectToLogin()">
+      <a *ngIf="currentRoute === '/homelander' ">Perfil</a>
+      <a *ngIf="currentRoute == '/' ">Juntar-se</a>
+    </button>
+    </div>
+  </header>
+ 
+
+  
+ 
+
+  <router-outlet><router-outlet/>
+ 
+
+
+  
+
+
+

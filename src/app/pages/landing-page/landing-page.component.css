@@ -3,6 +3,7 @@
     font-family: var(--fontegeral);
 }
 
+
 button {
     border: none;
     cursor: pointer;
@@ -40,6 +41,7 @@ header {
     margin-left: 2%;
     width: 20%;
 
+  
     .mat-icon {
         height: 110%;
         width: 20%
@@ -70,6 +72,7 @@ header {
     align-items: center;
     margin-right: 4%;
 
+  
     p {
         color: var(--rosa6);
         font-size: 1.2em;
@@ -77,19 +80,23 @@ header {
     }
 }
 
+
 #discover{
     background-color: var(--rosa2);
 }
+
 
 .search_section_image {
     width: 40%;
     height: 100%;
 
+  
     .mat-icon {
         width: 100%;
         height: 100%;
     }
 }
+
 
 .discover_section_image {
     width: 40%;
@@ -100,6 +107,7 @@ header {
         height: 100%;
     }
 }
+
 
 .rating_section_image {
     width: 40%;
@@ -121,7 +129,6 @@ header {
 
 .section_container {
     height: 95vh;
-
 }
 
 
@@ -131,40 +138,49 @@ header {
     align-items: center;
     justify-content: space-between;
     height: 100%;
-    width: 90%;
-    margin-left: 5%;
-    
+    width: 100%;
+    padding-left: 5%;
+    padding-right: 3%;
 }
 
 
 .info {
     height: 50%;
     width: 40%;
+}
 
-    h1 {
-        width: 90%;
-        font-size: 4em;
-        font-family: var(--fonteteste);
-        text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.20);
-        margin-bottom: 5%;
-    }
+
+h1 {
+    font-size: 4em;
+    font-family: var(--fontegeral);
+    text-shadow: 1px 1px 1px rgba(56, 18, 48, 0.849);
+    margin-bottom: 5%;
+}
+
+
+p {
+    font-family: var(--fontefrases);
+    font-size: 1.5em;
+    text-align: justify;
 }
 
 
 footer {
     height: 5.4vh;
-    width: 100%; 
+    width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     bottom: 0;
 
+  
     .footer_links {
         display: flex;
         flex-direction: row;
         justify-content: space-evenly;
         width: 50%;
 
+      
         a {
             text-decoration: none;
             color: black;
@@ -190,6 +206,7 @@ footer {
         width: 20%;
         margin-right: 3%;
 
+      
         .footer_sign_up_button {
             width: 35%;
             height: 75%;
@@ -243,6 +260,7 @@ footer {
         height: 75%;
         border-radius: 5px;
 
+      
         a{
             font-size: 0.85em;
         }
@@ -270,21 +288,21 @@ footer {
     
     .section_container {
         height: 95vh;
-    
     }
     
     
     .section_content {
         height: 100%;
         width: 90%;
-        margin-left: 5%;
-        
+        margin-left: 5%;  
     }
     
+  
     .info {
         height: 50%;
         width: 60%;
     
+      
         h1 {
             width: 90%;
             font-size: 2.3em;
@@ -301,6 +319,28 @@ footer {
 
     .discover_section_image{
         width: 45%;
+    }
+}
+
+
+.lfd_logo_footer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 2%;
+    width: 20%;
+
+  
+    .mat-icon {
+        height: 110%;
+        width: 20%
+    }
+
+  
+    p {
+        color: var(--rosa6);
+        font-size: 1.3em;
+        font-weight: bold;
     }
 }
 
