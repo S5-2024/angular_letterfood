@@ -1,11 +1,72 @@
-/*  Configurações globais */
-* {
-    font-family: var(--fontegeral);
+ 
+
+.main{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#location,
+#discover,
+#rating {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+ background-color: var(--white5);
+    height: 40%;
+    width: 100%;
+}
+ 
+.info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+     
+  
+    width: 50%;
+    height: 100%;
+
+
+}
+
+h1{
+    color: var(--rosa7);
+    text-align: left; 
+    font-size: 3rem;    
+    
+    width: 90%;
+    
+}
+
+span{
+    font-size: 1.4rem;
+    padding-top: 40px;
+    text-align: justify;
+    width: 90%;
+}
+
+
+.image {
+    display: flex;
+    justify-content: center;
+    
+     
+    width: 50%;
+}
+
+mat-icon {
+    height: 60%;
+    width: 60%;
+
 }
 
 
 button {
     border: none;
+    border-radius: 5px;
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -15,380 +76,48 @@ button {
     box-shadow: 2px 2px 2px 0px rgba(0, 0, 0, 0.2);
     color: white;
     background-color: var(--rosa6);
+
+    margin-top: 40px;
+    width: 20%;
+    height: 3rem;
+
 }
 
 
 button:hover {
     background-color: var(--rosa7);
 }
+ 
 
 
-header {
-    display: flex;
-    position: fixed;
-    width: 100vw;
-    flex-direction: row;
-    justify-content: space-between;
-    height: 5.4vh;
-    background-color: var(--rosa2);
-}
 
 
-.lfd_logo {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    margin-left: 2%;
-    width: 20%;
-
-  
-    .mat-icon {
-        height: 110%;
-        width: 20%
-    }
-
-
-    p {
-        color: var(--rosa6);
-        font-size: 1.3em;
-        font-weight: bold;
-    }
-}
-
-
-.header_sign_up_button {
-    /* position: fixed; */
-    width: 35%;
-    height: 75%;
-    border-radius: 5px;
-}
-
-
-.navi_links {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    width: 17%;
-    align-items: center;
-    margin-right: 4%;
-
-  
-    p {
-        color: var(--rosa6);
-        font-size: 1.2em;
-        font-weight: bold;
-    }
-}
-
-
-#discover{
-    background-color: var(--rosa2);
-}
-
-
-.search_section_image {
-    width: 40%;
-    height: 100%;
-
-  
-    .mat-icon {
-        width: 100%;
-        height: 100%;
-    }
-}
-
-
-.discover_section_image {
-    width: 40%;
-    height: 100%;
-
-    .mat-icon {
-        width: 100%;
-        height: 100%;
-    }
-}
-
-
-.rating_section_image {
-    width: 40%;
-    height: 100%;
-
-    .mat-icon {
-        width: 85%;
-        height: 85%;
-    }
-}
-
-
-.sign_up_button {
-    width: 23%;
-    height: 15%;
-    border-radius: 10px;
-}
-
-
-.section_container {
-    height: 95vh;
-}
-
-
-.section_content {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    height: 100%;
-    width: 100%;
-    padding-left: 5%;
-    padding-right: 3%;
-}
-
-
-.info {
-    height: 50%;
-    width: 40%;
-}
-
-
-h1 {
-    font-size: 4em;
-    font-family: var(--fontegeral);
-    text-shadow: 1px 1px 1px rgba(56, 18, 48, 0.849);
-    margin-bottom: 5%;
-}
-
-
-p {
-    font-family: var(--fontefrases);
-    font-size: 1.5em;
-    text-align: justify;
-}
-
-
-footer {
-    height: 5.4vh;
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    bottom: 0;
-
-  
-    .footer_links {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-evenly;
-        width: 50%;
-
-      
-        a {
-            text-decoration: none;
-            color: black;
-        }
-    }
-
-
-    .about_us,
-    .home {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-evenly;
-        font-size: 1rem;
-        width: 50%;
-    }
-
-
-    .footer_botoes {
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-end;
-        align-items: center;
-        width: 20%;
-        margin-right: 3%;
-
-      
-        .footer_sign_up_button {
-            width: 35%;
-            height: 75%;
-            margin-right: 5%;
-            border-radius: 5px;
-        }
-
-
-        .github {
-            width: 15%;
-
-
-            .mat-icon {
-                height: 100%;
-                width: 100%;
-            }
-        }
-    }
-}
-
-/* Media queries */
-@media (min-width: 768px) and (max-width: 992px) {
-
-/* Cabeçalho */
-    header {
-        width: 100vw;
-        height: 5.4vh;
-    }
-
-
-    .lfd_logo {
-        margin-left: 2%;
-        width: 20%;
-    
-
-        .mat-icon {
-            height: 110%;
-            width: 20%
-        }
-    
-
-        p {
-            font-size: 1.3em;
-            font-weight: bold;
-        }
-    }
-    
-    
-    .header_sign_up_button {
-        width: 35%;
-        height: 75%;
-        border-radius: 5px;
-
-      
-        a{
-            font-size: 0.85em;
-        }
-    }
-    
-    
-    .navi_links {
-        width: 30%;
-        margin-right: 4%;
-    
-
-        p {
-            font-size: 1.1em;
-            font-weight: bold;
-        }
-    } 
-
-/* Conteúdo */
-    .sign_up_button {
-        width: 35%;
-        height: 15%;
-        border-radius: 10px;
-    }
-    
-    
-    .section_container {
-        height: 95vh;
-    }
-    
-    
-    .section_content {
-        height: 100%;
-        width: 90%;
-        margin-left: 5%;  
-    }
-    
-  
-    .info {
-        height: 50%;
-        width: 60%;
-    
-      
-        h1 {
-            width: 90%;
-            font-size: 2.3em;
-            text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.20);
-            margin-bottom: 5%;
-        }
-    }
-    
-
-    .search_section_image{
-        width: 50%;
-    }
-
-
-    .discover_section_image{
-        width: 45%;
-    }
-}
-
-
-.lfd_logo_footer {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    margin-left: 2%;
-    width: 20%;
-
-  
-    .mat-icon {
-        height: 110%;
-        width: 20%
-    }
-
-  
-    p {
-        color: var(--rosa6);
-        font-size: 1.3em;
-        font-weight: bold;
-    }
-}
-
-
-    .rating_section_image{
-        width: 50%;
-    }
 
 /* Rodapé */
 footer {
-    height: 5.4vh;
-    width: 100%; 
-
-
-    .footer_links {
-        width: 35%;
-    }
-
-
-    .about_us,
-    .home {
-        font-size: 1rem;
-        width: 50%;
-    }
-
-
-    .footer_botoes {
-        width: 20%;
-        margin-right: 3%;
-
-
-        .footer_sign_up_button {
-            width: 50%;
-            height: 100%;
-            margin-right: 5%;
-            border-radius: 5px;
-            font-size: 0.85em;
-        }
-
-
-        .github {
-            width: 25%;
-
-
-            .mat-icon {
-                height: 100%;
-                width: 100%;
-            }
-        }
-    }
+    display: none;
 }
+
+@media(max-width: 670px) {
+
+    .section_content {
+        display: flex;
+        flex-direction: column;
+        height: fit-content;
+        background-color: brown;
+    }
+
+
+    h1 {
+        background-color: aqua;
+        font-size: 1.2em;
+    }
+
+    .info {
+        background-color: aqua;
+    }
+
+
+}
+
+@media(min-width: 670px) and (max-width: 1900px) {}
