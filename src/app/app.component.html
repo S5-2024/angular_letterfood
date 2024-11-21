@@ -1,5 +1,5 @@
 @if(currentRoute === '/homelander' ){
-<header class="navbar">
+<header class="navbar" *ngIf="showHeader">
   <div class="lfd_logo">
     <mat-icon svgIcon="solar--cat-bold" aria-label="LetterFood logo" />
     <p>LetterFood</p>
@@ -32,7 +32,7 @@
 
 
 @else if(currentRoute === '/profile'){
-<header class="navbar">
+<header class="navbar" *ngIf="showHeader">
   <div class="lfd_logo">
     <mat-icon svgIcon="solar--cat-bold" aria-label="LetterFood logo" />
     <p>LetterFood</p>
