@@ -21,6 +21,8 @@ const TRESURE_IMAGE = environment.icons['tresure-image'];
 const LOCATION_IMAGE = environment.icons['location-image'];
 const ORDER_FOOD_IMAGE = environment.icons['order-food-image'];
 const GITHUB_ICON = environment.icons['github-icon'];
+const USER = environment.icons['user'];
+
 
 @Component({
   selector: 'app-root',
