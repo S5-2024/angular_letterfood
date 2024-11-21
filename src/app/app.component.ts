@@ -5,7 +5,8 @@ import { DomSanitizer } from '@angular/platform-browser';
 import { environment } from '../environments/environment.development';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { Router, NavigationEnd } from '@angular/router';
-import { NgIf } from '@angular/common';
+import { CommonModule,NgIf } from '@angular/common';
+
 
 const MONEY_BAG = environment.icons['money-bag'];
 const REVIEW_STAR = environment.icons['review-star'];
@@ -24,7 +25,7 @@ const GITHUB_ICON = environment.icons['github-icon'];
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, MatIconModule, NgIf],
+  imports: [RouterOutlet, MatIconModule, NgIf,CommonModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
