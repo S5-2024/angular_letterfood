@@ -3,12 +3,11 @@
     <h2>Cadastrando empresa {{ selectedIndex + 1 }} / {{ steps.length }}</h2>
     <div class="icons-container">
       @for(step of steps; track $index){
-        <div class="step-item">
-          <span class="progress-icon">{{$index+1}}</span>
-        </div>
+      <div class="step-item">
+        <span class="progress-icon">{{ $index + 1 }}</span>
+      </div>
       }
     </div>
-    
   </header>
   <!-- <div [ngTemplateOutlet]="selected ? selected.content : null"></div> -->
   <div *ngFor="let step of steps; let i = index" [hidden]="i !== selectedIndex">
@@ -16,8 +15,10 @@
   </div>
   <footer>
     @if(selectedIndex != 0){
-      <button cdkStepperPrevious>Voltar</button>
+    <button cdkStepperPrevious>Voltar</button>
     }
-    <button cdkStepperNext class="submit-button">{{selectedIndex+1 == steps.length ? "Send" : "Next"}}</button>
+    <button cdkStepperNext (click)="checkIfSubmit($event)" class="submit-button">
+    {{ selectedIndex == steps.length-1 ? "Send" : "Next" }}
+    </button>
   </footer>
 </section>
