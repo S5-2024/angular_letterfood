@@ -20,7 +20,11 @@ export class UserService {
       catchError(this.errorHandler)
     )
   }
-  
+  getById(userId: string){
+    return this.http.get(`${this._userURL}/${userId}`).pipe(
+      catchError(this.errorHandler)
+    )
+  }
 
 
 

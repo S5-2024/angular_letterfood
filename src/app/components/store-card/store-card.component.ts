@@ -10,7 +10,7 @@ import { Restaurant } from '../../models/restaurant';
 })
 export class StoreCardComponent {
 
-  @Input() storeInfo!: Restaurant
+  @Input() storeInfo!: any
   arrTemplate:Array<number> = Array()
 
   constructor(){
@@ -18,11 +18,11 @@ export class StoreCardComponent {
 
   ngOnInit(){
     let soma = 0
-    this.storeInfo.reviews.forEach( (review) => {
-      soma += review.rate
+    this.storeInfo.avaliacoes.forEach( (review: any) => {
+      soma += review.nota
     } )
-
-    let tam = soma / this.storeInfo.reviews.length
+    console.log(this.storeInfo.avaliacoes.length)
+    let tam = soma / this.storeInfo.avaliacoes.length
     this.arrTemplate = Array(tam).fill(0)
 
   }

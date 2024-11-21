@@ -9,15 +9,17 @@
     <mat-tab label="Geral" class="tab">
       <div class="content">
         <div class="general_header">
-          <img src="{{ storeInfo.image }}" alt="" class="logo" />
+          @if(storeInfo.image == null){
+            <img src="https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png" alt="" class="logo">
+          }@else {
+            <img src="{{ storeInfo.imagem }}" alt="" class="logo" />
+          }
           <!--| PLACEHOLDER IMAGE: https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png-->
-          <h1>{{ storeInfo.name }}</h1>
+          <h1>{{ storeName }}</h1>
           <div class="categories">
-            @for (category of storeInfo.categories; track $index) {
+            @for (category of storeInfo.categoria; track $index) {
             <span class="category">{{ category }}</span>
             }
-            <!-- <span class="category">CATEGORIA 1</span>
-            <span class="category">CATEGORIA 2</span> -->
           </div>
         </div>
         <div class="general_body">
@@ -78,21 +80,25 @@
     <mat-tab label="Mapa">
       <div class="content_map">
         <div class="maps_header">
-          <img src="{{ storeInfo.image }}" alt="" class="logo"/>
+          @if(storeInfo.image == null){
+            <img src="https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png" alt="" class="logo">
+          }@else {
+            <img src="{{ storeInfo.imagem }}" alt="" class="logo" />
+          }
           <div class="local_info">
             
             <span style="grid-area: a"
-              ><mat-icon svgIcon="telephone-icon" />(31) 99999-9999</span
+              ><mat-icon svgIcon="telephone-icon" />{{storeInfo.telefone}}</span
             >
             <span style="grid-area: b"
-              ><mat-icon svgIcon="city-icon" />Xique-Xique Bahia</span
+              ><mat-icon svgIcon="city-icon" />{{storeInfo.cidade}}</span
             >
             <span style="grid-area: c"
               ><mat-icon svgIcon="location-icon" />
-              Rua Temporarios, 00 - Sem Criatividade
+              {{storeInfo.rua}}, {{storeInfo.numero}} - {{storeInfo.bairro}}
             </span>
             <span style="grid-area: d"
-              ><mat-icon svgIcon="globe-icon" />http://placeholder.com.br/</span
+              ><mat-icon svgIcon="globe-icon" />{{storeInfo.email}}</span
             >
           </div>
         </div>
@@ -108,19 +114,25 @@
     <mat-tab label="Avaliações">
       <div class="content">
         <div class="review_header">
-          <img src="{{ storeInfo.image }}" alt="" class="logo"/>
+          @if(storeInfo.image == null){
+            <img src="https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png" alt="" class="logo">
+          }@else {
+            <img src="{{ storeInfo.imagem }}" alt="" class="logo" />
+          }
           <!-- <canvas id="canvas"></canvas> -->
           <div id="canvas"></div>
         </div>
         <div class="review_body">
           <h2 style="color: var(--rosa5)">Comentarios:</h2>
           <br />
-          @for (review of storeInfo.reviews; track $index) {
-            <review-card [review]="review" />
+          @if(storeInfo.avaliacoes.length > 0){
+            @for (review of storeInfo.avaliacoes; track $index) {
+              <review-card [review]="review" />
+            }
+          }@else {
+            <span>Nenhum comentario feito ainda...</span>
           }
-          <!--      <review-card />
-          <review-card />
-          <review-card /> -->
+          
         </div>
       </div>
     </mat-tab>

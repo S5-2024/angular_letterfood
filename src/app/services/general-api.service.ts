@@ -5,9 +5,11 @@ import { catchError, Observable, throwError } from 'rxjs';
   providedIn: 'root'
 })
 export class GeneralApiService {
+  private geoKey = "api_key=673f9a1e56d02641701436zeuf172ab"
   private _urlList = {
     "brasilAPI_CNPJ": "https://brasilapi.com.br/api/cnpj/v1/",
-    "viacep": "https://viacep.com.br/ws/"
+    "viacep": "https://viacep.com.br/ws/",
+    "geolocalization" : "https://geocode.maps.co/search?q="
   }
   constructor(private http: HttpClient) { }
 
@@ -25,6 +27,12 @@ export class GeneralApiService {
     )
   }
 
+
+  getLatitudeAndLongitude(address: string): Observable<any>{
+    return this.http.get(`${this._urlList.geolocalization}${address}&${this.geoKey}`).pipe(
+      catchError(this.errorHandler)
+    )
+  }
 
   private errorHandler(error: HttpErrorResponse): Observable<any>{
     let errorMessage = ''
