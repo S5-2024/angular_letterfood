@@ -1,0 +1,13 @@
+money-bag
+review-star
+codistance-foot
+logos--google-icon
+solar--cat-bold
+ic--round-settings
+home-2-fill
+baseline-search
+solar-heart-bold
+tresure-image
+location-image
+order-food-image
+github-icon
