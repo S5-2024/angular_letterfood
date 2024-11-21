@@ -11,6 +11,8 @@ import{
   FormGroup,
   Validators,
 } from '@angular/forms';
+import { LoginService } from '../../services/login.service';
+import { isEmpty } from 'rxjs';
  
 
 @Component({
@@ -36,10 +38,17 @@ export class LoginComponent implements AfterViewInit {
     private renderer: Renderer2,
     private fb: FormBuilder,
     private registerService: RegisterService,
-    private router: Router
-
+    private router: Router,
+    private loginService: LoginService
   ) {
     this.initiateForm();
+  }
+
+  ngOnInit(){
+    let user: Object = JSON.parse(localStorage.getItem('user')|| '{}')
+    if(Object.keys(user).length != 0){
+      this.router.navigate(["/homelander"])
+    }
   }
 
   initiateForm() {
@@ -63,6 +72,22 @@ export class LoginComponent implements AfterViewInit {
     if (this.registerForm) {
       console.log(this.registerForm.status)
       console.log("valido!")
+      this.loginService.auth(this.loginForm.value).subscribe({
+        next: value => console.log("Logado com Sucesso!"),
+        error: err => console.error("Erro ao Logar: " + err),
+        complete: ()=> {
+          localStorage.setItem("user", JSON.stringify(this.loginForm.value))
+          this.router.navigate(['/homelander'])
+        }
+      })
+     /* this.loginService.auth(this.loginForm.value).subscribe(
+      (response) => {
+        console.log("Success: " + response)
+      },
+      (error) => {
+        console.log("Error: " + error)
+      }
+     ) */
     }else{
       console.log("invalido!")
     }
