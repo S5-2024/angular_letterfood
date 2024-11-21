@@ -4,4 +4,7 @@
     <mat-icon svgIcon="close-icon" (click)="closeModal()" class="teste"/>
   </div>
 </ng-template>
-<store-card (click)="openModal()"/>
+
+@for (store of storeList; track $index) {
+  <store-card [storeInfo]="store" (click)="openModal()"/>
+}

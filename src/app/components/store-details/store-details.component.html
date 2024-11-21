@@ -25,16 +25,6 @@
             <h2>Descrição:</h2>
             <p>{{ storeInfo.description }}</p>
           </div>
-          <!-- optio corporis et optio corporis et ssumenda culpa! Est nesciunt
-            officioptio corporis et a est vitae temporibus eos autem
-            perspicoptio corporis et iatis et omnis aliquam et optio corporis et
-            voluptates odit. Ut adipisci odit ut molestiae eius sit quia
-            commodi.<br />
-            ssumenda culpa! Est nesciunt officia est vitae temporibus eos
-            auoptio corporis et tem perspiciatis et omnis aliquam et optioptio
-            corporis et o corporis et voluptates odit. Ut adipisci odit ut
-            molestiae eius sit quia commodi.
-          </p> -->
           <div class="classifications">
             <div class="classification">
               <span>Custo:</span>
@@ -126,7 +116,7 @@
           <h2 style="color: var(--rosa5)">Comentarios:</h2>
           <br />
           @for (review of storeInfo.reviews; track $index) {
-          <review-card [review]="review" />
+            <review-card [review]="review" />
           }
           <!--      <review-card />
           <review-card />

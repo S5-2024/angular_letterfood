@@ -7,23 +7,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { Router, NavigationEnd } from '@angular/router';
 import { CommonModule,NgIf } from '@angular/common';
 
-
-const MONEY_BAG = environment.icons['money-bag'];
-const REVIEW_STAR = environment.icons['review-star'];
-const DISTANCE_FOOT = environment.icons['distance-foot'];
-const LOGOS_GOOGLE_ICON = environment.icons['logos--google-icon'];
-const SOLAR_CAT_BOLD = environment.icons['solar--cat-bold'];
-const IC_ROUND_SETTINGS = environment.icons['ic--round-settings'];
-const HOME_2_FILL = environment.icons['home-2-fill'];
-const BASELINE_SEARCH = environment.icons['baseline-search'];
-const SOLAR_HEART_BOLD = environment.icons['solar-heart-bold'];
-const TRESURE_IMAGE = environment.icons['tresure-image'];
-const LOCATION_IMAGE = environment.icons['location-image'];
-const ORDER_FOOD_IMAGE = environment.icons['order-food-image'];
-const GITHUB_ICON = environment.icons['github-icon'];
-const USER = environment.icons['user'];
-
-
 @Component({
   selector: 'app-root',
   standalone: true,
