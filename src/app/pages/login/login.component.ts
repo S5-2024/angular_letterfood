@@ -2,18 +2,17 @@ import { Component, ElementRef, Renderer2, AfterViewInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 import { MatIconModule } from '@angular/material/icon';
-import {RegisterService} from '../../services/register.service';
- 
-import{
+
+import {
   FormBuilder,
   FormsModule,
   ReactiveFormsModule,
   FormGroup,
   Validators,
 } from '@angular/forms';
-import { LoginService } from '../../services/login.service';
+import { UserService } from '../../services/login.service';
 import { isEmpty } from 'rxjs';
- 
+
 
 @Component({
   selector: 'app-login',
@@ -32,21 +31,23 @@ export class LoginComponent implements AfterViewInit {
   registerForm!: FormGroup;
   loginForm!: FormGroup;
   recoverPassForm!: FormGroup;
-  
+  // Script para mudar de login -> registro ou recuperar senha
+  formType: string = 'login'; // Inicia com o formulário de login
+
+
   constructor(
     private el: ElementRef,
     private renderer: Renderer2,
     private fb: FormBuilder,
-    private registerService: RegisterService,
     private router: Router,
-    private loginService: LoginService
+    private userService: UserService
   ) {
     this.initiateForm();
   }
 
-  ngOnInit(){
-    let user: Object = JSON.parse(localStorage.getItem('user')|| '{}')
-    if(Object.keys(user).length != 0){
+  ngOnInit() {
+    let user: Object = JSON.parse(localStorage.getItem('user') || '{}')
+    if (Object.keys(user).length != 0) {
       this.router.navigate(["/homelander"])
     }
   }
@@ -69,27 +70,30 @@ export class LoginComponent implements AfterViewInit {
 
   //depois colocar a lógica certa
   onSubmit() {
-    if (this.registerForm) {
-      console.log(this.registerForm.status)
-      console.log("valido!")
-      this.loginService.auth(this.loginForm.value).subscribe({
-        next: value => console.log("Logado com Sucesso!"),
-        error: err => console.error("Erro ao Logar: " + err),
-        complete: ()=> {
-          localStorage.setItem("user", JSON.stringify(this.loginForm.value))
-          this.router.navigate(['/homelander'])
-        }
-      })
-     /* this.loginService.auth(this.loginForm.value).subscribe(
-      (response) => {
-        console.log("Success: " + response)
-      },
-      (error) => {
-        console.log("Error: " + error)
-      }
-     ) */
-    }else{
-      console.log("invalido!")
+    switch (this.formType) {
+      case "login":
+        this.userService.auth(this.loginForm.value).subscribe({
+          next: value => console.log("Logado com Sucesso!"),
+          error: err => console.error("Erro ao Logar: " + err),
+          complete: () => {
+            localStorage.setItem("user", JSON.stringify({email: this.loginForm.get('email')!.value}))
+            this.router.navigate(['/homelander'])
+          }
+        });
+        break;
+
+      case "registerForm":
+        this.userService.create(this.registerForm.value).subscribe({
+          next: () => console.log("Usuário criado com sucesso!"),
+          error: (error) => console.log("Erro ao criar usuário: " + error),
+          complete: () => {
+            localStorage.setItem("user", JSON.stringify({email: this.registerForm.get('email')!.value}));
+            this.router.navigate(['/homelander']);
+          }
+        })
+        break
+
+      case "":
     }
   }
 
@@ -116,14 +120,13 @@ export class LoginComponent implements AfterViewInit {
     });
   }
 
-  // Script para mudar de login -> registro ou recuperar senha
-  formType: string = 'login'; // Inicia com o formulário de login
+
 
   toggleForm(type: string) {
     this.formType = type;
   }
 
 
- 
- 
+
+
 }

@@ -5,13 +5,18 @@ import { catchError, Observable, throwError } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class LoginService {
-
+export class UserService {
+  private _userURL = "http://localhost:3000/user/"
   constructor(private http: HttpClient) {}
 
 
   auth(body: object): Observable<any>{
-    return this.http.post("http://localhost:3000/user/login", body).pipe(
+    return this.http.post(`${this._userURL}/login`, body).pipe(
+      catchError(this.errorHandler)
+    )
+  }
+  create(user: object): Observable<any>{
+    return this.http.post(`${this._userURL}`, user).pipe(
       catchError(this.errorHandler)
     )
   }
