@@ -39,7 +39,7 @@
   justify-content: center;
   align-items: center;
   text-decoration: none;
-  color: var(--black);
+  color: var(--rosa7);
   font-weight: 700;
   font-size: 1.06em;
   transition: all 1s ease ;
@@ -50,7 +50,7 @@
 }
 
 .links:hover{
-  color: var(--rosa7);
+  color: var(--rosa6);
   background-color: var(--blue);
 }
 
