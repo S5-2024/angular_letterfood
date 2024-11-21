@@ -35,6 +35,7 @@ export class AppComponent {
   title = 'letterfood';
   showHeader = true; // Controle da visibilidade do header
   currentRoute: string = '';
+ 
   
   constructor(private router: Router) {
     const iconRegistry = inject(MatIconRegistry);
@@ -73,4 +74,11 @@ export class AppComponent {
   redirectToProfile() {
     this.router.navigate(['/profile']); // Define o caminho para o perfil
   }
+
+  redirectToGit() {
+    window.open('https://github.com/S5-2024/angular_letterfood', '_blank'); // Abre em uma nova aba
+  }
+
+
+
 }

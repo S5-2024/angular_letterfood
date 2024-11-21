@@ -139,11 +139,11 @@ button:hover {
 @media(max-width: 670px){
 
   .navbar {
-    top: unset; /* Remove o top */
-    bottom: 0; /* Fixa no rodapé */
-    position: fixed; /* Garante que fique visível mesmo com rolagem */
+    top: unset;  
+    bottom: 0;  
+    position: fixed;  
     width: 100vw;
-   
+ 
   }
 
   .celular{
@@ -157,7 +157,13 @@ button:hover {
   }
 
 .gato{
-  
+  width: 3.5rem;
+  height: 3.5rem;
+}
+
+.lupa2,.perfil, .github{
+  width:  2rem;
+  height: 2rem;
 }
 
 
