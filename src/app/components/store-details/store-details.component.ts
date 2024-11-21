@@ -4,7 +4,8 @@ import { environment } from '../../../environments/environment.development';
 import { ReviewCardComponent } from '../review-card/review-card.component';
 import * as echarts from 'echarts';
 import { Review } from '../../models/review';
-import { GoogleMapsModule } from '@angular/google-maps'
+import { GoogleMapsModule } from '@angular/google-maps';
+import { MatIconModule } from '@angular/material/icon';
 
 const MONEY_BAG = environment.icons['money-bag']
 const REVIEW_STAR = environment.icons['review-star']
