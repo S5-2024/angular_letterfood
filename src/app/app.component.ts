@@ -6,7 +6,7 @@ import { environment } from '../environments/environment.development';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { Router, NavigationEnd } from '@angular/router';
 import { NgIf } from '@angular/common';
-
+import { CommonModule } from '@angular/common';
 const MONEY_BAG = environment.icons['money-bag'];
 const REVIEW_STAR = environment.icons['review-star'];
 const DISTANCE_FOOT = environment.icons['distance-foot'];
@@ -24,7 +24,7 @@ const GITHUB_ICON = environment.icons['github-icon'];
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, MatIconModule, NgIf],
+  imports: [RouterOutlet, MatIconModule, NgIf,CommonModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
@@ -51,6 +51,7 @@ export class AppComponent {
       if (event instanceof NavigationEnd) {
         this.currentRoute = event.url; // Atualiza a rota atual
         this.showHeader = !event.url.includes('/about'); // Oculta o header se for a rota /about
+        this.showHeader = !event.url.includes('/login'); // Oculta o header se for a rota /about
       }
     });
   }

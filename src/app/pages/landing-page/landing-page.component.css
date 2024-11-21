@@ -23,64 +23,6 @@ button:hover {
 }
 
 
-header {
-    display: flex;
-    position: fixed;
-    width: 100vw;
-    flex-direction: row;
-    justify-content: space-between;
-    height: 5.4vh;
-    background-color: var(--rosa2);
-}
-
-
-.lfd_logo {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    margin-left: 2%;
-    width: 20%;
-
-  
-    .mat-icon {
-        height: 110%;
-        width: 20%
-    }
-
-
-    p {
-        color: var(--rosa6);
-        font-size: 1.3em;
-        font-weight: bold;
-    }
-}
-
-
-.header_sign_up_button {
-    /* position: fixed; */
-    width: 35%;
-    height: 75%;
-    border-radius: 5px;
-}
-
-
-.navi_links {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    width: 17%;
-    align-items: center;
-    margin-right: 4%;
-
-  
-    p {
-        color: var(--rosa6);
-        font-size: 1.2em;
-        font-weight: bold;
-    }
-}
-
-
 #discover{
     background-color: var(--rosa2);
 }
