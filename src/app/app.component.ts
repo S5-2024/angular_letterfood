@@ -47,7 +47,7 @@ export class AppComponent {
   }
 
   redirectToHome() {
-    if (this.router.url === '/profile' ) { 
+    if (this.router.url === '/profile' ||  this.router.url === '/homelander' ) { 
       // Verifica se a rota atual é 'profile'
       this.router.navigate(['/homelander']); // Redireciona para a página '/homelander'
     } else {
