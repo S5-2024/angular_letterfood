@@ -5,13 +5,12 @@ import { DomSanitizer } from '@angular/platform-browser';
 import { environment } from '../environments/environment.development';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { Router, NavigationEnd } from '@angular/router';
-import { NgIf } from '@angular/common';
-
+import { CommonModule,NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, MatIconModule, NgIf],
+  imports: [RouterOutlet, MatIconModule, NgIf,CommonModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
@@ -19,6 +18,7 @@ export class AppComponent {
   title = 'letterfood';
   showHeader = true; // Controle da visibilidade do header
   currentRoute: string = '';
+ 
   
   constructor(private router: Router) {
     const iconRegistry = inject(MatIconRegistry);
@@ -57,4 +57,11 @@ export class AppComponent {
   redirectToProfile() {
     this.router.navigate(['/profile']); // Define o caminho para o perfil
   }
+
+  redirectToGit() {
+    window.open('https://github.com/S5-2024/angular_letterfood', '_blank'); // Abre em uma nova aba
+  }
+
+
+
 }
