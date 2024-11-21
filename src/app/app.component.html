@@ -6,15 +6,16 @@
   </div>
 
   <div class="search">
-    <mat-icon svgIcon="baseline-search" aria-label="Search icon" />
+    <mat-icon svgIcon="baseline-search" aria-label="Search icon"  class="lupa"/>
     <input type="text" class="search-bar" placeholder="Pesquisar...">
   </div>
 
 
 
   <div class="navi_links">
-    <span>Home</span>
-    <span>GitHub</span>
+     
+    <a class="links" href="#">Home</a>
+    <a class="links" href="#">GitHub</a>
 
     <button class="header_sign_up_button" (click)="redirectToProfile()"><a>Perfil</a></button>
   </div>
@@ -29,8 +30,8 @@
   </div>
 
   <div class="navi_links" [ngClass]="'navprofile'">
-    <span>Home</span>
-    <span>GitHub</span>
+    <a class="links" href="#">Home</a>
+    <a class="links" href="#">GitHub</a>
 
 
   </div>
@@ -46,8 +47,8 @@
 
 
   <div class="navi_links">
-    <span>Home</span>
-    <span>GitHub</span>
+    <a class="links" href="#">Home</a>
+    <a class="links" href="#">GitHub</a>
 
     <button class="header_sign_up_button" (click)="redirectToLogin()"><a>Junte-se</a></button>
   </div>
