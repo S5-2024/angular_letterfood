@@ -1,13 +1,12 @@
- 
- 
+
   <header class="navbar" *ngIf="showHeader">
     <div class="lfd_logo" > 
         <mat-icon svgIcon="solar--cat-bold" aria-label="LetterFood logo" (click)="redirectToHome()" />
-         <p (click)="redirectToHome()">LetterFood</p>
+        <p (click)="redirectToHome()">LetterFood</p>
     </div>
     
     <div class="search-container" *ngIf="currentRoute === '/homelander'">
-      <mat-icon class="search-icon">search</mat-icon> <!-- Ícone Material -->
+      <mat-icon class="search-icon">search</mat-icon>
       <input 
         type="text" 
         class="search-bar" 
@@ -29,7 +28,7 @@
     </button>
     </div>
   </header>
- 
+
 
   
  
