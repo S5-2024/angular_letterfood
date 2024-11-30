@@ -11,6 +11,8 @@ import { Restaurant } from '../../models/restaurant';
 export class StoreCardComponent {
 
   @Input() restaurant: any;
+  @Input() popRestaurant: any;
+  
 
   
   @Input() storeInfo!: Restaurant

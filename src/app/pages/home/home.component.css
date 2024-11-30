@@ -30,42 +30,12 @@
   .section-title {
     font-size: 1.5rem;
     font-weight: bold;
-    color: var(--rosa5);
+    color: var(--rosa6);
     margin-left: 1vw;
   }
   
   hr {
     border: none;
     height: 2px;
-    background-color: var(--rosa5);
+    background-color: var(--rosa6);
   }
-  
-
-
-/* .teste{
-    color:var(--rosa5);
-}
-
-.home-container{
-    display: flex;
-    flex-direction: column;
-}
-
-.card-list{
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    margin-top:20px
-}
-
-#popular{
-    display: flex;
-    justify-content: center;
-    margin-bottom:30px;
-}
-
-p{
-    margin-top: 2vh;
-    margin-left: 1vw;
-    margin-bottom: 1vh;
-} */
