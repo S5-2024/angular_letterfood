@@ -1,12 +1,12 @@
 import { Component, inject, Input } from '@angular/core';
 import { MatTabChangeEvent, MatTabsModule } from '@angular/material/tabs';
-import { MatIconModule } from '@angular/material/icon';
-import { BrowserModule, DomSanitizer } from '@angular/platform-browser';
 import { environment } from '../../../environments/environment.development';
 import { ReviewCardComponent } from '../review-card/review-card.component';
 import * as echarts from 'echarts';
 import { Review } from '../../models/review';
 import { GoogleMapsModule } from '@angular/google-maps'
+import { MatIconModule } from '@angular/material/icon';
+
 
 const MONEY_BAG = environment.icons['money-bag']
 const REVIEW_STAR = environment.icons['review-star']
@@ -214,25 +214,11 @@ export class StoreDetailsComponent {
         starClass[review.rate].push(review)
       }
     }
-    console.log(starClass)
     let r: any = []
     Object.entries(starClass).forEach((review) => {
       r.push(review[1].length)
-      /* if(review[1].length == 0){
-        r.push(null)
-      }else{
-        r.push(review[1].length)
-      } */
-      /*  r.push(() => {
-         if(review[1].length == 0){
-           console.log("a")
-           return []
-         }
-         return review[1].length
-       }) */
     })
-    console.log(r)
-    return r// [1-star, 2-star, 3-star, 4-star, 5-star]
+    return r
   }
 
 }

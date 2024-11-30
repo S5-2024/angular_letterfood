@@ -1,43 +1,92 @@
+@if(currentRoute === '/homelander' ){
+<header class="navbar" *ngIf="showHeader">
+  <div class="lfd_logo">
+    <mat-icon svgIcon="solar--cat-bold" aria-label="LetterFood logo" />
+    <p>LetterFood</p>
+  </div>
 
-  <header class="navbar" *ngIf="showHeader">
-    <div class="lfd_logo" > 
-        <mat-icon svgIcon="solar--cat-bold" aria-label="LetterFood logo" (click)="redirectToHome()" />
-        <p (click)="redirectToHome()">LetterFood</p>
-    </div>
-    
-    <div class="search-container" *ngIf="currentRoute === '/homelander'">
-      <mat-icon class="search-icon">search</mat-icon>
-      <input 
-        type="text" 
-        class="search-bar" 
-        placeholder="Pesquisar..." 
-        >
-    </div>
-
-    <div class="navi_links">
-      <a *ngIf="currentRoute !== '/' && currentRoute !== '/profile'" href="http://localhost:4200/" class="links">Home</a>
-      <a *ngIf="currentRoute !== '' && currentRoute !== '/profile'" href="https://github.com/S5-2024/angular_letterfood"  class="links">GitHub</a>
-      <a *ngIf="currentRoute !== '' && currentRoute !== '/profile'" href="http://localhost:4200/about" class="links">Sobre nós</a>
-    
-      <button 
-      class="header_sign_up_button" 
-      *ngIf="currentRoute !== '/profile'" 
-      (click)="redirectToLogin()">
-      <a *ngIf="currentRoute === '/homelander' ">Perfil</a>
-      <a *ngIf="currentRoute == '/' ">Juntar-se</a>
-    </button>
-    </div>
-  </header>
+  <div class="search">
+    <mat-icon svgIcon="baseline-search" aria-label="Search icon" class="lupa" />
+    <input type="text" class="search-bar" placeholder="Pesquisar...">
+  </div>
+  <div class="navi_links">
+    <a class="links" (click)="redirectToHome() ">Home</a>
+    <a class="links" href="https://github.com/S5-2024/angular_letterfood" target="_blank">GitHub</a>
+    <button class="header_sign_up_button" (click)="redirectToProfile()"><a>Perfil</a></button>
+  </div>
 
 
+  <div class="celular">
+    <mat-icon svgIcon="baseline-search" aria-label="Search icon" class="lupa2" /> 
+
+   <mat-icon svgIcon="solar--cat-bold" aria-label="LetterFood logo" class="gato" (click)="redirectToHome() " />
+
+   <mat-icon svgIcon="user" aria-label="User icon" class="perfil" (click)=" redirectToProfile()" />
+
+ </div>
+
+</header>
+
+}
+
+
+
+@else if(currentRoute === '/profile'){
+<header class="navbar" *ngIf="showHeader">
+  <div class="lfd_logo">
+    <mat-icon svgIcon="solar--cat-bold" aria-label="LetterFood logo" />
+    <p>LetterFood</p>
+  </div>
+
+  <div class="navi_links" [ngClass]="'navprofile'">
+    <a class="links" (click)="redirectToHome() ">Home</a>
+    <a class="links" href="https://github.com/S5-2024/angular_letterfood" target="_blank">GitHub</a>
+
+
+  </div>
+
+  <div class="celular">
+
+    <mat-icon svgIcon="github-icon" aria-label="Github icon" class="github" (click)="redirectToGit()  " />
+    <mat-icon svgIcon="solar--cat-bold" aria-label="LetterFood logo" class="gato" (click)="redirectToHome() " />
+    <mat-icon svgIcon="user" aria-label="User icon" class="perfil" (click)=" redirectToProfile()" />
+  </div>
+</header>
+}
+
+
+
+@else{
+<header class="navbar" *ngIf="showHeader">
+  <div class="lfd_logo">
+    <mat-icon svgIcon="solar--cat-bold" aria-label="LetterFood logo" />
+    <p>LetterFood</p>
+  </div>
+
+
+
+  <div class="navi_links">
+    <a class="links" (click)="redirectToHome() " >Home</a>
+    <a class="links" href="https://github.com/S5-2024/angular_letterfood" target="_blank">GitHub</a>
+
+    <button class="header_sign_up_button" (click)="redirectToLogin()"><a>Junte-se</a></button>
+  </div>
+
+
+  <div class="celular">
   
- 
-
-  <router-outlet><router-outlet/>
- 
-
-
+    <mat-icon svgIcon="github-icon" aria-label="Github icon" class="github" (click)="redirectToGit()" />
+    <mat-icon svgIcon="solar--cat-bold" aria-label="LetterFood logo" class="gato" (click)="redirectToHome() " />
+    <mat-icon svgIcon="user" aria-label="User icon" class="perfil" (click)="redirectToLogin()" />
   
+  
+  </div>
+</header>
 
 
 
+}
+
+
+
+<router-outlet><router-outlet />

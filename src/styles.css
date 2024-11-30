@@ -32,6 +32,10 @@ body {
 
 }
 
+html{
+ 
+  height: 100vh;
+}
 
 
 
@@ -73,6 +77,7 @@ body {
   --rosa5: rgb(199, 140, 160); /*#C78CA0*/
   --rosa6: rgb(255, 129, 174);
   --rosa7: rgb(202, 101, 136);
+   
 
   /* Cores de Suporte */
   --pink: rgb(255, 179, 186);

@@ -5,6 +5,8 @@ import { ReactiveFormsModule, FormsModule, FormBuilder, FormGroup, FormControl, 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { trigger, state, transition, style, animate } from '@angular/animations';
 import { GeneralApiService } from '../../services/general-api.service';
+import { RestaurantsService } from '../../services/restaurants.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register-store',
@@ -37,25 +39,44 @@ export class RegisterStoreComponent {
   private companyInfo: any = null;
 
   constructor(private el: ElementRef, private renderer: Renderer2,
-    private fb: FormBuilder, private generalApi: GeneralApiService) { }
+    private fb: FormBuilder, private generalApi: GeneralApiService,
+    private restaurantService: RestaurantsService, private router: Router) { }
 
 
   ngOnInit() {
     this.registerForm = this.fb.group({
-      name: new FormControl('', Validators.required),
       cnpj: new FormControl('', [Validators.required, Validators.maxLength(14)]),
-      phone: new FormControl('', Validators.required),
+      telefone: new FormControl('', Validators.required),
       email: new FormControl('', [Validators.email, Validators.required]),
       cep: new FormControl('', Validators.required),
-      street: new FormControl('', Validators.required),
-      neighborhood: new FormControl('', Validators.required),
-      city: new FormControl('', Validators.required),
-      state: new FormControl('', Validators.required),
-      houseNumber: new FormControl('', Validators.required)
+      rua: new FormControl('', Validators.required),
+      bairro: new FormControl('', Validators.required),
+      cidade: new FormControl('', Validators.required),
+      estado: new FormControl('', Validators.required),
+      numero: new FormControl(0, Validators.required),
+      categoria: new FormControl([], Validators.required)
     })
   }
-  onSubmit() {
-    const checkboxes = document.querySelectorAll("#checkbox-container>input")
+  onSubmit($event: boolean = false) {
+    const checkboxes = document.querySelectorAll(".checkbox>input");
+    console.log(this.registerForm.value)
+    if($event){
+      checkboxes.forEach( (checkbox) => {
+        if((checkbox as HTMLInputElement).checked){
+          let oldValues = this.registerForm.get('categoria')!.value;
+          this.registerForm.get('categoria')!.setValue([...oldValues,(checkbox as HTMLInputElement).value]);
+        }
+      })
+      this.restaurantService.create(this.registerForm.value).subscribe({
+        next: () => console.log("Restaurante Criado com sucesso"),
+        error: (err) => console.error("Erro ao criar restaurante\n" + err),
+        complete: () => {
+          this.router.navigate(["/homelander"])
+        }
+      });
+    }
+
+    
   }
 
   onStepChange($event: StepperSelectionEvent) {
@@ -77,19 +98,20 @@ export class RegisterStoreComponent {
     console.log(this.companyInfo)
     switch (stepIndex) {
       case 0:
+        console.log((<HTMLInputElement>document.getElementById("email")).value)
         this.registerForm.controls['cnpj'].setValue((<HTMLInputElement>document.getElementById("cnpj")).value);
-        //define email
+        (<HTMLInputElement>document.getElementById("email")).value = this.companyInfo['email']
         this.registerForm.controls['email'].setValue((<HTMLInputElement>document.getElementById("email")).value);
-        //define Name
         (<HTMLInputElement>document.getElementById("name")).value = this.companyInfo['nome_fantasia'];
-        this.registerForm.controls['name'].setValue((<HTMLInputElement>document.getElementById("name")).value);
-        //define phone
+        /* this.registerForm.controls['name'].setValue((<HTMLInputElement>document.getElementById("name")).value); */
         (<HTMLInputElement>document.getElementById("phone")).value = this.companyInfo['ddd_telefone_1'];
-        this.registerForm.controls['phone'].setValue((<HTMLInputElement>document.getElementById("phone")).value);
+        this.registerForm.controls['telefone'].setValue((<HTMLInputElement>document.getElementById("phone")).value);
+        
         break;
 
       case 1:
         //define cep
+        this.registerForm.controls['email'].setValue((<HTMLInputElement>document.getElementById("email")).value);
         (<HTMLInputElement>document.getElementById('cep')).value = this.companyInfo['cep'];
         (<HTMLInputElement>document.getElementById('street')).value = this.companyInfo['logradouro'];
         (<HTMLInputElement>document.getElementById('neighborhood')).value = this.companyInfo['bairro'];
@@ -97,11 +119,11 @@ export class RegisterStoreComponent {
         (<HTMLInputElement>document.getElementById('state')).value = this.companyInfo['uf'];
         (<HTMLInputElement>document.getElementById('houseNumber')).value = this.companyInfo['numero'];
         this.registerForm.get('cep')?.setValue((<HTMLInputElement>document.getElementById('cep')).value);
-        this.registerForm.get('street')?.setValue((<HTMLInputElement>document.getElementById('street')).value);
-        this.registerForm.get('neighborhood')?.setValue((<HTMLInputElement>document.getElementById('neighborhood')).value);
-        this.registerForm.get('city')?.setValue((<HTMLInputElement>document.getElementById('city')).value);
-        this.registerForm.get('state')?.setValue((<HTMLInputElement>document.getElementById('state')).value);
-        this.registerForm.get('houseNumber')?.setValue((<HTMLInputElement>document.getElementById('houseNumber')).value);
+        this.registerForm.get('rua')?.setValue((<HTMLInputElement>document.getElementById('street')).value);
+        this.registerForm.get('bairro')?.setValue((<HTMLInputElement>document.getElementById('neighborhood')).value);
+        this.registerForm.get('cidade')?.setValue((<HTMLInputElement>document.getElementById('city')).value);
+        this.registerForm.get('estado')?.setValue((<HTMLInputElement>document.getElementById('state')).value);
+        this.registerForm.get('numero')?.setValue(parseInt((<HTMLInputElement>document.getElementById('houseNumber')).value));
     }
 
 

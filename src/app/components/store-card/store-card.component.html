@@ -3,11 +3,9 @@
         <img [src]="restaurant.imageUrl" alt="{{restaurant.name}}">
     </div>
         <div class="review">
-            <mat-icon svgIcon="review-star" aria-label="Review Star Icon" />
-            <mat-icon svgIcon="review-star" aria-label="Review Star Icon" />
-            <mat-icon svgIcon="review-star" aria-label="Review Star Icon" />
-            <mat-icon svgIcon="review-star" aria-label="Review Star Icon" />
-            <mat-icon svgIcon="review-star" aria-label="Review Star Icon" />
+            @for (star of arrTemplate; track $index) {
+                <mat-icon svgIcon="review-star" aria-label="Review Star Icon" />
+            }
             <p>10</p>
         </div>
 </div>

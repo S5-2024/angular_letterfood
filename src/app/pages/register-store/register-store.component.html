@@ -4,6 +4,7 @@
     [linear]="true"
     cdkStepperMulti
     (selectionChange)="onStepChange($event)"
+    (submitEvent)="onSubmit($event)"
   >
     <cdk-step>
       <form
@@ -29,7 +30,7 @@
             <input
               class="bar"
               type="text"
-              formControlName="name"
+              
               id="name"
               placeholder="Rodrigo Lanches"
             />
@@ -40,6 +41,7 @@
               class="bar"
               id="email"
               type="email"
+              formControlName="email"
               placeholder="exemplo@email.com"
             />
           </div>
@@ -79,7 +81,7 @@
             <input
               class="bar"
               type="text"
-              formControlName="street"
+              formControlName="rua"
               id="street"
               placeholder="Av. Sem criatividade"
             />
@@ -116,28 +118,36 @@
         <h3>Selecione as categorias do restaurante</h3>
         <div class="checkbox-formsContent">
           <div class="checkbox">
-            <input type="checkbox" />
+            <input type="checkbox" value="Fast-food"/>
             <label for="">Fast-food</label>
           </div>
           <div class="checkbox">
-            <input type="checkbox" />
-            <label for="">Fast-food</label>
+            <input type="checkbox" value="Comida Japonêsa"/>
+            <label for="">Comida Japonêsa</label>
           </div>
           <div class="checkbox">
-            <input type="checkbox" />
-            <label for="">Fast-food</label>
+            <input type="checkbox" value="Comida Chinesa"/>
+            <label for="">Comida Chinesa</label>
           </div>
           <div class="checkbox">
-            <input type="checkbox" />
-            <label for="">Fast-food</label>
+            <input type="checkbox" value="Marmitex"/>
+            <label for="">Marmitex</label>
           </div>
           <div class="checkbox">
-            <input type="checkbox" />
-            <label for="">Fast-food</label>
+            <input type="checkbox" value="Pizza"/>
+            <label for="">Pizza</label>
           </div>
           <div class="checkbox">
-            <input type="checkbox" />
-            <label for="">Fast-food</label>
+            <input type="checkbox" value="Hamburguer"/>
+            <label for="">Hamburguer</label>
+          </div>
+          <div class="checkbox">
+            <input type="checkbox" value="Artesanal" />
+            <label for="">Artesanal</label>
+          </div>
+          <div class="checkbox">
+            <input type="checkbox" value="Vegana"/>
+            <label for="">Vegana</label>
           </div>
         </div>
       </form>

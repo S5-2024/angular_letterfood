@@ -5,26 +5,12 @@ import { DomSanitizer } from '@angular/platform-browser';
 import { environment } from '../environments/environment.development';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { Router, NavigationEnd } from '@angular/router';
-import { NgIf } from '@angular/common';
-
-const MONEY_BAG = environment.icons['money-bag'];
-const REVIEW_STAR = environment.icons['review-star'];
-const DISTANCE_FOOT = environment.icons['distance-foot'];
-const LOGOS_GOOGLE_ICON = environment.icons['logos--google-icon'];
-const SOLAR_CAT_BOLD = environment.icons['solar--cat-bold'];
-const IC_ROUND_SETTINGS = environment.icons['ic--round-settings'];
-const HOME_2_FILL = environment.icons['home-2-fill'];
-const BASELINE_SEARCH = environment.icons['baseline-search'];
-const SOLAR_HEART_BOLD = environment.icons['solar-heart-bold'];
-const TRESURE_IMAGE = environment.icons['tresure-image'];
-const LOCATION_IMAGE = environment.icons['location-image'];
-const ORDER_FOOD_IMAGE = environment.icons['order-food-image'];
-const GITHUB_ICON = environment.icons['github-icon'];
+import { CommonModule,NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, MatIconModule, NgIf],
+  imports: [RouterOutlet, MatIconModule, NgIf,CommonModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
@@ -32,6 +18,7 @@ export class AppComponent {
   title = 'letterfood';
   showHeader = true; // Controle da visibilidade do header
   currentRoute: string = '';
+ 
   
   constructor(private router: Router) {
     const iconRegistry = inject(MatIconRegistry);
@@ -51,6 +38,7 @@ export class AppComponent {
       if (event instanceof NavigationEnd) {
         this.currentRoute = event.url; // Atualiza a rota atual
         this.showHeader = !event.url.includes('/about'); // Oculta o header se for a rota /about
+        this.showHeader = !event.url.includes('/login'); // Oculta o header se for a rota /about
       }
     });
   }
@@ -60,7 +48,7 @@ export class AppComponent {
   }
 
   redirectToHome() {
-    if (this.router.url === '/profile' ) { 
+    if (this.router.url === '/profile' ||  this.router.url === '/homelander' ) { 
       // Verifica se a rota atual é 'profile'
       this.router.navigate(['/homelander']); // Redireciona para a página '/homelander'
     } else {
@@ -70,4 +58,11 @@ export class AppComponent {
   redirectToProfile() {
     this.router.navigate(['/profile']); // Define o caminho para o perfil
   }
+
+  redirectToGit() {
+    window.open('https://github.com/S5-2024/angular_letterfood', '_blank'); // Abre em uma nova aba
+  }
+
+
+
 }

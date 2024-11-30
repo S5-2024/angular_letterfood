@@ -1,3 +1,4 @@
+
   <!-- <header>
         <div class="lfd_logo">
             <mat-icon svgIcon="solar--cat-bold" aria-label="LetterFood logo" />
@@ -10,78 +11,115 @@
         </div>
     </header> -->
 
-<!-- Location -->
+<div class="main">
     <div id="location">
-        <div class="section_container">
-            <div class="section_content">
-                <div class="info">
-                    <h1>Busque os melhores restaurantes da região</h1>
-                        <button class="sign_up_button" (click)="redirectToLogin()">Começe agora</button>
-                </div>
-                <div class="search_section_image">
-                    <mat-icon svgIcon="location-image" aria-label="Pessoa procurando restaurantes bem avaliados na região" />
-                </div>
-            </div>
-        </div>
-    </div>
+ 
+            <div class="info">
+                <h1>Busque os melhores restaurantes </h1>
     
-<!-- Discover -->
-    <div id="discover">
-        <div class="section_container">
-            <div class="section_content">
-                <div class="discover_section_image">
-                    <mat-icon svgIcon="tresure-image" aria-label="Pessoa abrindo um baú" />
-                </div>
-                <div class="info">
-                    <h1>Descubra novas experiências</h1>
-                        <button class="sign_up_button" (click)="redirectToLogin()" >Começe agora</button>
-                </div>
+                <span>Encontre os lugares mais recomendados e bem avaliados pelos amantes da boa gastronomia. Explore
+                    cardápios incríveis, ambientes acolhedores e experiências culinárias que deixarão sua próxima refeição
+                    inesquecível.</span>
+    
             </div>
-        </div>
+    
+            <div class="image">
+                <mat-icon svgIcon="location-image" aria-label="Pessoa procurando restaurantes bem avaliados na região" />
+    
+    
+            </div>
+ 
+
     </div>
 
-<!-- Rating -->
-    <div id="rating">
-        <div class="section_container">
-            <div class="section_content">
-                <div class="info">
-                    <h1>Avalie os restaurantes que você visitou</h1>
-                        <button class="sign_up_button" (click)="redirectToLogin()">Começe agora</button>
-                </div>
-                <div class="rating_section_image">
-                    <mat-icon svgIcon="order-food-image" aria-label="Pessoa avaliando um restaurante" />
-                </div>
-            </div>
+
+ 
+    <div id="discover">
+
+
+
+        <div class="image">
+            <mat-icon svgIcon="tresure-image" aria-label="Pessoa abrindo um baú" class="tesouro" />
+
+
         </div>
+
+
+
+        <div class="info">
+            <h1>Descubra novas experiências</h1>
+
+            <span>Saia da rotina e experimente algo novo! Seja um prato exótico, uma cozinha internacional ou um
+                cantinho escondido cheio de charme, temos opções que vão surpreender seu paladar e renovar suas
+                aventuras gastronômicas.</span>
+
+        </div>
+
     </div>
+
+ 
+
+
+
+
+    <div id="rating">
+
+        <div class="info">
+            <h1>Avalie os restaurantes que visitou</h1>
+            <button class="sign_up_button" (click)="redirectToLogin()">Start now</button>
+
+
+        </div>
+
+        <div class="image">
+            <mat-icon svgIcon="order-food-image" aria-label="Pessoa avaliando um restaurante" />
+
+
+        </div>
+
+    </div> 
+
+</div>
+<!-- Location -->
+
+
+
 
 <!-- Rodapé -->
-    <footer>
-            <div class="lfd_logo" >
-                <mat-icon svgIcon="solar--cat-bold" aria-label="LetterFood logo" />
-                <p>LetterFood</p>
-            </div>
+<footer>
+    <div class="lfd_logo">
+        <mat-icon svgIcon="solar--cat-bold" aria-label="LetterFood logo" />
+        <p>LetterFood</p>
+    </div>
 
-        <div class="footer_links">
-            <div class="home">
-                <h3>Inicio</h3>
-                <a href="#location"><p>Busque</p></a>
-                <a href="#discover"><p>Descubra</p></a>
-                <a href="#rating"><P>Avalie</P></a>
-            </div>
-
-            <div class="about_us">
-                <h3>Sobre nós</h3>
-                <a href=""><p>Informações da empresa</p></a>
-            </div>
-
+    <div class="footer_links">
+        <div class="home">
+            <h3>Inicio</h3>
+            <a href="#location">
+                <p>Busque</p>
+            </a>
+            <a href="#discover">
+                <p>Descubra</p>
+            </a>
+            <a href="#rating">
+                <P>Avalie</P>
+            </a>
         </div>
 
-        <div class="footer_botoes">
-            <button class="footer_sign_up_button" (click)="redirectToLogin()" >Começe agora</button>
-
-            <div class="github">
-                <mat-icon svgIcon="github-icon" aria-label="GitHub logo" />
-            </div>
+        <div class="about_us">
+            <h3>Sobre nós</h3>
+            <a href="">
+                <p>Informações da empresa</p>
+            </a>
         </div>
-    </footer>
+
+    </div>
+
+    <div class="footer_botoes">
+        <button class="footer_sign_up_button" (click)="redirectToLogin()">Começe agora</button>
+
+        <div class="github">
+            <mat-icon svgIcon="github-icon" aria-label="GitHub logo" />
+        </div>
+    </div>
+</footer>
