@@ -1,10 +1,47 @@
 <ng-template cdkPortal>
   <div class="modal">
-    <store-details [storeInfo]="storeList[0]"/>
-    <mat-icon svgIcon="close-icon" (click)="closeModal()" class="teste"/>
+    <store-details [storeInfo]="storeList[0]" />
+    <mat-icon svgIcon="close-icon" (click)="closeModal()" class="teste" />
   </div>
 </ng-template>
 
-@for (store of storeList; track $index) {
-  <store-card [storeInfo]="store" (click)="openModal()"/>
-}
+<div class="home-container">
+  <!-- Seção Popular -->
+  <p class="section-title">Populares</p>
+  <hr />
+  <div id="popular" class="card-list">
+    <div class="card" *ngFor="let restaurant of restaurants; let i = index">
+      <store-card 
+        [restaurant]="restaurant" 
+        (click)="openModal()" 
+        [class.highlight-card]="i < 3">
+      </store-card>
+    </div>
+  </div>
+
+  <!-- Outras Seções -->
+  <p class="section-title">Comida Japonesa</p>
+  <hr />
+  <div class="card-list">
+    <div class="card" *ngFor="let restaurant of restaurants">
+      <store-card [restaurant]="restaurant" (click)="openModal()"></store-card>
+    </div>
+  </div>
+
+  <p class="section-title">Comida Chinesa</p>
+  <hr />
+  <div class="card-list">
+    <div class="card" *ngFor="let restaurant of restaurants">
+      <store-card [restaurant]="restaurant" (click)="openModal()"></store-card>
+    </div>
+  </div>
+
+  <p class="section-title">Massas</p>
+  <hr />
+  <div class="card-list">
+    <div class="card" *ngFor="let restaurant of restaurants">
+      <store-card [restaurant]="restaurant" (click)="openModal()"></store-card>
+    </div>
+  </div>
+</div>
+

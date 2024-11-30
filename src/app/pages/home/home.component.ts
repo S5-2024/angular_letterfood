@@ -5,12 +5,13 @@ import { CdkPortal,PortalModule } from '@angular/cdk/portal';
 import { StoreCardComponent } from "../../components/store-card/store-card.component";
 import { MatIconModule } from '@angular/material/icon';
 import { environment } from '../../../environments/environment.development';
+import { NgFor } from '@angular/common';
 
 @Component({
   selector: 'app-home',
   standalone: true,
 
-  imports: [StoreDetailsComponent, StoreCardComponent,  OverlayModule, PortalModule, MatIconModule],
+  imports: [StoreDetailsComponent, StoreCardComponent,  OverlayModule, PortalModule, MatIconModule,NgFor],
 
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
@@ -43,4 +44,22 @@ export class HomeComponent {
   closeModal(){
     this.overlayRef.detach()
   }
+
+
+// Área de teste
+  restaurants = [
+    {
+      name: 'China In Box',
+      imageUrl: '/assets/brazilFlag.png'
+    },
+    {
+      name: 'Japa kama',
+      imageUrl: '/assets/americanFlag.png'
+    },
+    {
+      name:'caio restaurante',
+      ImageUrl:''
+    }
+
+  ];
 }

@@ -10,6 +10,9 @@ import { Restaurant } from '../../models/restaurant';
 })
 export class StoreCardComponent {
 
+  @Input() restaurant: any;
+
+  
   @Input() storeInfo!: Restaurant
   arrTemplate:Array<number> = Array()
 
