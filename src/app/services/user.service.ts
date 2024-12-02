@@ -18,12 +18,7 @@ export class UserService {
       catchError(this.errorHandler)
     )
   }
-
-/*   auth(body: object): Observable<any>{
-    return this.http.post(`${this._userURL}/login`, body).pipe(
-      catchError(this.errorHandler)
-    )
-  } */
+  
   create(user: object): Observable<any>{
     return this.http.post(``, user).pipe(
       catchError(this.errorHandler)

@@ -36,64 +36,48 @@ const DISTANCE_FOOT = environment.icons['distance-foot']
 })
 export class StoreDetailsComponent {
   @Input() storeInfo !: any;
+  protected reviewList: any[] = []
   private _color: any = '#C78CA0';
   private _size: any = "104px";
   private _labelSize: any = '1.875rem';
   private _textColor: any = '#C78CA0';
 
-  protected storeName!: string
+  protected center!: google.maps.LatLngLiteral;
+  protected mapOptions!: google.maps.MapOptions;
 
-  protected center: google.maps.LatLngLiteral = this.getCenter()
-  protected mapOptions: google.maps.MapOptions = {
-    mapId: "LOCATION_MAP",
-    center: this.center,
-    zoom: 33,
-    cameraControl: false,
-    streetViewControl: false,
-    mapTypeControl: false,
-  }
+  constructor(private generalService: GeneralApiService, private restaurantService: RestaurantsService) {
 
-  constructor(private generalService: GeneralApiService){
-    
-  }
-
-
-  getCenter(){
-    var center = {
-      lat: 0,
-      lng: 0
-    }
-    this.generalService.getLatitudeAndLongitude(this.storeInfo.rua).subscribe({
-      next: (data)=> {
-        console.log(parseFloat(data[0].lat))
-        center = {
-          lat: parseFloat(data[0].lat),
-          lng: parseFloat(data[0].lon)
-        }
-      }
-    })
-    return center
   }
 
   ngOnInit() {
     console.log(this.storeInfo)
-    this.getStoreName()
+    this.getReviews()
+    console.log(this.reviewList)
     this.getCenter()
   }
-  getStoreName(){ 
-    console.log(this.storeInfo.cnpj.replace("-", "").replace(".", "").replace("/", ""))
-    this.generalService.fetchCnpjInfo(this.storeInfo.cnpj.replace("-", "").replace(".", "").replace("/", ""))
-              .subscribe({
-                next: (data)=> {
-                  if(data['nome_fantasia'] != ""){
-                    this.storeName = data['nome_fantasia']
-                  }else{
-                    this.storeName = data['razao_social']
-                  }
-                },
-                error: (err) => console.error(err),
-              })
+
+  getCenter() {
+    /*  console.log(this.storeInfo.endereco.rua) */
+    this.generalService.getLatitudeAndLongitude(this.storeInfo.endereco.rua).subscribe({ //COLOCAR MARKER
+      next: (data) => {
+        console.log(data)
+        this.mapOptions = {
+          mapId: "LOCATION_MAP",
+          center: {
+            lat: parseFloat(data[0].lat),
+            lng: parseFloat(data[0].lon)
+          },
+          zoom: 33,
+          cameraControl: false,
+          streetViewControl: false,
+          mapTypeControl: false,
+        }
+      }
+    })
   }
+
+
+
   onTabChange($event: MatTabChangeEvent) {
     const tabLabel = $event.tab.textLabel
     if (tabLabel == "Avaliações") {
@@ -237,6 +221,46 @@ export class StoreDetailsComponent {
         )
       )
     );
+  }
+
+
+  getReviews() {
+    this.restaurantService.getAvaliacoes().subscribe(
+      {
+        next: (data) => {
+          data.forEach((item: any) => {
+            if (item.restaurante._id == this.storeInfo._id) {
+              this.reviewList.push(item)
+            }
+          })
+        },
+        error: (err) => console.error(err),
+      }
+    )
+  }
+
+  createReview() {
+    const rate = (<HTMLInputElement>document.getElementById("rate"));
+    const comment = (<HTMLInputElement>document.getElementById("comment"))
+    let user = JSON.parse(localStorage.getItem('user')!).usuario
+
+    if(rate.value == "" || comment.value == ""){
+      alert("Favor preencher todos os campos")
+    }else{
+      const body = {
+        restaurante: this.storeInfo._id,
+        usuario: user._id,
+        nota: rate.value,
+        comentario: comment.value
+      }
+      this.restaurantService.createAvaliacoes(body).subscribe({
+        next: (res)=> console.log(res),
+        error: (err)=> console.error(err),
+        complete: () => alert("Comentario criado")
+      })
+    }
+
+   
   }
 
   getReviewNumbers() {

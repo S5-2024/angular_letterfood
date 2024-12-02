@@ -56,6 +56,9 @@ export class RegisterStoreComponent {
       numero: new FormControl(0, Validators.required),
       categoria: new FormControl([], Validators.required)
     })
+
+
+
   }
   onSubmit($event: boolean = false) {
     const checkboxes = document.querySelectorAll(".checkbox>input");
@@ -67,17 +70,20 @@ export class RegisterStoreComponent {
           this.registerForm.get('categoria')!.setValue([...oldValues,(checkbox as HTMLInputElement).value]);
         }
       })
-      this.restaurantService.create(this.registerForm.value).subscribe({
+      /* this.restaurantService.create(this.registerForm.value).subscribe({
         next: () => console.log("Restaurante Criado com sucesso"),
         error: (err) => console.error("Erro ao criar restaurante\n" + err),
         complete: () => {
           this.router.navigate(["/homelander"])
         }
-      });
+      }); */
     }
 
     
   }
+
+
+
 
   onStepChange($event: StepperSelectionEvent) {
     this.configureInputs($event.selectedIndex)

@@ -154,8 +154,40 @@ review-card{
   margin-bottom: 1.3rem;
 }
 
-
-
+.comment-section{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  margin-top: 4em;
+}
+.comment-section > textarea{
+  width: 100%;
+  height: 40%;
+  margin-bottom: 1.2em;
+  resize: none;
+}
+.comment-section > button{
+  width: 50%;
+  border: none;
+  background-color: var(--rosa5);
+  border-radius: 10px;
+  padding: 1em;
+}
+.review-rate{
+  width: 100%;
+}
+.review-rate > input[type="number"]{
+  width: 10%;
+}
+.reviews{
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+}
+.reviews > review-card{
+  margin-bottom: 10px;
+}
 
 @media (min-width: 600px) and  (max-width: 1060px)  {
   .content{
