@@ -73,10 +73,12 @@ export class LoginComponent implements AfterViewInit {
     switch (this.formType) {
       case "login":
         this.userService.auth(this.loginForm.value).subscribe({
-          next: value => console.log("Logado com Sucesso!"),
+          next: value => {
+            console.log(`Logado com Sucesso!`)
+            localStorage.setItem("user", JSON.stringify(value.usuario))
+          },
           error: err => console.error("Erro ao Logar: " + err),
           complete: () => {
-            localStorage.setItem("user", JSON.stringify({email: this.loginForm.get('email')!.value}))
             this.router.navigate(['/homelander'])
           }
         });

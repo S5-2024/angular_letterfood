@@ -6,22 +6,31 @@ import { catchError, Observable, throwError } from 'rxjs';
   providedIn: 'root'
 })
 export class UserService {
-  private _userURL = "http://localhost:3000/user/"
+  private urls = {
+    authUrl: "http://localhost:3000/usuarios/login",
+    general : "http://localhost:3000/api/usuarios/"
+  }
   constructor(private http: HttpClient) {}
 
 
-  auth(body: object): Observable<any>{
-    return this.http.post(`${this._userURL}/login`, body).pipe(
+  auth(body: Object): Observable<any>{
+    return this.http.post(this.urls.authUrl, body).pipe(
       catchError(this.errorHandler)
     )
   }
+
+/*   auth(body: object): Observable<any>{
+    return this.http.post(`${this._userURL}/login`, body).pipe(
+      catchError(this.errorHandler)
+    )
+  } */
   create(user: object): Observable<any>{
-    return this.http.post(`${this._userURL}`, user).pipe(
+    return this.http.post(``, user).pipe(
       catchError(this.errorHandler)
     )
   }
   getById(userId: string){
-    return this.http.get(`${this._userURL}/${userId}`).pipe(
+    return this.http.get(`${userId}`).pipe(
       catchError(this.errorHandler)
     )
   }
