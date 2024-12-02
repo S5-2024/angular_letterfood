@@ -9,6 +9,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { RestaurantsService } from '../../services/restaurants.service';
 import { GeneralApiService } from '../../services/general-api.service';
 
+
 const MONEY_BAG = environment.icons['money-bag']
 const REVIEW_STAR = environment.icons['review-star']
 const DISTANCE_FOOT = environment.icons['distance-foot']

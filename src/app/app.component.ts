@@ -38,7 +38,7 @@ export class AppComponent {
       if (event instanceof NavigationEnd) {
         this.currentRoute = event.url; // Atualiza a rota atual
         this.showHeader = !event.url.includes('/about'); // Oculta o header se for a rota /about
-        this.showHeader = !event.url.includes('/login')
+        this.showHeader = !event.url.includes('/login'); // Oculta o header se for a rota /login
       }
     });
   }
@@ -48,7 +48,7 @@ export class AppComponent {
   }
 
   redirectToHome() {
-    if (this.router.url === '/profile' ) { 
+    if (this.router.url === '/profile' ||  this.router.url === '/homelander' ) { 
       // Verifica se a rota atual é 'profile'
       this.router.navigate(['/homelander']); // Redireciona para a página '/homelander'
     } else {

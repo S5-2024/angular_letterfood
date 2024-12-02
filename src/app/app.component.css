@@ -39,7 +39,7 @@
   justify-content: center;
   align-items: center;
   text-decoration: none;
-  color: var(--black);
+  color: var(--rosa7);
   font-weight: 700;
   font-size: 1.06em;
   transition: all 1s ease ;
@@ -50,7 +50,7 @@
 }
 
 .links:hover{
-  color: var(--rosa7);
+  color: var(--rosa6);
   background-color: var(--blue);
 }
 
@@ -143,6 +143,7 @@ button:hover {
     bottom: 0;  
     position: fixed;  
     width: 100vw;
+    height: 6vh;
  
   }
 
@@ -157,8 +158,8 @@ button:hover {
   }
 
 .gato{
-  width: 3.5rem;
-  height: 3.5rem;
+  width: 3rem;
+  height: 3rem;
 }
 
 .lupa2,.perfil, .github{

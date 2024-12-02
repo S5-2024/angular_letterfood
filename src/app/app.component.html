@@ -1,5 +1,5 @@
 @if(currentRoute === '/homelander' ){
-<header class="navbar">
+<header class="navbar" *ngIf="showHeader">
   <div class="lfd_logo">
     <mat-icon svgIcon="solar--cat-bold" aria-label="LetterFood logo" />
     <p>LetterFood</p>
@@ -9,22 +9,22 @@
     <mat-icon svgIcon="baseline-search" aria-label="Search icon" class="lupa" />
     <input type="text" class="search-bar" placeholder="Pesquisar...">
   </div>
-
-  <div class="celular">
-
-     <mat-icon svgIcon="baseline-search" aria-label="Search icon" class="lupa2" /> 
-    <mat-icon svgIcon="solar--cat-bold" aria-label="LetterFood logo" class="gato" (click)="redirectToHome() " />
-    <mat-icon svgIcon="user" aria-label="User icon" class="perfil" (click)=" redirectToProfile()" />
-
-  </div>
-
   <div class="navi_links">
-
-    <a class="links" href="#">Home</a>
-    <a class="links" href="#">GitHub</a>
-
+    <a class="links" (click)="redirectToHome() ">Home</a>
+    <a class="links" href="https://github.com/S5-2024/angular_letterfood" target="_blank">GitHub</a>
     <button class="header_sign_up_button" (click)="redirectToProfile()"><a>Perfil</a></button>
   </div>
+
+
+  <div class="celular">
+    <mat-icon svgIcon="baseline-search" aria-label="Search icon" class="lupa2" /> 
+
+   <mat-icon svgIcon="solar--cat-bold" aria-label="LetterFood logo" class="gato" (click)="redirectToHome() " />
+
+   <mat-icon svgIcon="user" aria-label="User icon" class="perfil" (click)=" redirectToProfile()" />
+
+ </div>
+
 </header>
 
 }
@@ -32,22 +32,22 @@
 
 
 @else if(currentRoute === '/profile'){
-<header class="navbar">
+<header class="navbar" *ngIf="showHeader">
   <div class="lfd_logo">
     <mat-icon svgIcon="solar--cat-bold" aria-label="LetterFood logo" />
     <p>LetterFood</p>
   </div>
 
   <div class="navi_links" [ngClass]="'navprofile'">
-    <a class="links" href="#">Home</a>
-    <a class="links" href="#">GitHub</a>
+    <a class="links" (click)="redirectToHome() ">Home</a>
+    <a class="links" href="https://github.com/S5-2024/angular_letterfood" target="_blank">GitHub</a>
 
 
   </div>
 
   <div class="celular">
 
-    <mat-icon svgIcon="github-icon" aria-label="Search icon" class="github" (click)="redirectToGit()  " />
+    <mat-icon svgIcon="github-icon" aria-label="Github icon" class="github" (click)="redirectToGit()  " />
     <mat-icon svgIcon="solar--cat-bold" aria-label="LetterFood logo" class="gato" (click)="redirectToHome() " />
     <mat-icon svgIcon="user" aria-label="User icon" class="perfil" (click)=" redirectToProfile()" />
   </div>
@@ -66,20 +66,20 @@
 
 
   <div class="navi_links">
-    <a class="links" href="#">Home</a>
-    <a class="links" href="#">GitHub</a>
+    <a class="links" (click)="redirectToHome() " >Home</a>
+    <a class="links" href="https://github.com/S5-2024/angular_letterfood" target="_blank">GitHub</a>
 
     <button class="header_sign_up_button" (click)="redirectToLogin()"><a>Junte-se</a></button>
   </div>
 
 
   <div class="celular">
-
-    <a href=""> <mat-icon svgIcon="github-icon" aria-label="Search icon" class="github" /> </a>
-    <a href=""> <mat-icon svgIcon="solar--cat-bold" aria-label="LetterFood logo" class="gato" /></a>
+  
+    <mat-icon svgIcon="github-icon" aria-label="Github icon" class="github" (click)="redirectToGit()" />
+    <mat-icon svgIcon="solar--cat-bold" aria-label="LetterFood logo" class="gato" (click)="redirectToHome() " />
     <mat-icon svgIcon="user" aria-label="User icon" class="perfil" (click)="redirectToLogin()" />
-
-
+  
+  
   </div>
 </header>
 

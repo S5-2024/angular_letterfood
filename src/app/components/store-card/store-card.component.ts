@@ -11,6 +11,8 @@ import { Restaurant } from '../../models/restaurant';
 export class StoreCardComponent {
 
   @Input() storeInfo!: any
+  @Input() restaurant: any;
+  @Input() popRestaurant: any;
   arrTemplate:Array<number> = Array()
 
   constructor(){
