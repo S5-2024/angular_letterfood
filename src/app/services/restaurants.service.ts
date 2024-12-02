@@ -17,6 +17,12 @@ export class RestaurantsService {
     )
   }
 
+  createRestaurant(body: Object): Observable<any>{
+    return this.http.post(this._restaurantURL, body).pipe(
+      catchError(this.errorHandler)
+    )
+  }
+
   getAvaliacoes(): Observable<any> {
     return this.http.get(this._reviewURL).pipe(
       catchError(this.errorHandler)
