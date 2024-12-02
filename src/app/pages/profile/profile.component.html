@@ -8,20 +8,25 @@
 
     <div class="item" id="n2">
        <div class="subitem" id="foto">
-        <h2> <span>Nome bla</span></h2>
+        <h2> <span>{{userInfo.nome}}</span></h2>
         <img src="profile.png" alt="imagem">
        </div>  
 
        <div class="subitem" id="bio">
-        <p> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eligendi architecto earum neque facere, ab sed atque eius. Ipsum voluptatum alias, et nostrum, dolores porro velit quam adipisci quibusdam totam asperiores. Lorem ipsu </p>
+        <p> {{userInfo.descricao}} </p>
        </div>
-
+       <div class="reviewList-container">
+        <h2>Lista de Avaliações:</h2>
+        @if(userInfo.avaliacoes.length > 0){
+          <div class="reviewList">
+            @for(review of userInfo.avaliacoes; track $index){
+              <review-card [review]="review" [type]="'profile'"></review-card>
+            }
+          </div>
+        }@else {
+          <span>Nenhuma avaliação feita ainda...</span>
+        }
+       </div>
     </div>
-
-
-
   </div>
-</div>
-
-
 </div>
