@@ -2,19 +2,19 @@
   <div class="card-header">
     <div class="info">
       <img
-        src="{{review.user.image}}"
+        src="https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png"
         alt=""
       />
-      <span class="user-name">{{review.user.username}}</span>
+      <span class="user-name">{{userName}}</span>
       <div>
         @for (rateNum of getRateIndex(); track $index) {
           <mat-icon svgIcon="review-star" />
         }
       </div>
     </div>
-    <p style="text-align: center">{{review.createdOn}}</p>
+    <p style="text-align: center">{{review.data}}</p>
   </div>
   <div class="card-body">
-    <p>{{this.review.comment}}</p>
+    <p>{{review.comentario}}</p>
   </div>
 </div>

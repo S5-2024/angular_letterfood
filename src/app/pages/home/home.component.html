@@ -1,9 +1,13 @@
+@for (store of storeList; track $index) {
+  <store-card [storeInfo]="store" (click)="openModal(store)"/>
+}
 <ng-template cdkPortal>
   <div class="modal">
-    <store-details [storeInfo]="storeList[0]" />
-    <mat-icon svgIcon="close-icon" (click)="closeModal()" class="teste" />
+    <store-details [storeInfo]="this.selectedStore"/>
+    <mat-icon svgIcon="close-icon" (click)="closeModal()" class="teste"/>
   </div>
 </ng-template>
+
 
 <div class="home-container">
   

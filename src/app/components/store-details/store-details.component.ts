@@ -6,6 +6,8 @@ import * as echarts from 'echarts';
 import { Review } from '../../models/review';
 import { GoogleMapsModule } from '@angular/google-maps'
 import { MatIconModule } from '@angular/material/icon';
+import { RestaurantsService } from '../../services/restaurants.service';
+import { GeneralApiService } from '../../services/general-api.service';
 
 
 const MONEY_BAG = environment.icons['money-bag']
@@ -38,10 +40,10 @@ export class StoreDetailsComponent {
   private _size: any = "104px";
   private _labelSize: any = '1.875rem';
   private _textColor: any = '#C78CA0';
-  protected center: google.maps.LatLngLiteral = {
-    lat: -19.939296680492138, 
-    lng:-44.053810119331914
-  };
+
+  protected storeName!: string
+
+  protected center: google.maps.LatLngLiteral = this.getCenter()
   protected mapOptions: google.maps.MapOptions = {
     mapId: "LOCATION_MAP",
     center: this.center,
@@ -51,11 +53,47 @@ export class StoreDetailsComponent {
     mapTypeControl: false,
   }
 
-  
-  ngOnInit() {
-    console.log(this.storeInfo)
+  constructor(private generalService: GeneralApiService){
+    
   }
 
+
+  getCenter(){
+    var center = {
+      lat: 0,
+      lng: 0
+    }
+    this.generalService.getLatitudeAndLongitude(this.storeInfo.rua).subscribe({
+      next: (data)=> {
+        console.log(parseFloat(data[0].lat))
+        center = {
+          lat: parseFloat(data[0].lat),
+          lng: parseFloat(data[0].lon)
+        }
+      }
+    })
+    return center
+  }
+
+  ngOnInit() {
+    console.log(this.storeInfo)
+    this.getStoreName()
+    this.getCenter()
+  }
+  getStoreName(){ 
+    console.log(this.storeInfo.cnpj.replace("-", "").replace(".", "").replace("/", ""))
+    this.generalService.fetchCnpjInfo(this.storeInfo.cnpj.replace("-", "").replace(".", "").replace("/", ""))
+              .subscribe({
+                next: (data)=> {
+                  if(data['nome_fantasia'] != ""){
+                    this.storeName = data['nome_fantasia']
+                  }else{
+                    this.storeName = data['razao_social']
+                  }
+                },
+                error: (err) => console.error(err),
+              })
+  }
   onTabChange($event: MatTabChangeEvent) {
     const tabLabel = $event.tab.textLabel
     if (tabLabel == "Avaliações") {
@@ -209,9 +247,9 @@ export class StoreDetailsComponent {
       4: [],
       5: []
     }
-    for (let review of this.storeInfo.reviews) {
-      if (starClass[review.rate] !== undefined) {
-        starClass[review.rate].push(review)
+    for (let review of this.storeInfo.avaliacoes) {
+      if (starClass[review.nota] !== undefined) {
+        starClass[review.nota].push(review)
       }
     }
     let r: any = []

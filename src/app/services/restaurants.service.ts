@@ -16,6 +16,14 @@ export class RestaurantsService {
       catchError(this.errorHandler)
     )
   }
+  getRestaurantList(): Observable<any>{
+    return this.http.get(this._restaurantURL).pipe(
+      catchError(this.errorHandler)
+    )
+  }
+  getRestaurantById(id: any) {
+    return this.http.get(`${this._restaurantURL}/${id}`)
+  }
 
   private errorHandler(error: HttpErrorResponse): Observable<any>{
     let errorMessage = ''
