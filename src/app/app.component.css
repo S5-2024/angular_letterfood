@@ -177,7 +177,7 @@ button:hover {
 
 @media(min-width: 670px) and (max-width: 1900px){
   .navi_links{
-    background-color: aqua;
+    
     width: 35%;
     margin-right: 1px;
  }
