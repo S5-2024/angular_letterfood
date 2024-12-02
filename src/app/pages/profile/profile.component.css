@@ -135,6 +135,19 @@
    align-items: center;
    padding: 15px;
  }
+ .reviewList-container{
+  width: 100%;
+  text-align: center;
+ }
+ .reviewList{
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5em;
+  justify-content: space-around;
+  overflow-y: scroll;
+  margin-top: 3em;
+ }
 
  img{
   width: 40%;
@@ -204,7 +217,7 @@
     flex-direction: column;
     gap: 5px;
     background-color: white;
-    height: 450px;
+    height: 700px;
     width: 60%;
   }
  

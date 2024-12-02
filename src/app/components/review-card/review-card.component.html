@@ -1,20 +1,33 @@
-<div class="card-container">
-  <div class="card-header">
-    <div class="info">
-      <img
-        src="https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png"
-        alt=""
-      />
-      <span class="user-name">{{userName}}</span>
-      <div>
-        @for (rateNum of getRateIndex(); track $index) {
-          <mat-icon svgIcon="review-star" />
-        }
+@if(type == "details"){
+  <div class="card-container">
+    <div class="card-header">
+      <div class="info">
+        <img
+          src="https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png"
+          alt=""
+        />
+        <span class="user-name">{{userName}}</span>
+        <div>
+          @for (rateNum of getRateIndex(); track $index) {
+            <mat-icon svgIcon="review-star" />
+          }
+        </div>
       </div>
+      <p style="text-align: center">{{review.data}}</p>
     </div>
-    <p style="text-align: center">{{review.data}}</p>
+    <div class="card-body">
+      <p>{{review.comentario}}</p>
+    </div>
   </div>
-  <div class="card-body">
+  
+}@else {
+  <div class="profile-card">
+    <div>
+      <h2>{{review.restaurante.nome}}</h2>
+      @for (rateNum of getRateIndex(); track $index) {
+        <mat-icon svgIcon="review-star" />
+      }
+    </div>
     <p>{{review.comentario}}</p>
   </div>
-</div>
+}
