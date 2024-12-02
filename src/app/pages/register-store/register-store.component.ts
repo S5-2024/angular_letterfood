@@ -44,23 +44,35 @@ export class RegisterStoreComponent {
 
 
   ngOnInit() {
-    this.registerForm = this.fb.group({
-      cnpj: new FormControl('', [Validators.required, Validators.maxLength(14)]),
+    /* this.registerForm = this.fb.group({
+      
       telefone: new FormControl('', Validators.required),
       email: new FormControl('', [Validators.email, Validators.required]),
       cep: new FormControl('', Validators.required),
       rua: new FormControl('', Validators.required),
-      bairro: new FormControl('', Validators.required),
       cidade: new FormControl('', Validators.required),
       estado: new FormControl('', Validators.required),
       numero: new FormControl(0, Validators.required),
       categoria: new FormControl([], Validators.required)
+    }) */
+    this.registerForm = this.fb.group({
+      nome: new FormControl('', [Validators.required, Validators.maxLength(100)]),
+      endereco: this.fb.group({
+        rua: new FormControl('', Validators.required),
+        numero: new FormControl('', Validators.required),
+        cidade: new FormControl('', Validators.required),
+        estado: new FormControl('', Validators.required),
+        cep: new FormControl('', Validators.required)
+      }),
+      telefone: new FormControl('', Validators.required),
+      categoria: new FormControl('', Validators.required),
+      email: new FormControl('', Validators.required),
+      senha: new FormControl('', Validators.required)
     })
 
 
-
   }
-  onSubmit($event: boolean = false) {
+  /* onSubmit($event: boolean = false) {
     const checkboxes = document.querySelectorAll(".checkbox>input");
     console.log(this.registerForm.value)
     if($event){
@@ -70,16 +82,18 @@ export class RegisterStoreComponent {
           this.registerForm.get('categoria')!.setValue([...oldValues,(checkbox as HTMLInputElement).value]);
         }
       })
-      /* this.restaurantService.create(this.registerForm.value).subscribe({
-        next: () => console.log("Restaurante Criado com sucesso"),
-        error: (err) => console.error("Erro ao criar restaurante\n" + err),
-        complete: () => {
-          this.router.navigate(["/homelander"])
-        }
-      }); */
     }
 
-    
+}*/
+  onSubmit($event: boolean = false) {
+    console.log(this.registerForm.value)
+    this.restaurantService.createRestaurant(this.registerForm.value).subscribe({
+      next: ()=> alert("Restaurante criado com sucesso"),
+      error: (err)=> console.error(err),
+      complete: ()=>{
+        this.router.navigate(['/homelander'])
+      }
+    })
   }
 
 
@@ -104,32 +118,43 @@ export class RegisterStoreComponent {
     console.log(this.companyInfo)
     switch (stepIndex) {
       case 0:
-        console.log((<HTMLInputElement>document.getElementById("email")).value)
-        this.registerForm.controls['cnpj'].setValue((<HTMLInputElement>document.getElementById("cnpj")).value);
-        (<HTMLInputElement>document.getElementById("email")).value = this.companyInfo['email']
-        this.registerForm.controls['email'].setValue((<HTMLInputElement>document.getElementById("email")).value);
+        //SETTING THE INPUT VALUE
         (<HTMLInputElement>document.getElementById("name")).value = this.companyInfo['nome_fantasia'];
-        /* this.registerForm.controls['name'].setValue((<HTMLInputElement>document.getElementById("name")).value); */
+        //SETTING THE FORMS CONTROL VALUE
+        this.registerForm.controls['nome'].setValue((<HTMLInputElement>document.getElementById("name")).value);
+        //SETTING THE INPUT VALUE
+        (<HTMLInputElement>document.getElementById("email")).value = this.companyInfo['email'];
+        //SETTING THE INPUT VALUE
         (<HTMLInputElement>document.getElementById("phone")).value = this.companyInfo['ddd_telefone_1'];
+        //SETTING THE FORMS CONTROL VALUE
         this.registerForm.controls['telefone'].setValue((<HTMLInputElement>document.getElementById("phone")).value);
-        
+        //SETTING THE INPUT VALUE
+        (<HTMLInputElement>document.getElementById("phone")).value = this.companyInfo['ddd_telefone_1'];
         break;
 
       case 1:
-        //define cep
-        this.registerForm.controls['email'].setValue((<HTMLInputElement>document.getElementById("email")).value);
+        const enderecoControl = this.registerForm.get('endereco') as FormGroup;
+        //SETTING THE INPUT VALUE
         (<HTMLInputElement>document.getElementById('cep')).value = this.companyInfo['cep'];
-        (<HTMLInputElement>document.getElementById('street')).value = this.companyInfo['logradouro'];
+        //SETTING THE FORMS CONTROL VALUE
+        enderecoControl.controls['cep'].setValue((<HTMLInputElement>document.getElementById('cep')).value);
+        //SETTING THE INPUT VALUE
         (<HTMLInputElement>document.getElementById('neighborhood')).value = this.companyInfo['bairro'];
+        //SETTING THE INPUT VALUE
         (<HTMLInputElement>document.getElementById('city')).value = this.companyInfo['municipio'];
-        (<HTMLInputElement>document.getElementById('state')).value = this.companyInfo['uf'];
+        //SETTING THE FORMS CONTROL VALUE
+        enderecoControl.controls['cidade'].setValue((<HTMLInputElement>document.getElementById('city')).value);
+        //SETTING THE INPUT VALUE
         (<HTMLInputElement>document.getElementById('houseNumber')).value = this.companyInfo['numero'];
-        this.registerForm.get('cep')?.setValue((<HTMLInputElement>document.getElementById('cep')).value);
-        this.registerForm.get('rua')?.setValue((<HTMLInputElement>document.getElementById('street')).value);
-        this.registerForm.get('bairro')?.setValue((<HTMLInputElement>document.getElementById('neighborhood')).value);
-        this.registerForm.get('cidade')?.setValue((<HTMLInputElement>document.getElementById('city')).value);
-        this.registerForm.get('estado')?.setValue((<HTMLInputElement>document.getElementById('state')).value);
-        this.registerForm.get('numero')?.setValue(parseInt((<HTMLInputElement>document.getElementById('houseNumber')).value));
+        //SETTING THE FORMS CONTROL VALUE
+        enderecoControl.controls['numero'].setValue((<HTMLInputElement>document.getElementById('houseNumber')).value);
+        //SETTING THE INPUT VALUE
+        (<HTMLInputElement>document.getElementById('state')).value = this.companyInfo['uf'];
+        enderecoControl.controls['estado'].setValue((<HTMLInputElement>document.getElementById('state')).value);
+        //SETTING THE INPUT VALUE
+        (<HTMLInputElement>document.getElementById('street')).value = this.companyInfo['logradouro'];
+        //SETTING THE FORMS CONTROL VALUE
+        enderecoControl.controls['rua'].setValue((<HTMLInputElement>document.getElementById('street')).value);
     }
 
 

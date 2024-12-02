@@ -20,7 +20,6 @@
               class="bar"
               type="text"
               placeholder="00.000.000/0000-00"
-              formGroupName="cnpj"
               id="cnpj"
               (focusout)="checkCNPJ()"
             />
@@ -30,7 +29,7 @@
             <input
               class="bar"
               type="text"
-              
+              formControlName="nome"
               id="name"
               placeholder="Rodrigo Lanches"
             />
@@ -51,7 +50,18 @@
               class="bar"
               type="text"
               placeholder="(00)99999-9999"
+              formControlName="telefone"
               id="phone"
+            />
+          </div>
+          <div>
+            <label for="">Senha: </label>
+            <input
+              class="bar"
+              type="password"
+              placeholder="Password..."
+              formControlName="senha"
+              id="password"
             />
           </div>
         </div>
@@ -64,15 +74,15 @@
         [@stepAnimation]="stepper.selectedIndex === 1 ? 'current' : 'inactive'"
         (submit)="onSubmit()"
       >
-        <div class="formsContent">
+        <div class="formsContent" formGroupName="endereco">
           <div>
             <label for="">CEP: </label>
             <input
               class="bar"
               type="text"
               placeholder="0000-000"
-              formGroupName="cep"
               id="cep"
+              formControlName="cep"
             />
           </div>
 
@@ -97,15 +107,19 @@
           </div>
           <div>
             <label for="">Número: </label>
-            <input class="bar" id="houseNumber" type="text" placeholder="00" />
+            <input class="bar" id="houseNumber" type="text" placeholder="00" 
+            formControlName="numero"
+            />
           </div>
           <div>
             <label for="">Cidade: </label>
-            <input class="bar" id="city" type="text" placeholder="São Paulo" />
+            <input class="bar" id="city" type="text" placeholder="São Paulo" 
+            formControlName="cidade"/>
           </div>
           <div>
             <label for="">Estado: </label>
-            <input class="bar" id="state" type="text" placeholder="SP" />
+            <input class="bar" id="state" type="text" placeholder="SP"
+            formControlName="estado" />
           </div>
         </div>
       </form>
@@ -113,42 +127,18 @@
     <cdk-step>
       <form
         class=""
+        [formGroup]="registerForm"
         [@stepAnimation]="stepper.selectedIndex === 2 ? 'current' : 'inactive'"
       >
         <h3>Selecione as categorias do restaurante</h3>
         <div class="checkbox-formsContent">
-          <div class="checkbox">
-            <input type="checkbox" value="Fast-food"/>
-            <label for="">Fast-food</label>
-          </div>
-          <div class="checkbox">
-            <input type="checkbox" value="Comida Japonêsa"/>
-            <label for="">Comida Japonêsa</label>
-          </div>
-          <div class="checkbox">
-            <input type="checkbox" value="Comida Chinesa"/>
-            <label for="">Comida Chinesa</label>
-          </div>
-          <div class="checkbox">
-            <input type="checkbox" value="Marmitex"/>
-            <label for="">Marmitex</label>
-          </div>
-          <div class="checkbox">
-            <input type="checkbox" value="Pizza"/>
-            <label for="">Pizza</label>
-          </div>
-          <div class="checkbox">
-            <input type="checkbox" value="Hamburguer"/>
-            <label for="">Hamburguer</label>
-          </div>
-          <div class="checkbox">
-            <input type="checkbox" value="Artesanal" />
-            <label for="">Artesanal</label>
-          </div>
-          <div class="checkbox">
-            <input type="checkbox" value="Vegana"/>
-            <label for="">Vegana</label>
-          </div>
+          <select name="" id="" formControlName="categoria">
+            <option value="Fast Food">Fast Food</option>
+            <option value="Italiana">Italiana</option>
+            <option value="Japonesa">Japonesa</option>
+            <option value="Brasileira">Brasileira</option>
+            <option value="Outros">Outros</option>
+          </select>
         </div>
       </form>
     </cdk-step>
