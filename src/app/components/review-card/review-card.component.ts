@@ -12,23 +12,19 @@ import { UserService } from '../../services/user.service';
 })
 export class ReviewCardComponent {
   @Input() review:any;
-  userName!: string
+  userName: string = "Anonimo"
   
   constructor(private userService: UserService){}
 
   ngOnInit(){
-    this.getUserResponsible()
+    this.checkName()
   }
-
-  getUserResponsible(){
-    this.userService.getById(this.review.userId).subscribe({
-      next: (data) => {
-        this.userName = data.nome
-      },
-      error: (err) => console.error(err),
-    })
+  checkName(){
+    if(this.review.usuario.nome != null){
+      this.userName = this.review.usuario.nome 
+    }
   }
   getRateIndex(){
-    return Array(this.review.nota).fill(0)
+    return Array(Math.round(this.review.nota)).fill(0)
   }
 }

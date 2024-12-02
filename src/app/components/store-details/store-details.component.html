@@ -10,22 +10,31 @@
       <div class="content">
         <div class="general_header">
           @if(storeInfo.image == null){
-            <img src="https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png" alt="" class="logo">
+          <img
+            src="https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png"
+            alt=""
+            class="logo"
+          />
           }@else {
-            <img src="{{ storeInfo.imagem }}" alt="" class="logo" />
+          <img src="{{ storeInfo.imagem }}" alt="" class="logo" />
           }
           <!--| PLACEHOLDER IMAGE: https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png-->
-          <h1>{{ storeName }}</h1>
+          <h1>{{ storeInfo.nome }}</h1>
           <div class="categories">
-            @for (category of storeInfo.categoria; track $index) {
+            <span class="category">{{ storeInfo.categoria }}</span>
+            <!-- @for (category of storeInfo.categoria; track $index) {
             <span class="category">{{ category }}</span>
-            }
+            } -->
           </div>
         </div>
         <div class="general_body">
           <div class="description">
             <h2>Descrição:</h2>
+            @if(storeInfo.description){
             <p>{{ storeInfo.description }}</p>
+            }@else {
+            <p>This is a new restaurant, waiting for the configuration</p>
+            }
           </div>
           <div class="classifications">
             <div class="classification">
@@ -81,31 +90,42 @@
       <div class="content_map">
         <div class="maps_header">
           @if(storeInfo.image == null){
-            <img src="https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png" alt="" class="logo">
+          <img
+            src="https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png"
+            alt=""
+            class="logo"
+          />
           }@else {
-            <img src="{{ storeInfo.imagem }}" alt="" class="logo" />
+          <img src="{{ storeInfo.imagem }}" alt="" class="logo" />
           }
           <div class="local_info">
-            
             <span style="grid-area: a"
-              ><mat-icon svgIcon="telephone-icon" />{{storeInfo.telefone}}</span
+              ><mat-icon svgIcon="telephone-icon" />{{
+                storeInfo.telefone
+              }}</span
             >
             <span style="grid-area: b"
-              ><mat-icon svgIcon="city-icon" />{{storeInfo.cidade}}</span
+              ><mat-icon svgIcon="city-icon" />{{
+                storeInfo.endereco.cidade
+              }}</span
             >
             <span style="grid-area: c"
               ><mat-icon svgIcon="location-icon" />
-              {{storeInfo.rua}}, {{storeInfo.numero}} - {{storeInfo.bairro}}
+              {{ storeInfo.endereco.rua }}, {{ storeInfo.endereco.numero
+              }}<!--  - {{ storeInfo.endereco.bairro }} -->
             </span>
             <span style="grid-area: d"
-              ><mat-icon svgIcon="globe-icon" />{{storeInfo.email}}</span
+              ><mat-icon svgIcon="globe-icon" />{{ storeInfo.email }}</span
             >
           </div>
         </div>
         <div class="maps_body">
           <h2>Localização:</h2>
           <google-map width="100%" [options]="mapOptions">
-            <map-advanced-marker #markerElem="mapAdvancedMarker" [position]="center"/>
+            <map-advanced-marker
+              #markerElem="mapAdvancedMarker"
+              [position]="center"
+            />
           </google-map>
         </div>
       </div>
@@ -115,9 +135,13 @@
       <div class="content">
         <div class="review_header">
           @if(storeInfo.image == null){
-            <img src="https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png" alt="" class="logo">
+          <img
+            src="https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png"
+            alt=""
+            class="logo"
+          />
           }@else {
-            <img src="{{ storeInfo.imagem }}" alt="" class="logo" />
+          <img src="{{ storeInfo.imagem }}" alt="" class="logo" />
           }
           <!-- <canvas id="canvas"></canvas> -->
           <div id="canvas"></div>
@@ -125,14 +149,23 @@
         <div class="review_body">
           <h2 style="color: var(--rosa5)">Comentarios:</h2>
           <br />
-          @if(storeInfo.avaliacoes.length > 0){
-            @for (review of storeInfo.avaliacoes; track $index) {
-              <review-card [review]="review" />
-            }
-          }@else {
+          <div class="reviews">
+            @if(reviewList.length > 0){ @for (review of reviewList; track
+            $index) {
+            <review-card [review]="review" />
+            } }@else {
             <span>Nenhum comentario feito ainda...</span>
-          }
-          
+            }
+          </div>
+          <div class="comment-section">
+            <div class="review-rate">
+              <label for="" style="margin-right: 5px">Nota:</label
+              ><input type="number" max="5" min="1" id="rate" />
+            </div>
+            <label for="">Comentario:</label>
+            <textarea name="" id="comment"></textarea>
+            <button (click)="createReview()">Send</button>
+          </div>
         </div>
       </div>
     </mat-tab>

@@ -11,8 +11,6 @@ import { Restaurant } from '../../models/restaurant';
 export class StoreCardComponent {
 
   @Input() storeInfo!: any
-  @Input() restaurant: any;
-  @Input() popRestaurant: any;
   arrTemplate:Array<number> = Array()
 
   constructor(){
@@ -23,7 +21,6 @@ export class StoreCardComponent {
     this.storeInfo.avaliacoes.forEach( (review: any) => {
       soma += review.nota
     } )
-    console.log(this.storeInfo.avaliacoes.length)
     let tam = soma / this.storeInfo.avaliacoes.length
     this.arrTemplate = Array(tam).fill(0)
 
