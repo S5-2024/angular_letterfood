@@ -19,8 +19,7 @@ export class ProfileComponent {
   }
 
   ngOnInit(){
-    this.userInfo = JSON.parse(localStorage.getItem("user")!).usuario
-
+    this.userInfo = JSON.parse(localStorage.getItem("user")!)
     this.getReviewList();
     console.log(this.userInfo)
   }

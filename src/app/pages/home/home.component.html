@@ -11,18 +11,7 @@
 
 <div class="home-container">
   
-  <!-- Seção Popular -->
-  <p class="section-title">Populares</p>
-  <hr />
-  <div id="popular" class="card-list">
-    <div class="card" *ngFor="let popRestaurant of popRestaurants; let i = index">
-      <!-- <store-card 
-        [restaurant]="popRestaurants" 
-        (click)="openModal()">
-      </store-card> -->
-    </div>
-  </div>
-
+  <br>
   <!-- Outras Seções -->
   <p class="section-title">Comida Japonesa</p>
   <hr />
@@ -32,19 +21,18 @@
     </div>
   </div>
 
-  <p class="section-title">Comida Chinesa</p>
-  <hr />
-  <div class="card-list">
-    <div class="card" *ngFor="let chinese of storeList.chinese">
-      <store-card [storeInfo]="chinese" (click)="openModal(chinese)"></store-card>
-    </div>
-  </div>
-
   <p class="section-title">Brasileira</p>
   <hr />
   <div class="card-list">
     <div class="card" *ngFor="let brazilian of storeList.brazilian">
       <store-card [storeInfo]="brazilian" (click)="openModal(brazilian)"></store-card>
+    </div>
+  </div>
+  <p class="section-title">Outros</p>
+  <hr />
+  <div class="card-list">
+    <div class="card" *ngFor="let other of storeList.others">
+      <store-card [storeInfo]="other" (click)="openModal(other)"></store-card>
     </div>
   </div>
 </div>
