@@ -84,27 +84,27 @@ export class RegisterStoreComponent {
     formData.append('senha', this.registerForm.controls['senha'].value)
 
     this.restaurantService.createRestaurant(formData).subscribe({
-      next: ()=> alert("Restaurante criado com sucesso"),
-      error: (err)=> console.error(err),
-      complete: ()=>{
+      next: () => alert("Restaurante criado com sucesso"),
+      error: (err) => console.error(err),
+      complete: () => {
         this.router.navigate(['/homelander'])
       }
     })
   }
 
-  saveImage(event: any){
+  saveImage(event: any) {
     if (event.target.files && event.target.files[0]) {
       const reader = new FileReader();
 
       reader.onload = (_event: any) => {
-          this.imageFile = {
-              link: _event.target.result,
-              file: event.srcElement.files[0],
-              name: event.srcElement.files[0].name
-          };
+        this.imageFile = {
+          link: _event.target.result,
+          file: event.srcElement.files[0],
+          name: event.srcElement.files[0].name
+        };
       };
       reader.readAsDataURL(event.target.files[0]);
-  }
+    }
   }
 
 

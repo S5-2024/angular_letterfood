@@ -20,8 +20,8 @@ export class UserService {
     )
   }
   
-  create(user: object): Observable<any>{
-    return this.http.post(``, user).pipe(
+  create(user: FormData): Observable<any>{
+    return this.http.post(this.urls.general2, user).pipe(
       catchError(this.errorHandler)
     )
   }

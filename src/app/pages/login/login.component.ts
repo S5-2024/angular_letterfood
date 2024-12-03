@@ -33,6 +33,7 @@ export class LoginComponent implements AfterViewInit {
   recoverPassForm!: FormGroup;
   // Script para mudar de login -> registro ou recuperar senha
   formType: string = 'login'; // Inicia com o formulário de login
+  imageFile!: { link: any; file: any; name: any; };
 
 
   constructor(
@@ -85,17 +86,39 @@ export class LoginComponent implements AfterViewInit {
         break;
 
       case "registerForm":
+        const formData = new FormData()
+        formData.append('foto', this.imageFile.file )
+        Object.keys(this.registerForm.controls).forEach((key) => {
+          formData.append(key, this.registerForm.get(key)?.value)
+        })
         this.userService.create(this.registerForm.value).subscribe({
-          next: () => console.log("Usuário criado com sucesso!"),
+          next: (res) => {
+            alert("Usuário criado com sucesso!");
+            localStorage.setItem("user", JSON.stringify(res.usuario))
+          },
           error: (error) => console.log("Erro ao criar usuário: " + error),
           complete: () => {
-            localStorage.setItem("user", JSON.stringify({email: this.registerForm.get('email')!.value}));
             this.router.navigate(['/homelander']);
           }
         })
-        break
+        break;
 
       case "":
+    }
+  }
+
+  saveImage(event: any) {
+    if (event.target.files && event.target.files[0]) {
+      const reader = new FileReader();
+
+      reader.onload = (_event: any) => {
+        this.imageFile = {
+          link: _event.target.result,
+          file: event.srcElement.files[0],
+          name: event.srcElement.files[0].name
+        };
+      };
+      reader.readAsDataURL(event.target.files[0]);
     }
   }
 

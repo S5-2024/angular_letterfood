@@ -38,7 +38,7 @@
 
 
   @else if(formType === 'registerForm'){
-  <form   id="registerForm" [formGroup] ="registerForm" (ngSubmit)="onSubmit()">
+  <form   id="registerForm" [formGroup] ="registerForm" (submit)="onSubmit()">
     <div class="detalhes">
       <mat-icon svgIcon="solar--cat-bold" aria-label="Solar Cat Bold" class="icones" />
       <h1 class="frase">Bem-Vindo(a) ao Letter Food </h1>
@@ -61,9 +61,14 @@
         <input type="password" placeholder="senha" id="senha" class="bar"
         formControlName="senha">
       </div>
+      <div class="form-group">
+        <label for="senha">Image</label>
+        <input type="file" id="img" class="bar"
+         (change)="saveImage($event)">
+      </div>
     </div>
     <div class="botoes">
-      <button id="button" class="botao" type="submit"> <span>Criar</span></button>
+      <button id="button" class="botao" type="submit" > <span>Criar</span></button>
       <button class="botao-google">
         <mat-icon svgIcon="logos--google-icon" aria-label="googleicon"/>
         <span> Continuar com o Google</span>
