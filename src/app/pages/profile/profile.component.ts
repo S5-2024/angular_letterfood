@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { RestaurantsService } from '../../services/restaurants.service';
 import { ReviewCardComponent } from '../../components/review-card/review-card.component';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -13,7 +14,7 @@ import { ReviewCardComponent } from '../../components/review-card/review-card.co
 export class ProfileComponent {
   userInfo!: any;
 
-  constructor(private restaurantService: RestaurantsService){
+  constructor(private restaurantService: RestaurantsService, private router: Router){
 
   }
 
@@ -38,5 +39,9 @@ export class ProfileComponent {
         });
       }
     })
+  }
+  logout(){
+    localStorage.removeItem('user');
+    this.router.navigate(['/login'])
   }
 }
