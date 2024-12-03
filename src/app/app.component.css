@@ -6,9 +6,8 @@
   flex-direction: row;
   justify-content: space-between;
   height: 5.4vh;
-
   background-color: var(--rosa2);
-
+  z-index: 999;
 }
 
 

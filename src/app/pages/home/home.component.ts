@@ -61,6 +61,9 @@ export class HomeComponent {
             case "italiana":
               this.storeList.italian.push(restaurant);
               break;
+            case "fast food":
+              this.storeList.fastfood.push(restaurant);
+              break;
             case "outros":
               this.storeList.others.push(restaurant)
           }
