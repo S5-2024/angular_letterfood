@@ -9,14 +9,14 @@
     <mat-tab label="Geral" class="tab">
       <div class="content">
         <div class="general_header">
-          @if(storeInfo.image == null){
+          @if(storeInfo.foto == null){
           <img
             src="https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png"
             alt=""
             class="logo"
           />
           }@else {
-          <img src="{{ storeInfo.imagem }}" alt="" class="logo" />
+          <img src="http://localhost:3000/{{ storeInfo.foto }}" alt="" class="logo" />
           }
           <!--| PLACEHOLDER IMAGE: https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png-->
           <h1>{{ storeInfo.nome }}</h1>
@@ -89,14 +89,14 @@
     <mat-tab label="Mapa">
       <div class="content_map">
         <div class="maps_header">
-          @if(storeInfo.image == null){
+          @if(storeInfo.foto == null){
           <img
             src="https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png"
             alt=""
             class="logo"
           />
           }@else {
-          <img src="{{ storeInfo.imagem }}" alt="" class="logo" />
+          <img src="http://localhost:3000/{{ storeInfo.foto }}" alt="" class="logo" />
           }
           <div class="local_info">
             <span style="grid-area: a"
@@ -134,14 +134,14 @@
     <mat-tab label="Avaliações">
       <div class="content">
         <div class="review_header">
-          @if(storeInfo.image == null){
+          @if(storeInfo.foto == null){
           <img
             src="https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png"
             alt=""
             class="logo"
           />
           }@else {
-          <img src="{{ storeInfo.imagem }}" alt="" class="logo" />
+          <img src="http://localhost:3000/{{ storeInfo.foto }}" alt="" class="logo" />
           }
           <!-- <canvas id="canvas"></canvas> -->
           <div id="canvas"></div>

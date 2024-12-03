@@ -8,7 +8,8 @@ import { catchError, Observable, throwError } from 'rxjs';
 export class UserService {
   private urls = {
     authUrl: "http://localhost:3000/usuarios/login",
-    general : "http://localhost:3000/api/usuarios/"
+    general : "http://localhost:3000/api/usuarios/",
+    general2: "http://localhost:3000/usuarios"
   }
   constructor(private http: HttpClient) {}
 
@@ -25,7 +26,7 @@ export class UserService {
     )
   }
   getById(userId: string){
-    return this.http.get(`${userId}`).pipe(
+    return this.http.get(`${this.urls.general2}/${userId}`).pipe(
       catchError(this.errorHandler)
     )
   }

@@ -11,29 +11,41 @@ import { UserService } from '../../services/user.service';
   styleUrl: './review-card.component.css'
 })
 export class ReviewCardComponent {
-  @Input() review:any;
+  @Input() review: any;
   @Input() type: string = "details"
   userName: string = "Anonimo"
+  userImage: any;
   protected arrTemplate!: Array<number>
-  constructor(private userService: UserService){}
+  constructor(private userService: UserService) { }
 
-  ngOnInit(){
+  ngOnInit() {
     this.checkName()
+    this.getUserImage(this.review.usuario._id)
     console.log(this.review)
     this.arrTemplate = Array(Math.round(this.review.nota)).fill(0)
- /*    let soma = 0
-    this.storeInfo.avaliacoes.forEach( (review: any) => {
-      soma += review.nota
-    } )
-    let tam = soma / this.storeInfo.avaliacoes.length
-    this.arrTemplate = Array(tam).fill(0) */
   }
-  checkName(){
-    if(this.review.usuario.nome != null){
-      this.userName = this.review.usuario.nome 
+  checkName() {
+    if (this.review.usuario.nome != null) {
+      this.userName = this.review.usuario.nome
     }
   }
-  getRateIndex(){
+  getRateIndex() {
     return Array(Math.round(this.review.nota)).fill(0)
+  }
+  getUserImage(id: string) {
+    this.userService.getById(id).subscribe(
+      {
+        next: (value) => {
+          if (value.foto == undefined) {
+            this.userImage = "https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png"
+          } else {
+            this.userImage = `http://localhost:3000/${value.foto}`
+          }
+
+        },
+        error: (err) => console.log(err),
+        complete: () => console.log(this.userImage)
+      }
+    )
   }
 }

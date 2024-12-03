@@ -9,7 +9,11 @@
     <div class="item" id="n2">
        <div class="subitem" id="foto">
         <h2> <span>{{userInfo.nome}}</span></h2>
-        <img src="profile.png" alt="imagem">
+        @if(userInfo.foto){
+          <img src="http://localhost:3000/{{userInfo.foto}}" alt="profile">
+        }@else {
+          <img src="profile.png" alt="imagem">
+        }
        </div>  
 
        <div class="subitem" id="bio">

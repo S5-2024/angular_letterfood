@@ -2,10 +2,15 @@
   <div class="card-container">
     <div class="card-header">
       <div class="info">
-        <img
+        @if(userImage){
+          <img src="{{userImage}}" alt="">
+        }@else {
+          <img
           src="https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png"
           alt=""
         />
+        }
+        
         <span class="user-name">{{userName}}</span>
         <div>
           @for (rateNum of getRateIndex(); track $index) {

@@ -17,8 +17,8 @@ export class RestaurantsService {
     )
   }
 
-  createRestaurant(body: Object): Observable<any>{
-    return this.http.post(this._restaurantURL, body).pipe(
+  createRestaurant(body: FormData): Observable<any>{
+    return this.http.post(this._restaurantURL + "/registro", body).pipe(
       catchError(this.errorHandler)
     )
   }

@@ -37,6 +37,7 @@ export class RegisterStoreComponent {
   private tgY = 0;
   protected registerForm !: FormGroup
   private companyInfo: any = null;
+  imageFile!: { link: any; file: any; name: any; };
 
   constructor(private el: ElementRef, private renderer: Renderer2,
     private fb: FormBuilder, private generalApi: GeneralApiService,
@@ -44,19 +45,9 @@ export class RegisterStoreComponent {
 
 
   ngOnInit() {
-    /* this.registerForm = this.fb.group({
-      
-      telefone: new FormControl('', Validators.required),
-      email: new FormControl('', [Validators.email, Validators.required]),
-      cep: new FormControl('', Validators.required),
-      rua: new FormControl('', Validators.required),
-      cidade: new FormControl('', Validators.required),
-      estado: new FormControl('', Validators.required),
-      numero: new FormControl(0, Validators.required),
-      categoria: new FormControl([], Validators.required)
-    }) */
     this.registerForm = this.fb.group({
       nome: new FormControl('', [Validators.required, Validators.maxLength(100)]),
+      /* foto: [null], */
       endereco: this.fb.group({
         rua: new FormControl('', Validators.required),
         numero: new FormControl('', Validators.required),
@@ -72,28 +63,57 @@ export class RegisterStoreComponent {
 
 
   }
-  /* onSubmit($event: boolean = false) {
-    const checkboxes = document.querySelectorAll(".checkbox>input");
-    console.log(this.registerForm.value)
-    if($event){
-      checkboxes.forEach( (checkbox) => {
-        if((checkbox as HTMLInputElement).checked){
-          let oldValues = this.registerForm.get('categoria')!.value;
-          this.registerForm.get('categoria')!.setValue([...oldValues,(checkbox as HTMLInputElement).value]);
-        }
-      })
-    }
 
-}*/
   onSubmit($event: boolean = false) {
-    console.log(this.registerForm.value)
-    this.restaurantService.createRestaurant(this.registerForm.value).subscribe({
+    console.log(this.imageFile)
+    let enderecoGroup = (this.registerForm.get('endereco') as FormGroup)
+    let endereco = {
+      rua: enderecoGroup.controls['rua'].value,
+      cep: enderecoGroup.controls['cep'].value,
+      numero: enderecoGroup.controls['cep'].value,
+      cidade: enderecoGroup.controls['cidade'].value,
+      estado: enderecoGroup.controls['estado'].value,
+    }
+    const formData = new FormData()
+    formData.append("foto", this.imageFile.file);
+    formData.append('nome', this.registerForm.controls['nome'].value);
+    formData.append('endereco', JSON.stringify(endereco))
+    formData.append('telefone', this.registerForm.controls['telefone'].value);
+    formData.append('categoria', this.registerForm.controls['categoria'].value)
+    formData.append('email', this.registerForm.controls['email'].value)
+    formData.append('senha', this.registerForm.controls['senha'].value)
+    /* Object.keys(this.registerForm.controls).forEach(
+      (key)=>{
+        const value = this.registerForm.get(key)?.value;
+
+        if(value !== null && value !== undefined){
+          formData.append(key, value)
+        }
+      }
+    ) */
+
+    this.restaurantService.createRestaurant(formData).subscribe({
       next: ()=> alert("Restaurante criado com sucesso"),
       error: (err)=> console.error(err),
       complete: ()=>{
         this.router.navigate(['/homelander'])
       }
     })
+  }
+
+  saveImage(event: any){
+    if (event.target.files && event.target.files[0]) {
+      const reader = new FileReader();
+
+      reader.onload = (_event: any) => {
+          this.imageFile = {
+              link: _event.target.result,
+              file: event.srcElement.files[0],
+              name: event.srcElement.files[0].name
+          };
+      };
+      reader.readAsDataURL(event.target.files[0]);
+  }
   }
 
 

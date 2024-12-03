@@ -1,7 +1,7 @@
 <div class="card_container">
     <div class="image_container">
-        @if(storeInfo.imageUrl){
-            <img [src]="storeInfo.imageUrl" alt="{{storeInfo.name}}">
+        @if(storeInfo.foto){
+            <img src="http://localhost:3000/{{storeInfo.foto}}" alt="{{storeInfo.name}}">
         }@else {
             <img src="https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png" alt="">
         }
