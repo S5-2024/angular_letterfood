@@ -28,6 +28,13 @@
       <store-card [storeInfo]="brazilian" (click)="openModal(brazilian)"></store-card>
     </div>
   </div>
+  <p class="section-title">Fast-Food</p>
+  <hr />
+  <div class="card-list">
+    <div class="card" *ngFor="let fastfood of storeList.fastfood">
+      <store-card [storeInfo]="fastfood" (click)="openModal(fastfood)"></store-card>
+    </div>
+  </div>
   <p class="section-title">Outros</p>
   <hr />
   <div class="card-list">

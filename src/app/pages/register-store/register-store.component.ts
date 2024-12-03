@@ -82,15 +82,6 @@ export class RegisterStoreComponent {
     formData.append('categoria', this.registerForm.controls['categoria'].value)
     formData.append('email', this.registerForm.controls['email'].value)
     formData.append('senha', this.registerForm.controls['senha'].value)
-    /* Object.keys(this.registerForm.controls).forEach(
-      (key)=>{
-        const value = this.registerForm.get(key)?.value;
-
-        if(value !== null && value !== undefined){
-          formData.append(key, value)
-        }
-      }
-    ) */
 
     this.restaurantService.createRestaurant(formData).subscribe({
       next: ()=> alert("Restaurante criado com sucesso"),

@@ -13,17 +13,20 @@ export class StoreCardComponent {
 
   @Input() storeInfo!: any
   arrTemplate:Array<number> = Array()
+  protected img!: string
 
   constructor(private restaurantService: RestaurantsService){
   }
 
   ngOnInit(){
-    console.log(this.storeInfo)
     this.getReviews()
-    this.getStars()
-
+    this.formatImg = this.storeInfo.foto[0] == '/' ? this.storeInfo.foto.substring(1) : this.storeInfo.foto
   }
-
+  formatImg(){
+    if(this.storeInfo.foto[0] == "/"){
+      this.storeInfo.foto = this.storeInfo.foto.substring(1)
+    }
+  }
   getReviews() {
     this.restaurantService.getAvaliacoes().subscribe(
       {
