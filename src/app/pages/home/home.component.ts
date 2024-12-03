@@ -20,7 +20,7 @@ export class HomeComponent {
   private overlayRef;
   protected storeList : any = {
     japanese: [],
-    chinese: [],
+    others: [],
     fastfood: [],
     italian: [],
     brazilian: []
@@ -61,6 +61,8 @@ export class HomeComponent {
             case "italiana":
               this.storeList.italian.push(restaurant);
               break;
+            case "outros":
+              this.storeList.others.push(restaurant)
           }
         });
       },

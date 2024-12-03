@@ -39,10 +39,9 @@ export class AppComponent {
         this.currentRoute = event.url; // Atualiza a rota atual
         if(event.url.includes('/about') || event.url.includes('/login') || event.url.includes('/store/register')){
           this.showHeader = false
+        }else{
+          this.showHeader = true
         }
-/*         this.showHeader = !event.url.includes('/about'); // Oculta o header se for a rota /about
-        this.showHeader = !event.url.includes('/login'); // Oculta o header se for a rota /login
-        this.showHeader = !event.url.includes('/store/register'); // Oculta o header se for a rota /store/register */
       }
     });
   }
